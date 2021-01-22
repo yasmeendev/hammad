@@ -174,5 +174,32 @@ namespace VirtoCommerce.Platform.Core.Common
             }
             return false;
         }
+
+        public static bool IsAssignableToTypeByGeneric(Type givenType, Type targetType)
+        {
+            var givenTypeInfo = givenType.GetTypeInfo();
+            var targetTypeInfo = targetType.GetTypeInfo();
+
+            if (givenTypeInfo.IsGenericType && targetTypeInfo.IsGenericType
+                && givenType.GetGenericTypeDefinition() == targetTypeInfo.GetGenericTypeDefinition())
+            {
+                return true;
+            }
+
+            //foreach (var interfaceType in givenTypeInfo.GetInterfaces())
+            //{
+            //    if (interfaceType.GetTypeInfo().IsGenericType && interfaceType.GetGenericTypeDefinition() == genericType)
+            //    {
+            //        return true;
+            //    }
+            //}
+
+            if (givenTypeInfo.BaseType == null)
+            {
+                return false;
+            }
+
+            return IsAssignableToTypeByGeneric(givenTypeInfo.BaseType, targetType);
+        }
     }
 }
