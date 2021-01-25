@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Reflection;
 using VirtoCommerce.Platform.Core.Common;
 
 namespace VirtoCommerce.Platform.Core.Events
@@ -9,25 +10,19 @@ namespace VirtoCommerce.Platform.Core.Events
     /// 
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public abstract class IntegrationEventBase<TEntity> : Entity, IEvent
+    public abstract class IntegrationEventBase<TEntity> : DomainEvent, IIntegrationEvent<TEntity> where TEntity : IEntity
     {
         protected readonly Dictionary<string, object> _metaInfo;
 
-        protected IntegrationEventBase(TEntity entity)
+        protected IntegrationEventBase(TEntity entity, params (string Key, object Value)[] keyValuePairs)
         {
             Id = Guid.NewGuid().ToString();
             TimeStamp = DateTime.UtcNow;
-            _metaInfo = new Dictionary<string, object>();
             Entity = entity;
+            _metaInfo = new Dictionary<string, object>();
+            _metaInfo.AddRange(keyValuePairs.Select(x => new KeyValuePair<string, object>(x.Key, x.Value)));
         }
-
-        protected IntegrationEventBase(Dictionary<string, object> metaInfo)
-        {
-            _metaInfo = metaInfo;
-        }
-
-        public int Version { get; set; }
-        public DateTimeOffset TimeStamp { get; set; }
+                
         /// <summary>
         /// Related entity with this event.
         /// </summary>
@@ -53,9 +48,20 @@ namespace VirtoCommerce.Platform.Core.Events
 
     public static class IntegrationEventExtension
     {
-        public static IntegrationEventBase<TEvent> AddModuleId<TEvent>(this IntegrationEventBase<TEvent> @event, string moduleId)
+        public static IntegrationEventBase<TEntity> AddModuleId<TEntity>(this IntegrationEventBase<TEntity> @event, string moduleId) where TEntity : IEntity
         {
             return @event.AddMetaInfo(EventMetaInfoType.ModuleId, moduleId);
+        }
+
+        public static Dictionary<string, object> DictionaryFromAnonymousObject(this object o)
+        {
+            Dictionary<string, object> dic = new Dictionary<string, object>();
+            var properties = o.GetType().GetProperties();
+            foreach (PropertyInfo prop in properties)
+            {
+                dic.Add(prop.Name, prop.GetValue(o, null) as string);
+            }
+            return dic;
         }
     }
 }
