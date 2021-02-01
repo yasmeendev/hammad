@@ -24,8 +24,14 @@ namespace VirtoCommerce.Platform.Core.Bus
             handlers.Add((message, token) => handler((T)message, token));
         }
 
-        public abstract Task PublishAsync<T>(T @event, CancellationToken cancellationToken = default(CancellationToken)) where T : IntegrationEventBase<IEntity>, IEvent;
+        public async Task PublishAsync<T>(T @event, CancellationToken cancellationToken = default) where T : IntegrationEventBase<IEntity>, IEvent
+        {
+            //TODO @event cast to IntegrationEvent<T>
+            if (!EventSuppressor.EventsSuppressed && _routes.TryGetValue(@event.GetType(), out var handlers))
+            {
+                await Task.WhenAll(handlers.Select(handler => handler(@event, cancellationToken)));
+            }
+        }
 
-        
     }
 }
