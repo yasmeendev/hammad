@@ -26,9 +26,11 @@ namespace VirtoCommerce.Platform.Data.Extensions
     {
         public static IServiceCollection AddPlatformServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<PlatformDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("VirtoCommerce")));
-            services.AddTransient<IPlatformRepository, PlatformRepository>();
-            services.AddTransient<Func<IPlatformRepository>>(provider => () => provider.CreateScope().ServiceProvider.GetService<IPlatformRepository>());
+            //services.AddDbContext<PlatformDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("VirtoCommerce")));
+            //services.AddTransient<IPlatformRepository, PlatformRepository>();
+            //services.AddTransient<Func<IPlatformRepository>>(provider => () => provider.CreateScope().ServiceProvider.GetService<IPlatformRepository>());
+            services.AddTransient<IPlatformRepository, PlatformRepositoryStub>();
+            services.AddTransient<Func<IPlatformRepository>>(provider => () => provider.GetService<IPlatformRepository>());
 
             services.AddSettings();
 
@@ -45,7 +47,7 @@ namespace VirtoCommerce.Platform.Data.Extensions
 
             services.AddCaching(configuration);
 
-            services.AddScoped<IPlatformExportImportManager, PlatformExportImportManager>();
+            //services.AddScoped<IPlatformExportImportManager, PlatformExportImportManager>();
             services.AddSingleton<ITransactionFileManager, TransactionFileManager.TransactionFileManager>();
 
             services.AddTransient<IEmailSender, DefaultEmailSender>();

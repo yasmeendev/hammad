@@ -281,3 +281,4 @@ app_data/
 /src/VirtoCommerce.Platform.Web/modules
 # mkdocs output
 /site
+/src/VirtoCommerce.Platform.Web/Modules2/VirtoCommerce.Core

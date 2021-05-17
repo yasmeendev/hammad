@@ -16,35 +16,37 @@ namespace VirtoCommerce.Platform.Web.Security
     {
         public static IServiceCollection AddSecurityServices(this IServiceCollection services, Action<AuthorizationOptions> setupAction = null)
         {
-            services.AddTransient<ISecurityRepository, SecurityRepository>();
+           // services.AddTransient<ISecurityRepository, SecurityRepository>();
+           // services.AddTransient<Func<ISecurityRepository>>(provider => () => provider.CreateScope().ServiceProvider.GetService<ISecurityRepository>());
+           services.AddTransient<ISecurityRepository, SecurityRepositoryStub>();
             services.AddTransient<Func<ISecurityRepository>>(provider => () => provider.CreateScope().ServiceProvider.GetService<ISecurityRepository>());
 
-            services.AddScoped<IUserApiKeyService, UserApiKeyService>();
-            services.AddScoped<IUserApiKeySearchService, UserApiKeySearchService>();
+            //services.AddScoped<IUserApiKeyService, UserApiKeyService>();
+            //services.AddScoped<IUserApiKeySearchService, UserApiKeySearchService>();
 
             services.AddScoped<IUserNameResolver, HttpContextUserResolver>();
             services.AddSingleton<IPermissionsRegistrar, DefaultPermissionProvider>();
-            services.AddScoped<IRoleSearchService, RoleSearchService>();
+            //services.AddScoped<IRoleSearchService, RoleSearchService>();
 
             //Register as singleton because this abstraction can be used as dependency in singleton services
-            services.AddSingleton<IUserSearchService>(provider =>
-            {
-                var scope = provider.CreateScope();
-                return new UserSearchService(scope.ServiceProvider.GetService<Func<UserManager<ApplicationUser>>>(),
-                                             scope.ServiceProvider.GetService<Func<RoleManager<Role>>>());
-            });
+            //services.AddSingleton<IUserSearchService>(provider =>
+            //{
+            //    var scope = provider.CreateScope();
+            //    return new UserSearchService(scope.ServiceProvider.GetService<Func<UserManager<ApplicationUser>>>(),
+            //                                 scope.ServiceProvider.GetService<Func<RoleManager<Role>>>());
+            //});
 
             //Identity dependencies override
-            services.TryAddScoped<RoleManager<Role>, CustomRoleManager>();
-            services.TryAddScoped<UserManager<ApplicationUser>, CustomUserManager>();
-            services.TryAddScoped<IPasswordValidator<ApplicationUser>, CustomPasswordValidator>();
-            services.TryAddScoped<IdentityErrorDescriber, CustomIdentityErrorDescriber>();
-            services.AddSingleton<Func<RoleManager<Role>>>(provider => () => provider.CreateScope().ServiceProvider.GetService<RoleManager<Role>>());
-            services.AddSingleton<Func<UserManager<ApplicationUser>>>(provider => () => provider.CreateScope().ServiceProvider.GetService<UserManager<ApplicationUser>>());
-            services.AddSingleton<Func<SignInManager<ApplicationUser>>>(provider => () => provider.CreateScope().ServiceProvider.GetService<SignInManager<ApplicationUser>>());
-            services.AddSingleton<IUserPasswordHasher, DefaultUserPasswordHasher>();
-            //Use custom ClaimsPrincipalFactory to add system roles claims for user principal
-            services.TryAddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, CustomUserClaimsPrincipalFactory>();
+            //services.TryAddScoped<RoleManager<Role>, CustomRoleManager>();
+            //services.TryAddScoped<UserManager<ApplicationUser>, CustomUserManager>();
+            //services.TryAddScoped<IPasswordValidator<ApplicationUser>, CustomPasswordValidator>();
+            //services.TryAddScoped<IdentityErrorDescriber, CustomIdentityErrorDescriber>();
+            //services.AddSingleton<Func<RoleManager<Role>>>(provider => () => provider.CreateScope().ServiceProvider.GetService<RoleManager<Role>>());
+            //services.AddSingleton<Func<UserManager<ApplicationUser>>>(provider => () => provider.CreateScope().ServiceProvider.GetService<UserManager<ApplicationUser>>());
+            //services.AddSingleton<Func<SignInManager<ApplicationUser>>>(provider => () => provider.CreateScope().ServiceProvider.GetService<SignInManager<ApplicationUser>>());
+            //services.AddSingleton<IUserPasswordHasher, DefaultUserPasswordHasher>();
+            ////Use custom ClaimsPrincipalFactory to add system roles claims for user principal
+            //services.TryAddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, CustomUserClaimsPrincipalFactory>();
 
             if (setupAction != null)
             {

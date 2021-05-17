@@ -83,9 +83,9 @@ namespace VirtoCommerce.Platform.Web
             // without this Bearer authorization will not work
             services.AddSingleton<IAuthenticationSchemeProvider, CustomAuthenticationSchemeProvider>();
 
-            services.AddRedis(Configuration);
-
-            services.AddSignalR().AddPushNotifications(Configuration);
+            //services.AddRedis(Configuration);
+            services.AddSingleton<IDistributedLockProvider, NoLockDistributedLockProvider>();
+            //services.AddSignalR().AddPushNotifications(Configuration);
 
             services.AddOptions<PlatformOptions>().Bind(Configuration.GetSection("VirtoCommerce")).ValidateDataAnnotations();
             services.AddOptions<DistributedLockOptions>().Bind(Configuration.GetSection("DistributedLock"));
@@ -162,26 +162,26 @@ namespace VirtoCommerce.Platform.Web
 
             var authBuilder = services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                                       //Add the second ApiKey auth schema to handle api_key in query string
-                                      .AddScheme<ApiKeyAuthenticationOptions, ApiKeyAuthenticationHandler>(ApiKeyAuthenticationOptions.DefaultScheme, options => { })
+                                      //.AddScheme<ApiKeyAuthenticationOptions, ApiKeyAuthenticationHandler>(ApiKeyAuthenticationOptions.DefaultScheme, options => { })
                                       .AddCookie();
 
             services.AddSecurityServices(options =>
             {
             });
 
-            services.AddIdentity<ApplicationUser, Role>(options => options.Stores.MaxLengthForKeys = 128)
-                    .AddEntityFrameworkStores<SecurityDbContext>()
-                    .AddDefaultTokenProviders();
+            //services.AddIdentity<ApplicationUser, Role>(options => options.Stores.MaxLengthForKeys = 128)
+            //        .AddEntityFrameworkStores<SecurityDbContext>()
+            //        .AddDefaultTokenProviders();
 
             // Configure Identity to use the same JWT claims as OpenIddict instead
             // of the legacy WS-Federation claims it uses by default (ClaimTypes),
             // which saves you from doing the mapping in your authorization controller.
-            services.Configure<IdentityOptions>(options =>
-            {
-                options.ClaimsIdentity.UserNameClaimType = OpenIdConnectConstants.Claims.Subject;
-                options.ClaimsIdentity.UserIdClaimType = OpenIdConnectConstants.Claims.Name;
-                options.ClaimsIdentity.RoleClaimType = OpenIdConnectConstants.Claims.Role;
-            });
+            //services.Configure<IdentityOptions>(options =>
+            //{
+            //    options.ClaimsIdentity.UserNameClaimType = OpenIdConnectConstants.Claims.Subject;
+            //    options.ClaimsIdentity.UserIdClaimType = OpenIdConnectConstants.Claims.Name;
+            //    options.ClaimsIdentity.RoleClaimType = OpenIdConnectConstants.Claims.Role;
+            //});
 
             // Support commonly used forwarded headers
             // X-Forwarded-For - Holds Client IP (optionally port number) across proxies and ends up in HttpContext.Connection.RemoteIpAddress
@@ -259,97 +259,97 @@ namespace VirtoCommerce.Platform.Web
             // Register the OpenIddict services.
             // Note: use the generic overload if you need
             // to replace the default OpenIddict entities.
-            services.AddOpenIddict()
-                .AddCore(options =>
-                {
-                    options.UseEntityFrameworkCore()
-                        .UseDbContext<SecurityDbContext>();
-                }).AddServer(options =>
-                {
-                    // Register the ASP.NET Core MVC binder used by OpenIddict.
-                    // Note: if you don't call this method, you won't be able to
-                    // bind OpenIdConnectRequest or OpenIdConnectResponse parameters.
-                    options.UseMvc();
+            //services.AddOpenIddict()
+            //    .AddCore(options =>
+            //    {
+            //        options.UseEntityFrameworkCore()
+            //            .UseDbContext<SecurityDbContext>();
+            //    }).AddServer(options =>
+            //    {
+            //        // Register the ASP.NET Core MVC binder used by OpenIddict.
+            //        // Note: if you don't call this method, you won't be able to
+            //        // bind OpenIdConnectRequest or OpenIdConnectResponse parameters.
+            //        options.UseMvc();
 
-                    // Enable the authorization, logout, token and userinfo endpoints.
-                    options.EnableTokenEndpoint("/connect/token")
-                        .EnableUserinfoEndpoint("/api/security/userinfo");
+            //        // Enable the authorization, logout, token and userinfo endpoints.
+            //        options.EnableTokenEndpoint("/connect/token")
+            //            .EnableUserinfoEndpoint("/api/security/userinfo");
 
-                    // Note: the Mvc.Client sample only uses the code flow and the password flow, but you
-                    // can enable the other flows if you need to support implicit or client credentials.
-                    options.AllowPasswordFlow()
-                        .AllowRefreshTokenFlow()
-                        .AllowClientCredentialsFlow();
+            //        // Note: the Mvc.Client sample only uses the code flow and the password flow, but you
+            //        // can enable the other flows if you need to support implicit or client credentials.
+            //        options.AllowPasswordFlow()
+            //            .AllowRefreshTokenFlow()
+            //            .AllowClientCredentialsFlow();
 
-                    options.SetRefreshTokenLifetime(authorizationOptions?.RefreshTokenLifeTime);
-                    options.SetAccessTokenLifetime(authorizationOptions?.AccessTokenLifeTime);
+            //        options.SetRefreshTokenLifetime(authorizationOptions?.RefreshTokenLifeTime);
+            //        options.SetAccessTokenLifetime(authorizationOptions?.AccessTokenLifeTime);
 
-                    options.AcceptAnonymousClients();
+            //        options.AcceptAnonymousClients();
 
-                    // Configure Openiddict to issues new refresh token for each token refresh request.
-                    options.UseRollingTokens();
+            //        // Configure Openiddict to issues new refresh token for each token refresh request.
+            //        options.UseRollingTokens();
 
-                    // Make the "client_id" parameter mandatory when sending a token request.
-                    //options.RequireClientIdentification()
+            //        // Make the "client_id" parameter mandatory when sending a token request.
+            //        //options.RequireClientIdentification()
 
-                    // When request caching is enabled, authorization and logout requests
-                    // are stored in the distributed cache by OpenIddict and the user agent
-                    // is redirected to the same page with a single parameter (request_id).
-                    // This allows flowing large OpenID Connect requests even when using
-                    // an external authentication provider like Google, Facebook or Twitter.
-                    options.EnableRequestCaching();
+            //        // When request caching is enabled, authorization and logout requests
+            //        // are stored in the distributed cache by OpenIddict and the user agent
+            //        // is redirected to the same page with a single parameter (request_id).
+            //        // This allows flowing large OpenID Connect requests even when using
+            //        // an external authentication provider like Google, Facebook or Twitter.
+            //        options.EnableRequestCaching();
 
-                    options.DisableScopeValidation();
+            //        options.DisableScopeValidation();
 
-                    // During development or when you explicitly run the platform in production mode without https, need to disable the HTTPS requirement.
-                    if (WebHostEnvironment.IsDevelopment() || platformOptions.AllowInsecureHttp || !Configuration.IsHttpsServerUrlSet())
-                    {
-                        options.DisableHttpsRequirement();
-                    }
+            //        // During development or when you explicitly run the platform in production mode without https, need to disable the HTTPS requirement.
+            //        if (WebHostEnvironment.IsDevelopment() || platformOptions.AllowInsecureHttp || !Configuration.IsHttpsServerUrlSet())
+            //        {
+            //            options.DisableHttpsRequirement();
+            //        }
 
-                    // Note: to use JWT access tokens instead of the default
-                    // encrypted format, the following lines are required:
-                    options.UseJsonWebTokens();
+            //        // Note: to use JWT access tokens instead of the default
+            //        // encrypted format, the following lines are required:
+            //        options.UseJsonWebTokens();
 
-                    var bytes = File.ReadAllBytes(Configuration["Auth:PrivateKeyPath"]);
-                    X509Certificate2 privateKey;
-                    if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-                    {
-                        // https://github.com/dotnet/corefx/blob/release/2.2/Documentation/architecture/cross-platform-cryptography.md
-                        // macOS cannot load certificate private keys without a keychain object, which requires writing to disk. Keychains are created automatically for PFX loading, and are deleted when no longer in use. Since the X509KeyStorageFlags.EphemeralKeySet option means that the private key should not be written to disk, asserting that flag on macOS results in a PlatformNotSupportedException.
-                        privateKey = new X509Certificate2(bytes, Configuration["Auth:PrivateKeyPassword"], X509KeyStorageFlags.MachineKeySet);
-                    }
-                    else
-                    {
-                        privateKey = new X509Certificate2(bytes, Configuration["Auth:PrivateKeyPassword"], X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.EphemeralKeySet);
-                    }
-                    options.AddSigningCertificate(privateKey);
-                });
+            //        var bytes = File.ReadAllBytes(Configuration["Auth:PrivateKeyPath"]);
+            //        X509Certificate2 privateKey;
+            //        if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            //        {
+            //            // https://github.com/dotnet/corefx/blob/release/2.2/Documentation/architecture/cross-platform-cryptography.md
+            //            // macOS cannot load certificate private keys without a keychain object, which requires writing to disk. Keychains are created automatically for PFX loading, and are deleted when no longer in use. Since the X509KeyStorageFlags.EphemeralKeySet option means that the private key should not be written to disk, asserting that flag on macOS results in a PlatformNotSupportedException.
+            //            privateKey = new X509Certificate2(bytes, Configuration["Auth:PrivateKeyPassword"], X509KeyStorageFlags.MachineKeySet);
+            //        }
+            //        else
+            //        {
+            //            privateKey = new X509Certificate2(bytes, Configuration["Auth:PrivateKeyPassword"], X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.EphemeralKeySet);
+            //        }
+            //        options.AddSigningCertificate(privateKey);
+            //    });
 
-            services.Configure<IdentityOptions>(Configuration.GetSection("IdentityOptions"));
-            services.Configure<PasswordOptionsExtended>(Configuration.GetSection("IdentityOptions:Password"));
-            services.Configure<UserOptionsExtended>(Configuration.GetSection("IdentityOptions:User"));
-            services.Configure<DataProtectionTokenProviderOptions>(Configuration.GetSection("IdentityOptions:DataProtection"));
+            //services.Configure<IdentityOptions>(Configuration.GetSection("IdentityOptions"));
+            //services.Configure<PasswordOptionsExtended>(Configuration.GetSection("IdentityOptions:Password"));
+            //services.Configure<UserOptionsExtended>(Configuration.GetSection("IdentityOptions:User"));
+            //services.Configure<DataProtectionTokenProviderOptions>(Configuration.GetSection("IdentityOptions:DataProtection"));
 
             //always  return 401 instead of 302 for unauthorized  requests
-            services.ConfigureApplicationCookie(options =>
-            {
-                options.Events.OnRedirectToLogin = context =>
-                {
-                    context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                    return Task.CompletedTask;
-                };
-                options.Events.OnRedirectToAccessDenied = context =>
-                {
-                    context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                    return Task.CompletedTask;
-                };
-            });
+            //services.ConfigureApplicationCookie(options =>
+            //{
+            //    options.Events.OnRedirectToLogin = context =>
+            //    {
+            //        context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+            //        return Task.CompletedTask;
+            //    };
+            //    options.Events.OnRedirectToAccessDenied = context =>
+            //    {
+            //        context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+            //        return Task.CompletedTask;
+            //    };
+            //});
 
             services.AddAuthorization(options =>
             {
                 //We need this policy because it is a single way to implicitly use the two schema (JwtBearer and ApiKey)  authentication for resource based authorization.
-                var mutipleSchemaAuthPolicy = new AuthorizationPolicyBuilder().AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme, ApiKeyAuthenticationOptions.DefaultScheme)
+                var mutipleSchemaAuthPolicy = new AuthorizationPolicyBuilder().AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme /*, ApiKeyAuthenticationOptions.DefaultScheme*/)
                                                                               .RequireAuthenticatedUser()
                                                                               .Build();
                 //The good article is described the meaning DefaultPolicy and FallbackPolicy
@@ -394,7 +394,7 @@ namespace VirtoCommerce.Platform.Web
             services.AddHangfire(Configuration);
 
             // Register the Swagger generator
-            services.AddSwagger();
+            //services.AddSwagger();
 
 
             // The following line enables Application Insights telemetry collection.
@@ -456,21 +456,21 @@ namespace VirtoCommerce.Platform.Web
             app.UseCookiePolicy();
 
             //Handle all requests like a $(Platform) and Modules/$({ module.ModuleName }) as static files in correspond folder
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(WebHostEnvironment.MapPath("~/js")),
-                RequestPath = new PathString($"/$(Platform)/Scripts")
-            });
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(WebHostEnvironment.MapPath("~/js")),
+            //    RequestPath = new PathString($"/$(Platform)/Scripts")
+            //});
 
-            var localModules = app.ApplicationServices.GetRequiredService<ILocalModuleCatalog>().Modules;
-            foreach (var module in localModules.OfType<ManifestModuleInfo>())
-            {
-                app.UseStaticFiles(new StaticFileOptions()
-                {
-                    FileProvider = new PhysicalFileProvider(module.FullPhysicalPath),
-                    RequestPath = new PathString($"/modules/$({ module.ModuleName })")
-                });
-            }
+            //var localModules = app.ApplicationServices.GetRequiredService<ILocalModuleCatalog>().Modules;
+            //foreach (var module in localModules.OfType<ManifestModuleInfo>())
+            //{
+            //    app.UseStaticFiles(new StaticFileOptions()
+            //    {
+            //        FileProvider = new PhysicalFileProvider(module.FullPhysicalPath),
+            //        RequestPath = new PathString($"/modules/$({ module.ModuleName })")
+            //    });
+            //}
 
             app.UseDefaultFiles();
 
@@ -484,7 +484,7 @@ namespace VirtoCommerce.Platform.Web
                 // This ensures only one active EF-migration ran simultaneously to avoid DB-related side-effects.
 
                 // Apply platform migrations
-                app.UsePlatformMigrations();
+                //app.UsePlatformMigrations();
 
                 app.UseDbTriggers();
 
@@ -492,12 +492,12 @@ namespace VirtoCommerce.Platform.Web
                 app.UsePlatformSettings();
 
                 // Complete hangfire init and apply Hangfire migrations
-                app.UseHangfire(Configuration);
+                //app.UseHangfire(Configuration);
 
                 // Register platform permissions
                 app.UsePlatformPermissions();
                 app.UseSecurityHandlers();
-                app.UsePruneExpiredTokensJob();
+                //app.UsePruneExpiredTokensJob();
 
                 // Complete modules startup and apply their migrations
                 app.UseModules();
@@ -508,14 +508,14 @@ namespace VirtoCommerce.Platform.Web
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 //Setup SignalR hub
-                endpoints.MapHub<PushNotificationHub>("/pushNotificationHub");
+                //endpoints.MapHub<PushNotificationHub>("/pushNotificationHub");
             });
 
             //Seed default users
-            app.UseDefaultUsersAsync().GetAwaiter().GetResult();
+            //app.UseDefaultUsersAsync().GetAwaiter().GetResult();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
+            //app.UseSwagger();
 
             // Use app insights telemetry 
             app.UseAppInsightsTelemetry();
