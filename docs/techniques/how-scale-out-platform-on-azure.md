@@ -8,7 +8,7 @@ Using scale-out for platform allows you to build more reliable service and also 
 
 This reference architecture shows proven practices for improving scalability and performance for solutions build on the virtocommerce platform 
 
-![image](../media/how-scale-out-platform-on-azure-1.png) 
+
 
 **Components:**
 

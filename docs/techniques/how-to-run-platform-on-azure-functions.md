@@ -17,12 +17,16 @@ In this article, you use `command-line` tools to deploy platform app to the serv
 
 The platform folder already includes all files that required to run platform app as custom handler you don't need to do anything extra with this:
 
+
 A `/host.json` file at the root of platform app tells the Functions host where to send requests by pointing to a web server capable of processing HTTP events.
 
 A `/local.settings.json` file at the root of platform app. Defines application settings used when running the function app locally.
 
 A `/azure-func/function.json` function metadata in a folder `azure-func`, that will forward all requests payloads to the platform app
 
+
+> Please note! You can run selected platform modules as resource servers on Azure Functions without access to the main membership data [Share bearer tokens across multiple instances](https://github.com/VirtoCommerce/vc-platform/blob/master/docs/techniques/sharing-bearer-tokens-across-platform-instances.md)
+> Also is important for each platform application that is run on serverless environment must be configured to use [Redis cache backplane](https://github.com/VirtoCommerce/vc-platform/blob/master/docs/techniques/how-scale-out-platform-on-azure.md#memory-cache-use-the-redis-server-backplane) to keep a local memory cache of instances in the consistent state and has the setting for processing Hangfire jobs disabled [Configure the Hangfire server to processing background jobs into another process](https://github.com/VirtoCommerce/vc-platform/blob/master/docs/techniques/how-scale-out-platform-on-azure.md#configure-the-hangfire-server-to-processing-background-jobs-into-another-process).
 
 # Run the platform as function locally
 Run platform function by starting the local Azure Functions runtime host from the platform's installed folder:
@@ -44,10 +48,8 @@ For detailed output, run func with --verbose flag.
 
 Then you can execute  platform Api locally by sending http requests to http://localhost:7071/{*paths}. 
 ```console
-curl http://localhost:7071/api/currencies?api_key=<API KEY>
+curl http://localhost:7071/api/currencies
 ```
-
-> Please note! That currently the platform that host as function doesn't accept `Authorization: Bearer` header, and you must use simple key authorization in query string `?api_key=<api key>` instead (TBD article how to use api_key authorization)
 
 # Deploy the function project to Azure
 
@@ -64,24 +66,24 @@ Use the following commands to create these items.
 ```console
 az login
 ```
-2. Create a resource group named `vc-platform-serverless` in the `westeurope` region or in a region near you:
+2. Create a resource group named `vc-platform-func-rg` in the `westeurope` region or in a region near you:
 ```console
-az group create --name vc-platform-serverless --location westeurope
+az group create --name vc-platform-func-rg --location westeurope
 ```
 3. Create a general-purpose storage account in your resource group and region
 ```console
-az storage account create --name vcplatformserverlessstorage --location westeurope --resource-group vc-platform-serverless --sku Standard_LRS
+az storage account create --name vcplatformfuncstorage --location westeurope --resource-group vc-platform-func-rg --sku Standard_LRS
 ```
 4. Create the function app
 ```console
-az functionapp create --resource-group vc-platform-serverless --consumption-plan-location westeurope --runtime custom --functions-version 3 --name vc-platform-serverless-app --storage-account vcplatformserverlessstorage --os-type Windows --subscription <your azure subscription id>
+az functionapp create --resource-group vc-platform-func-rg --consumption-plan-location westeurope --runtime custom --functions-version 3 --name vc-platform-func-app --storage-account vcplatformfuncstorage --os-type Windows --subscription <your azure subscription id>
 ```
 
 
 Then deploy the platform application to Azure
 ```console
 cd C:\vc-platform-3\
-func azure functionapp publish vc-platform-serverless-app --subscription <your azure subscription id>
+func azure functionapp publish vc-platform-func-app --subscription <your azure subscription id>
 ```   
 
 > Important note! 
@@ -93,4 +95,4 @@ func azure functionapp publish vc-platform-serverless-app --subscription <your a
 
 # Known limitations
 - Platform runs as Azure Functions only on Windows os type (Linux os WIP)
-- Bearer token Authorization doesn't work you must use simple key authorization (api_key) instead (WIP)  
+- Non reliable behavior, often the exception "System.OutOfMemoryException" has thrown during working (WIP on the lite platform version)
