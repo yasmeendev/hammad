@@ -1,6 +1,10 @@
 # Pricing module
 
+Managing prices is the scenario that results appearing different prices for one product in different conditions or for different users. 
+
 ## Overview
+
+*Describe main entities definitions, navigation, indexation, etc.*
 
 ## Relations
 
@@ -12,8 +16,11 @@ Prices | (many) prices <-> (one) price list; (many) prices <-> (one) product;
 Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one) sale price; (one) price line <-> (one) list price; 
 
 Price list can have only one currency, It can be changed in Price list details.
+
 Price list can have one or many Price list assignments. Each Price list assignment can be related only to one catalog. The product items selected in Price list should be from the catalog selected in Price list assignment.
+
 Product can have many prices. You can add product price from Price list (Product items widget) or from Product details (Price widget). If you add price from Product details, for this need select price list, make sure that this price list has price list assignment with the corresponding Catalog of this product.
+
 Product can have different price lines. Each price line has regular and sales prices. Each price line related to  Price list. Product can have different sales related to one price line for different quantity.
 
 
@@ -89,7 +96,8 @@ Product can have different price lines. Each price line has regular and sales pr
 2.	Open Price list assignments tab
 3.	Open price list assignment to edit
 4.	Fill Priority field
-!!Notice that the Product price related to price list assignments with the Higher value will be used first.
+
+> Notice that the Product price related to price list assignments with the Higher value will be used first.
 
 ### How to change Eligible shoppers for price list assignments
 
@@ -100,7 +108,7 @@ Product can have different price lines. Each price line has regular and sales pr
 5.	Choose if conditions are required
 6.	Add conditions
 
-!!This rules set availability of prices  in this price list related to price list catalog for shoppers 
+> This rules set availability of prices  in this price list related to price list catalog for shoppers 
 
 ### How to set timeframes for price list assignment
 
@@ -111,7 +119,7 @@ Product can have different price lines. Each price line has regular and sales pr
 5.	Set value for Expiration date
 6.	Save
 
-!! This timeframes set availability for all prices in Price list related to catalog from this price list assignment. 
+> This timeframes set availability for all prices in Price list related to catalog from this price list assignment. 
 
 ### How to add price for product
 
@@ -124,7 +132,7 @@ Product can have different price lines. Each price line has regular and sales pr
 7.	Click Add button 
 8.	Select needed products 
 
-!!You should select product from catalog which was selected in price list assignment.
+> You should select product from catalog which was selected in price list assignment.
 
 ### How to add new currency
 
@@ -138,7 +146,7 @@ Product can have different price lines. Each price line has regular and sales pr
 8.	Fill needed fields
 9.	Click Create
 
-!!Notice that this currency will be available for all price lists and Stores
+> Notice that this currency will be available for all price lists and Stores
 
 ### How to set timeframes for price
 
@@ -154,4 +162,4 @@ Product can have different price lines. Each price line has regular and sales pr
 10.	 Add values into Valid from and Valid to fields is If needed
 11.	 Save
 
-!! This value will be implemented only for selected price
+> This value will be implemented only for selected price
