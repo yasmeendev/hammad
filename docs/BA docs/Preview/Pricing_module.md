@@ -15,13 +15,17 @@ Price list assignments | (many) price list assignments <-> (one) catalog; (many)
 Prices | (many) prices <-> (one) price list; (many) prices <-> (one) product;
 Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one) sale price; (one) price line <-> (one) list price; 
 
-Price list can have only one currency, It can be changed in Price list details.
+> Price list can have only one currency, It can be changed in Price list details.
 
-Price list can have one or many Price list assignments. Each Price list assignment can be related only to one catalog. The product items selected in Price list should be from the catalog selected in Price list assignment.
+> Price list can have one or many Price list assignments. Each Price list assignment can be related only to one catalog. 
+> The product items selected in Price list should be from the catalog selected in Price list assignment.
 
-Product can have many prices. You can add product price from Price list (Product items widget) or from Product details (Price widget). If you add price from Product details, for this need select price list, make sure that this price list has price list assignment with the corresponding Catalog of this product.
+> Product can have many prices. You can add product price from Price list (Product items widget) or from Product details (Price widget)
+> If you add price from Product details, for this need select price list, make sure that this price list has price list assignment with 
+> the corresponding Catalog of this product.
 
-Product can have different price lines. Each price line has regular and sales prices. Each price line related to  Price list. Product can have different sales related to one price line for different quantity.
+> Product can have different price lines. Each price line has regular and sales prices. Each price line related to  Price list. 
+> Product can have different sales related to one price line for different quantity.
 
 
 ## Atomic functions and scenarios
