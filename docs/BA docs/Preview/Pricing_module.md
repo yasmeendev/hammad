@@ -15,7 +15,7 @@ Price list assignments | (many) price list assignments <-> (one) catalog; (many)
 Prices | (many) prices <-> (one) price list; (many) prices <-> (one) product;
 Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one) sale price; (one) price line <-> (one) list price; 
 
-> Price list can have only one currency, It can be changed in Price list details.
+> Price list can have only one currency, it can be changed in Price list details.
 
 > Price list can have one or many Price list assignments. Each Price list assignment can be related only to one catalog. 
 > The product items selected in Price list should be from the catalog selected in Price list assignment.
@@ -41,8 +41,8 @@ Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one
 7.	Click Create
 8.	System will reopen saved Price list
 9.	Click on Assignments widget
-10.	 Add Price list assignment
-11.	 Click Save on manage Price list blade
+10.	Add Price list assignment
+11.	Click Save on manage Price list blade
 
 ### How to delete Price list
 
@@ -69,7 +69,7 @@ Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one
 7.	Price list field is preselected with price list from where you create assignment
 8.	Fill other necessary fields 
 9.	Click Create button
-10.	 Save Price list
+10.	Save Price list
 
 ### How to create Price list assignment
 
@@ -82,8 +82,8 @@ Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one
 7.	Select Price list (required)
 8.	Fill Priority, Description 
 9.	Set Enable and Expiration date
-10.	 Set conditions for shoppers 
-11.	 Click Create
+10.	Set conditions for shoppers 
+11.	Click Create
 
 ### How to edit Price list assignments
 
@@ -112,7 +112,7 @@ Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one
 5.	Choose if conditions are required
 6.	Add conditions
 
-> This rules set availability of prices  in this price list related to price list catalog for shoppers 
+> This rules set availability of prices  in this price list related to price list catalog for shoppers. 
 
 ### How to set timeframes for price list assignment
 
@@ -150,7 +150,7 @@ Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one
 8.	Fill needed fields
 9.	Click Create
 
-> Notice that this currency will be available for all price lists and Stores
+> Notice that this currency will be available for all price lists and Stores.
 
 ### How to set timeframes for price
 
@@ -163,7 +163,7 @@ Price lines | (many) price lines <-> (one) price list; (one) price line <-> (one
 7.	System opens Edit prices blade for this product
 8.	Open Burger menu and select Valid from Valid to
 9.	Close menu
-10.	 Add values into Valid from and Valid to fields is If needed
-11.	 Save
+10.	Add values into Valid from and Valid to fields is If needed
+11.	Save
 
-> This value will be implemented only for selected price
+> This value will be implemented only for selected price.
