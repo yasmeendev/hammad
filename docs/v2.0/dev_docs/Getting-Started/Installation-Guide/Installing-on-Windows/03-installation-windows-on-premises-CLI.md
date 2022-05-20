@@ -29,8 +29,8 @@ Open the *appsettings.json* file in your text editor and change the `VirtoCommer
 <details><summary>ConnectionStrings Section Example</summary>
 
 ```json
-"ConnectionStrings": { 
-"VirtoCommerce" : "Data Source={SQL Server URL};Initial Catalog={Database name};Persist Security Info=True;User ID={User name};Password={User password};MultipleActiveResultSets=True;Connect Timeout=30" 
+"ConnectionStrings": {
+"VirtoCommerce" : "Data Source={SQL Server URL};Initial Catalog={Database name};Persist Security Info=True;User ID={User name};Password={User password};MultipleActiveResultSets=True;Connect Timeout=30"
 },
 ```
 </details>
@@ -48,7 +48,7 @@ In order to trust the certificate, run this command:
 
 `dotnet dev-certs https --trust`
 
-For more information, please refer to [this Microsoft article](https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-3.0&tabs=visual-studio#trust). 
+For more information, please refer to [this Microsoft article](https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-3.0&tabs=visual-studio#trust).
 
 ## Launching Platform
 In order to launch the platform, run this command:
@@ -63,7 +63,7 @@ dotnet VirtoCommerce.Platform.Web.dll --urls=http://localhost:5000
 ## First Time Launch
 To launch the platform for the first time, open your browser and type http://localhost:5000 or https://localhost:5001. You may get the *Your connection is not private* error; in this case, click *Advanced* and then *Proceed to...*:
 
-![Your Connection Is Not Private screen](./media/04-your-connection-is-not-private-screen.png)
+![Your Connection Is Not Private screen](media/04-your-connection-is-not-private-screen.png)
 
 You can also remove this error using a [self signed certificate](https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx).
 
@@ -71,10 +71,10 @@ The application will then create and initialize the database. After that, you sh
 
 After you log into the platform for the first time, the installation wizard will show up and download default modules and sample data:
 
-![Installation wizard screen](./media/02-module-auto-installation-screen.png)
+![Installation wizard screen](media/02-module-auto-installation-screen.png)
 
 Once the wizard is done installing, you will be prompted to reset the default credentials:
 
-![Resetting default credentials](./media/03-resetting-default-credentials.png)
+![Resetting default credentials](media/03-resetting-default-credentials.png)
 
 This is it! Your platform is good to go.

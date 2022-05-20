@@ -1,0 +1,4 @@
+.md-source-file {
+    float: right;
+    color: var(--md-source-primary-color);
+}

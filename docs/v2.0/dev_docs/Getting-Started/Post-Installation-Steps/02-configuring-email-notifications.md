@@ -14,7 +14,7 @@ To enable sending notifications through Gmail, turn on the  `Allow less secure a
 ```json
 1 ...
 2 "Notifications": {
-3        "Gateway": "Smtp", 
+3        "Gateway": "Smtp",
 4        "DefaultSender": "noreply@gmail.com", //the default sender address
 5        "Smtp": {
 6            "SmtpServer": "http://smtp.gmail.com",
@@ -38,7 +38,7 @@ Once your account is up and running, edit the `Notifications`  section in the *a
 ```json
 1 ...
 2 "Notifications": {
-3         "Gateway": "SendGrid", 
+3         "Gateway": "SendGrid",
 4        "DefaultSender": "noreply@gmail.com", //the default sender address
 5        "SendGrid": {
 6            "ApiKey": "your API key", //SendGrid API key
@@ -47,7 +47,7 @@ Once your account is up and running, edit the `Notifications`  section in the *a
 9....
 ```
 
-## Testing Notification Sending Process 
+## Testing Notification Sending Process
 
 To test your notifications, you will need to use REST Admin API queries that require a valid Shopify access token.
 
@@ -59,4 +59,4 @@ curl -X POST "https://localhost:5001/api/notifications/send" -H  "accept: text/p
 
 In case of success, you will receive an test email on your email account. Otherwise, go to *Notifications → Notification activity feed* to see which error(s) led to a failure:
 
-![Notification activity feed](./media/05-notification-activity-feed.png)
+![Notification activity feed](media/05-notification-activity-feed.png)

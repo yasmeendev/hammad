@@ -1,0 +1,141 @@
+.md-footer {
+    height: 3.333rem;
+    background-color: var(--header-footer-primary-color);
+}
+
+.md-footer .md-tabs {
+    background-color: transparent;
+    margin-right: 0;
+}
+
+.md-footer-meta__inner.md-grid {
+    max-width: 45.833rem;
+    display: flex;
+    align-items: center;
+}
+
+.md-footer__title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.583rem;
+    line-height: 1.917rem;
+    text-transform: uppercase;
+    color: var(--header-title-primary-color);
+}
+
+.md-footer__title {
+    display: flex;
+    align-items: center;
+}
+
+[dir=ltr] .md-footer__title {
+    margin-left: 0;
+}
+
+.md-footer__bottom {
+    font-style: normal;
+    font-weight: 450;
+    font-size: 11px;
+    line-height: 12px;
+    letter-spacing: 0.01em;
+    color: var(--md-source-primary-color);
+}
+
+.md-footer__bottom {
+    padding: 0.25rem 0;
+    text-align: center;
+}
+
+.md-footer__bottom p {
+    margin: 0;
+    color: var(--neutral-60);
+}
+
+.md-footer__button.md-logo :-webkit-any(img,svg) {
+    fill: currentcolor;
+    display: block;
+    height: 2rem;
+    width: auto;
+}
+
+.md-footer__button.md-logo {
+    margin: 0.2rem;
+    padding: 0.4rem;
+}
+.md-footer__button:not(.focus-visible) {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+.md-footer__button:not([hidden]) {
+    display: inline-block;
+}
+.md-footer__button {
+    color: currentcolor;
+    cursor: pointer;
+    margin: 0.2rem;
+    outline-color: var(--md-accent-fg-color);
+    padding: 0.4rem;
+    position: relative;
+    transition: opacity .25s;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+[data-md-color-scheme=slate] .md-tabs__link {
+    color: var(--sidebar-text-color);
+}
+
+.md-footer__title {
+    padding: 0 0.5rem 0 0;
+    flex-grow: 0;
+    width: auto;
+}
+
+.md-footer-meta__inner {
+    padding: 0;
+    background-color: var(--header-footer-primary-color);
+}
+
+.md-footer-meta {
+    background-color: transparent;
+}
+
+html .md-footer-meta.md-typeset a {
+    color: var(--neutral-60);
+}
+
+html .md-footer-meta.md-typeset a:is(:focus,:hover) {
+    color: var(--neutral-80);
+}
+
+.md-footer__logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.md-footer__title>.md-footer__ellipsis {
+    display: flex;
+    align-items: center;
+}
+
+.md-footer__title>.md-footer__ellipsis {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.md-footer__topic {
+    display: flex;
+    max-width: 100%;
+}
+
+.md-footer .md-tabs__link {
+    font-size: 0.5rem;
+    line-height: 0.667rem;
+}
+
+.md-footer .md-tabs__item {
+    padding-left: 0.521rem;
+    padding-right: 0.521rem;
+}

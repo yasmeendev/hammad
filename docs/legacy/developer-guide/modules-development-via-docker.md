@@ -5,7 +5,7 @@
 The main idea is to simplify the initial setup process for Virto Commerce (VC) module development environment. This will speed up the onboarding process for new engineers who join our team.
 Developers would only need to install Docker and Visual Studio, but not external tools / services (VC Platform, SQL Server, Elastic Search, Redis). Coding is done in Visual Studio as usual, and the changes would be tracked and propagated from host to the container.
 
-Read how to [Deploy module from source code](./deploy-from-source-code.md)
+Read how to [Deploy module from source code](deploy-from-source-code.md)
 
 ## Description
 
@@ -73,7 +73,7 @@ docker-compose -f c:\path\to\modulesdevelop\docker-compose.yml up --build -d
 ```
 
 5. Run Virto Commerce Platform Manager - http://localhost:8090/ (configure modules as sample data)
-6. [Create new module](./create-new-module.md) as described in the article
+6. [Create new module](create-new-module.md) as described in the article
 7. Write code for new module
 8. Build new module
 9. Copy built module to `Modules` folder
