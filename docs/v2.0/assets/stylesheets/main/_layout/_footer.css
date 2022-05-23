@@ -9,7 +9,7 @@
 }
 
 .md-footer-meta__inner.md-grid {
-    max-width: 45.833rem;
+    max-width: 54.6rem;
     display: flex;
     align-items: center;
 }
@@ -30,7 +30,7 @@
 }
 
 [dir=ltr] .md-footer__title {
-    margin-left: 0;
+    margin-left: 0.545rem;
 }
 
 .md-footer__bottom {
@@ -60,8 +60,8 @@
 }
 
 .md-footer__button.md-logo {
-    margin: 0.2rem;
-    padding: 0.4rem;
+    margin: 0;
+    padding: 0;
 }
 .md-footer__button:not(.focus-visible) {
     -webkit-tap-highlight-color: transparent;
