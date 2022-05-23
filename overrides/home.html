@@ -1,0 +1,99 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+
+<section class="main-container md-grid">
+    <div class="md-typeset">
+        <h1 class="main-container__title">Welcome to Virto Documentation Center</h1>
+        <p class="main-container__desc">All you need to know about Virto Commerce solutions is here.</p>
+
+    </div>
+    <div class="main-container__search">
+        <form class="main-container__search-form">
+            <input type="text" class="md-search__input main-container__search-input" placeholder="Search documentation"/>
+            <button class="main-container__search-button"></button>
+        </form>
+        <div class="main-container__pills">
+            <button class="main-container__pill">Deploy on Azure</button>
+            <button class="main-container__pill">OpenAPIn</button>
+            <button class="main-container__pill">Atomic Architecture</button>
+        </div>
+    </div>
+    {% if not config.extra.main_page.top_cards is mapping %}
+    <div class="main-container__cards">
+
+        <div class="main-container__cards-row">
+            {% for card in config.extra.main_page.top_cards %}
+            <div class="main-container__cards-col main-container__cards-col_four">
+                    {% include "partials/big-card.html" %}
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+    {% endif %}
+</section>
+
+<section class="main-container md-grid">
+    <div class="md-typeset">
+        <h1 class="main-container__title">Product Catalog</h1>
+    </div>
+    {% if not config.extra.main_page.wide_cards is mapping %}
+    <div class="main-container__cards">
+        <div class="main-container__cards-row">
+            {% for card in config.extra.main_page.wide_cards %}
+            <div class="main-container__cards-col main-container__cards-col_wide">
+                {% include "partials/wide-card.html" %}
+            </div>
+            {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+<section class="main-container md-grid">
+    <div class="md-typeset">
+        <h1 class="main-container__title">Virto Education</h1>
+    </div>
+    {% if not config.extra.main_page.education is mapping %}
+    <div class="main-container__cards">
+        <div class="main-container__cards-row">
+            {% for card in config.extra.main_page.education %}
+            <div class="main-container__cards-col main-container__cards-col_triple">
+                {% include "partials/card.html" %}
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endif %}
+</section>
+
+<section class="main-container md-grid">
+    <div class="md-typeset">
+        <h1 class="main-container__title">Recommended Resources</h1>
+    </div>
+    {% if not config.extra.main_page.recommended is mapping %}
+    <div class="main-container__cards">
+        <div class="main-container__cards-row">
+            {% for card in config.extra.main_page.recommended %}
+            <div class="main-container__cards-col main-container__cards-col_triple">
+                {% include "partials/big-card.html" %}
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endif %}
+</section>
+
+
+
+
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}
+    {% include "partials/footer.html" %}
+{% endblock %}

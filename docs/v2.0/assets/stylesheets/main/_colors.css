@@ -30,4 +30,16 @@
     --primary-80: #EF776C;
     --neutral-80: #D3D3D3;
     --neutral-60: #A7A7A7;
+    --neutral-95: #F4F4F4;
+    --pill-color-primary: #D6E9FF;
+    --pill-text-color-primary: #051322;
+    --pill-hover: linear-gradient(0deg, rgba(34, 34, 34, 0.08), rgba(34, 34, 34, 0.08)), #D6E9FF;
+    --card-primary-color: #FFFFFF;
+    --card-border-primary-color: #D3D3D3;
+    --card-text-color: #383838;
+    --card-desc-color: #4E4E4E;
+    --card-hover-color: radial-gradient(75% 75% at 50% 100%, rgba(87, 119, 201, 0.24) 0%, rgba(87, 119, 201, 0) 100%), rgba(34, 34, 34, 0.02);
+    --card-button-hover-color: #D6E9FF;
+    --card-button-icon: #4E4E4E;
+    --card-icon-holder: rgba(34, 34, 34, 0.05);
 }

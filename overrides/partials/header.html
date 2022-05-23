@@ -66,8 +66,6 @@
         {% if not config.theme.palette is mapping %}
         <form class="md-header__option" data-md-component="palette">
             {% for option in config.theme.palette %}
-            {% set primary = option.primary | replace(" ", "-") | lower %}
-            {% set accent  = option.accent  | replace(" ", "-") | lower %}
             <input
                 class="md-option"
                 data-md-color-media="{{ option.media }}"

@@ -1,16 +1,19 @@
 @import "main/_layout/_header.css";
 @import "main/_layout/_tabs.css";
-@import "../fonts/Inter/index.css";
-@import "main/_typeset.css";
-@import "main/_colors.css";
-@import "palette/_scheme.css";
 @import "main/_layout/_search.css";
 @import "main/_layout/_source-file.css";
 @import "main/_layout/_sidebar.css";
 @import "main/_layout/_footer.css";
 @import "main/_layout/_admonitions.css";
+@import "main/_layout/_big-card.css";
+@import "main/_layout/_wide-card.css";
+@import "main/_layout/_card.css";
+@import "main/_layout/_home.css";
 @import "main/_icons.css";
-
+@import "main/_typeset.css";
+@import "main/_colors.css";
+@import "palette/_scheme.css";
+@import "../fonts/Inter/index.css";
 
 *::-webkit-scrollbar {
     width: 12px;
@@ -28,4 +31,8 @@
 
 * {
     scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+.md-grid {
+    max-width: 54.6rem;
 }
