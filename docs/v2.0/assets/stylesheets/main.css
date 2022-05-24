@@ -14,6 +14,7 @@
 @import "main/_colors.css";
 @import "palette/_scheme.css";
 @import "../fonts/Inter/index.css";
+@import "../fonts/CircularStd/index.css";
 
 *::-webkit-scrollbar {
     width: 12px;

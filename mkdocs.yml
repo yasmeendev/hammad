@@ -16,7 +16,7 @@ theme:
                 icon: assets/icons/light-mode.svg
                 name: Switch to light mode
     font:
-        text: Roboto
+        text: Circular Std
         code: Ubuntu Mono
 
 markdown_extensions:
