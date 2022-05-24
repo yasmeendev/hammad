@@ -1,4 +1,7 @@
 .md-source-file {
     float: right;
     color: var(--md-source-primary-color);
+    height: 40px;
+    display: flex;
+    align-items: center;
 }
