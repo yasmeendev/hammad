@@ -3,7 +3,7 @@ There are two approaches of working with payment systems:
 
 * Off-site - in this approach customer fills in required payment credentials in payment system;
 * On-site - in this approach customer fills in required payment information on seller's system side. After all the required data is filled, the seller's system sends a request to the payment system. In special cases the customer will be asked to enter additional security data to commit the transaction (MasterCard SecureCode).
-  
+
 VirtoCommerce supports both off-site and on-site payment methods implementations.
 
 [Sample code](https://github.com/VirtoCommerce/vc-module-payment/blob/master/src/VirtoCommerce.Payment.Data/DefaultManualPaymentMethod.cs)
@@ -18,7 +18,7 @@ An off-site payment method implementation activities diagram.
 
 * Create new module [create new module](../../developer-guide/create-new-module.md)
 * Create a class derived from `PaymentMethod` abstract class and override all abstract  methods each of them will be called on the appropriated stage of payment processing workflow
-  
+
 ```C#
   public class DefaultManualPaymentMethod : PaymentMethod
     {
@@ -41,12 +41,12 @@ An off-site payment method implementation activities diagram.
 ```
 
 * Register your module class in the DI container. This must be done in `PostInitialize` method. You can also associate the settings which will be used in your method and can be changed in the management UI. 
-  
+
 ```C#
 public void PostInitialize(IApplicationBuilder applicationBuilder)
 {
   ...
-     
+
 	 	var settingsRegistrar = appBuilder.ApplicationServices.GetRequiredService<ISettingsRegistrar>();
         var paymentMethodsRegistrar = appBuilder.ApplicationServices.GetRequiredService<IPaymentMethodsRegistrar>();
         paymentMethodsRegistrar.RegisterPaymentMethod<DefaultManualPaymentMethod>();
@@ -64,7 +64,7 @@ The important property of payment method is `PaymentMethodType` property. That p
 
 ## Enable and configure payment method for store
 
-After your module is installed in your target system, all your payment methods should appear and be available for configuration in every store in your system. 
+After your module is installed in your target system, all your payment methods should appear and be available for configuration in every store in your system.
 `Store->Payment` methods methods widget. You can configure shipping methods for each store individually:
 
 * enable/disable method for current store
@@ -76,4 +76,4 @@ After you complete the configuration, your shipping method will be appear in the
 
 ## Management UI customization
 
-If a standard user interface is not enough, then consider implementing your own UI for managing tax providers through the standard UI extension point (widget container with group ”paymentMethodDetail”). You can read more about extending the existing UI with widgets [here](./widgets.md).
+If a standard user interface is not enough, then consider implementing your own UI for managing tax providers through the standard UI extension point (widget container with group ”paymentMethodDetail”). You can read more about extending the existing UI with widgets [here](widgets.md).

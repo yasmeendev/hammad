@@ -1,0 +1,117 @@
+<!-- Determine class according to configuration -->
+{% set class = "md-header" %}
+{% if "navigation.tabs.sticky" in features %}
+{% set class = class ~ " md-header--lifted" %}
+{% endif %}
+
+<!-- Header -->
+<header class="{{ class }}" data-md-component="header">
+    <nav
+        class="md-header__inner md-grid"
+        aria-label="{{ lang.t('header.title') }}"
+    >
+
+        <!-- Link to home -->
+        <a
+            href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+            title="{{ config.site_name | e }}"
+            class="md-header__button md-logo"
+            aria-label="{{ config.site_name }}"
+            data-md-component="logo"
+        >
+            {% include "partials/logo.html" %}
+        </a>
+
+        <!-- Button to open drawer -->
+        <label class="md-header__button md-icon" for="__drawer">
+            {% include ".icons/material/menu" ~ ".svg" %}
+        </label>
+
+        <!-- Header title -->
+        <div class="md-header__title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__topic">
+                  <span class="md-ellipsis">
+                    {{ config.site_name }}
+                  </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+
+        <div class="md-tabs">
+            <div class="md-tabs__inner md-grid">
+                <ul class="md-tabs__list">
+                    <li class="md-tabs__item">
+                        <a href="#" class="md-tabs__link">Dev Blog</a>
+                    </li>
+                    <li class="md-tabs__item">
+                        <a href="#" class="md-tabs__link">Community</a>
+                    </li>
+                    <li class="md-tabs__item">
+                        <a href="#" class="md-tabs__link">Release Notes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RSS -->
+        <button class="md-header__button md-icon" id="rss">
+            {% include config.extra.rss.icon %}
+            <span>RSS</span>
+        </button>
+
+        <!-- Color palette -->
+        {% if not config.theme.palette is mapping %}
+        <form class="md-header__option" data-md-component="palette">
+            {% for option in config.theme.palette %}
+            <input
+                class="md-option"
+                data-md-color-media="{{ option.media }}"
+                data-md-color-scheme="{{ option.scheme }}"
+                data-md-color-primary="{{ primary }}"
+                data-md-color-accent="{{ accent }}"
+                {% if option.toggle %}
+                aria-label="{{ option.toggle.name }}"
+                {% else  %}
+                aria-hidden="true"
+                {% endif %}
+                type="radio"
+                name="__palette"
+                id="__palette_{{ loop.index }}"
+            />
+            {% if option.toggle %}
+            <label
+                class="md-header__button md-icon"
+                title="{{ option.toggle.name }}"
+                for="__palette_{{ loop.index0 or loop.length }}"
+                hidden
+            >
+                {% if option.toggle.icon %}
+                {% include option.toggle.icon %}
+                {% endif %}
+            </label>
+            {% endif %}
+            {% endfor %}
+        </form>
+        {% endif %}
+
+        <!-- Button to open search modal -->
+        {% if "search" in config["plugins"] %}
+        <label class="md-header__button md-icon" for="__search">
+            {% include config.extra.search.icon %}
+        </label>
+
+        <!-- Search interface -->
+        {% include "partials/search.html" %}
+        {% endif %}
+    </nav>
+
+    <!-- Navigation tabs (sticky) -->
+    {% if "navigation.tabs.sticky" in features %}
+    {% if "navigation.tabs" in features %}
+    {% include "partials/tabs.html" %}
+    {% endif %}
+    {% endif %}
+</header>

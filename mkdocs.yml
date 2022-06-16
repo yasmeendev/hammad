@@ -1,17 +1,24 @@
-site_name: Virto Commerce Documentation
 theme:
     name: material
     custom_dir: overrides
     language: en
 #    features:
 #        - instant # (still experimental) feature fails to load images when folder changes
-    favicon: media/favicon.ico
-    logo: media/logo.png
+    favicon: legacy/media/favicon.ico
+    logo: v2.0/assets/icons/logo.svg
     palette:
-        primary: red
+        -   scheme: default
+            toggle:
+                icon: assets/icons/dark-mode.svg
+                name: Switch to dark mode
+        -   scheme: slate
+            toggle:
+                icon: assets/icons/light-mode.svg
+                name: Switch to light mode
     font:
-        text: Roboto
+        text: Circular Std
         code: Ubuntu Mono
+
 markdown_extensions:
     - admonition # https://squidfunk.github.io/mkdocs-material/extensions/admonition/ (in material theme)
     - codehilite
@@ -19,6 +26,10 @@ markdown_extensions:
     # https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
     - pymdownx.superfences
     - pymdownx.magiclink
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
 plugins:
     - search # necessary for search to work
  #   - autolinks
@@ -33,8 +44,8 @@ plugins:
 #    - monorepo
 
 # Project information
-site_name: Virto Commerce Documentation
-site_description: Documentation portal for enterprise-level Microsoft .NET ecommerce platform Virto Commerce. 
+site_name: Developer center
+site_description: Documentation portal for enterprise-level Microsoft .NET ecommerce platform Virto Commerce.
 site_author: Virto Commerce
 site_url: https://virtocommerce.com/docs/latest
 
@@ -56,6 +67,95 @@ extra:
         link: https://twitter.com/virtocommerce?lang=en
       - icon: fontawesome/brands/linkedin
         link: https://www.linkedin.com/company/virto-commerce/
-
+    search:
+        icon: assets/icons/search.svg
+    rss:
+        icon: assets/icons/rss.svg
+    main_page:
+        top_cards:
+            -   title: Developer
+                icon: assets/icons/code-square.svg
+                description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
+                links:
+                    -   title: Developers Guide
+                        link: google.com
+                        icon: assets/icons/file-code.svg
+                    -   title: Deployment
+                        link: google.com
+                        icon: assets/icons/desktop-download.svg
+            -   title: Business Analyst
+                icon: assets/icons/briefcase.svg
+                description: I need to know how to implement Virto solutions across my team or externally.
+                links:
+                    -   title: Business Analyst Guide
+                        link: google.com
+                        icon: assets/icons/file-business.svg
+                    -   title: Customer Journey
+                        link: google.com
+                        icon: assets/icons/repo-forked.svg
+            -   title: Architect
+                icon: assets/icons/package.svg
+                description: I need to build the platform's architecture or learn how I can do that.
+                links:
+                    -   title: VC Architecture
+                        link: google.com
+                        icon: assets/icons/file-box.svg
+                    -   title: Atomic Architecture
+                        link: google.com
+                        icon: assets/icons/north-star.svg
+            -   title: User
+                icon: assets/icons/person.svg
+                description: I use or am going to use Virto solutions on a regular basis.
+                links:
+                    -   title: User Guide
+                        link: google.com
+                        icon: assets/icons/file-person.svg
+                    -   title: Configuration
+                        link: google.com
+                        icon: assets/icons/tools.svg
+        wide_cards:
+            -   title: B2C solution
+                icon: platform.svg
+                description: Learn how to build an online store your customers will buy goods and services from.
+                link: google.com
+            -   title: B2B solution
+                icon: b2b-second.svg
+                description: Cloud techs are currently in the forefront of the IT industry. Learn how to them with Virto.
+                link: google.com
+            -   title: VirtoCloud
+                icon: cloud.svg
+                description: Cloud techs are currently in the forefront of the IT industry. Learn how to them with Virto.
+                link: google.com
+            -   title: Marketplace
+                icon: marketplace.svg
+                description: Virto Commerce allows you to build your very own unique online marketplace. See how!
+                link: google.com
+        education:
+            - title: Videos
+              description: Explore our video tutorials where we cover most aspects of using the Virto Commerce ecosystem.
+              image: assets/icons/videos.png
+            - title: Blog articles
+              description: Hints, tips, useful info and so much more! Check out our blog now.
+              image: assets/icons/articles.png
+            - title: Success stories
+              description: See what our happy customers say about us and our solutions.
+              image: assets/icons/stories.png
+        recommended:
+            - title: Case Studies
+              icon: assets/icons/mortar-board.svg
+              description: Best case studies provided by our dev team.
+              link: google.com
+            - title: VC Dev Blog
+              icon: assets/icons/code-review.svg
+              description: Stay tuned to our dev team progressing every day.
+              link: google.com
+            - title: Code Samples
+              icon: assets/icons/code.svg
+              description: Most used code samples are already in your pocket.
+              link: google.com
 extra_javascript:
-    - scripts/scripts-loader.js
+    - legacy/scripts/scripts-loader.js
+
+extra_css:
+    - v2.0/assets/stylesheets/main.css
+    - v2.0/assets/stylesheets/fonts.css

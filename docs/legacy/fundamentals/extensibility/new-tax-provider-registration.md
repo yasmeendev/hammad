@@ -1,5 +1,5 @@
 
-In order to calculate taxes in Virto Commerce you must register at least one `TaxProvider` implementation. 
+In order to calculate taxes in Virto Commerce you must register at least one `TaxProvider` implementation.
 
 [Sample code](https://github.com/VirtoCommerce/vc-module-tax/blob/master/src/VirtoCommerce.TaxModule.Data/Provider/FixedRateTaxProvider.cs)
 
@@ -7,7 +7,7 @@ In order to calculate taxes in Virto Commerce you must register at least one `Ta
 
 * Create new module ([creating new module](../../developer-guide/create-new-module.md)
 * Create a class derived from `TaxProvider` abstract class and override `CalculateRate` method. 
-  
+
 ```C#
  public class FixedRateTaxProvider : TaxProvider
     {
@@ -24,7 +24,7 @@ In order to calculate taxes in Virto Commerce you must register at least one `Ta
 ```
 
 * Register your module class in the DI container. This must be done in `PostInitialize` method in your module class. You can also associate the settings which will be used in your method and can be changed in the management UI. 
-  
+
 ```C#
 public void PostInitialize(IApplicationBuilder applicationBuilder)
 {
@@ -51,4 +51,4 @@ After you complete the configuration, your tax provider will be used for tax cal
 
 ## Management UI customization
 
-If a standard user interface is not enough, then consider implementing your own UI for managing tax providers through the standard UI extension point (widget container with group ”taxProviderDetail”). You can read more about extending the existing UI with widgets [here](./widgets.md).
+If a standard user interface is not enough, then consider implementing your own UI for managing tax providers through the standard UI extension point (widget container with group ”taxProviderDetail”). You can read more about extending the existing UI with widgets [here](widgets.md).

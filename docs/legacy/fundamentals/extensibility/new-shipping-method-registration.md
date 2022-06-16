@@ -7,7 +7,7 @@ If customers have shippable products, they can choose a shipping option during c
 
 * Create new module ([create new module](../../developer-guide/create-new-module.md)
 * Create a class derived from `TaxProvider` abstract class and overrides `CalculateRate` method. 
-  
+
 ```C#
   public class FixedRateShippingMethod : ShippingMethod
     {
@@ -15,19 +15,19 @@ If customers have shippable products, they can choose a shipping option during c
         {
         }
 		public override IEnumerable<ShippingRate> CalculateRates(IEvaluationContext context)
-        { 
+        {
 			//Implement logic of shipping rates calculation here
 		}
 	}
 ```
 
 * Register your module class in the DI container. This must be done in `PostInitialize` method. You can also associate the settings which will be used in your method and can be changed in the management UI. 
-  
+
 ```C#
 public void PostInitialize(IApplicationBuilder applicationBuilder)
 {
   ...
-     
+
 	 	var settingsRegistrar = applicationBuilder.ApplicationServices.GetRequiredService<ISettingsRegistrar>();
         var shippingMethodsRegistrar = applicationBuilder.ApplicationServices.GetRequiredService<IShippingMethodsRegistrar>();
 		//Associate the settings with the particular shipping provider
@@ -53,4 +53,4 @@ After you complete the configuration, your shipping method will be appear in the
 
 ## Management UI customization
 
-If a standard user interface is not enough, then consider implementing your own UI for managing tax providers through the standard UI extension point (widget container with group ”shippingMethodDetail”). You can read more about extending the existing UI with widgets [here](./widgets.md).
+If a standard user interface is not enough, then consider implementing your own UI for managing tax providers through the standard UI extension point (widget container with group ”shippingMethodDetail”). You can read more about extending the existing UI with widgets [here](widgets.md).

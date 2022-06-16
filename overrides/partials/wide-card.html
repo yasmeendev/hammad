@@ -1,0 +1,19 @@
+<!-- Card -->
+{% if card %}
+<div class="wide-card">
+    {% if "icon" in card %}
+    <img alt="{{card.title}}" class="wide-card__icon" src="./../assets/icons/{{card.icon}}#only-light" />
+    <img alt="{{card.title}}" class="wide-card__icon" src="./../assets/icons/dark-{{card.icon}}#only-dark" />
+    {% endif %}
+
+    <div class="wide-card__wrapper">
+        <div class="wide-card__header">
+            <h2 class="wide-card__title">
+                {{ card.title }}</h2>
+        </div>
+        <div class="wide-card__content">
+            <p>{{ card.description }}</p>
+        </div>
+    </div>
+</div>
+{% endif %}

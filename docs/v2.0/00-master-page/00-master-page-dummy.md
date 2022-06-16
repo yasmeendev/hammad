@@ -99,3 +99,13 @@ Finally, we need to format pieces of code, like this:
 39        }
 40    }
 ```
+
+!!! info
+    * Type annotations are very useful and help your IDE understand the type of config objects!
+
+!!! warning
+    * Type annotations are very useful and help your IDE understand the type of config objects!
+
+!!! error
+    * Type annotations are very useful and help your IDE understand the type of config objects!
+
