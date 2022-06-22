@@ -77,8 +77,8 @@ extra:
                 icon: assets/icons/code-square.svg
                 description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
                 links:
-                    -   title: Developers Guide
-                        link: google.com
+                    -   title: Developer Guide
+                        link: docs/v2.0/dev_docs/index.md
                         icon: assets/icons/file-code.svg
                     -   title: Deployment
                         link: google.com
@@ -88,7 +88,7 @@ extra:
                 description: I need to know how to implement Virto solutions across my team or externally.
                 links:
                     -   title: Business Analyst Guide
-                        link: google.com
+                        link: docs/legacy/BA docs/index.md
                         icon: assets/icons/file-business.svg
                     -   title: Customer Journey
                         link: google.com
@@ -98,7 +98,7 @@ extra:
                 description: I need to build the platform's architecture or learn how I can do that.
                 links:
                     -   title: VC Architecture
-                        link: google.com
+                        link: docs/legacy/B2B-multiregional.md
                         icon: assets/icons/file-box.svg
                     -   title: Atomic Architecture
                         link: google.com
@@ -108,51 +108,54 @@ extra:
                 description: I use or am going to use Virto solutions on a regular basis.
                 links:
                     -   title: User Guide
-                        link: google.com
+                        link: docs/legacy/user-guide
                         icon: assets/icons/file-person.svg
                     -   title: Configuration
                         link: google.com
                         icon: assets/icons/tools.svg
         wide_cards:
-            -   title: B2C solution
+            -   title: B2C Solution
                 icon: platform.svg
                 description: Learn how to build an online store your customers will buy goods and services from.
-                link: google.com
-            -   title: B2B solution
+                link: docs/under-construction.md
+            -   title: B2B Solution
                 icon: b2b-second.svg
-                description: Cloud techs are currently in the forefront of the IT industry. Learn how to them with Virto.
-                link: google.com
+                description: Explore Virto's B2B opportunities and learn how to leverage them.
+                link: docs/under-construction.md
             -   title: VirtoCloud
                 icon: cloud.svg
-                description: Cloud techs are currently in the forefront of the IT industry. Learn how to them with Virto.
-                link: google.com
+                description: Cloud techs are currently in the forefront of the IT industry. Learn how to work them with Virto.
+                link: docs/under-construction.md
             -   title: Marketplace
                 icon: marketplace.svg
                 description: Virto Commerce allows you to build your very own unique online marketplace. See how!
-                link: google.com
+                link: docs/under-construction.md
         education:
             - title: Videos
               description: Explore our video tutorials where we cover most aspects of using the Virto Commerce ecosystem.
               image: assets/icons/videos.png
+              link: https://www.youtube.com/c/Virtocommerce
             - title: Blog articles
-              description: Hints, tips, useful info and so much more! Check out our blog now.
+              description: Hints, tips, useful info, and so much more! Check out our blog now.
               image: assets/icons/articles.png
+              link: docs/under-construction.md
             - title: Success stories
               description: See what our happy customers say about us and our solutions.
               image: assets/icons/stories.png
+              link: docs/under-construction.md
         recommended:
             - title: Case Studies
               icon: assets/icons/mortar-board.svg
               description: Best case studies provided by our dev team.
-              link: google.com
+              link: docs/under-construction.md
             - title: VC Dev Blog
               icon: assets/icons/code-review.svg
               description: Stay tuned to our dev team progressing every day.
-              link: google.com
+              link: https://www.virtocommerce.org/
             - title: Code Samples
               icon: assets/icons/code.svg
               description: Most used code samples are already in your pocket.
-              link: google.com
+              link: docs/under-construction.md
 extra_javascript:
     - legacy/scripts/scripts-loader.js
 
