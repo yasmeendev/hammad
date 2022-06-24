@@ -2,8 +2,9 @@
 {% if card %}
 <div class="wide-card">
     {% if "icon" in card %}
-    <img alt="{{card.title}}" class="wide-card__icon" src="./../assets/icons/{{card.icon}}#only-light" />
-    <img alt="{{card.title}}" class="wide-card__icon" src="./../assets/icons/dark-{{card.icon}}#only-dark" />
+    <div class="wide-card__img-wrap">
+        <img alt="{{card.title}}" class="wide-card__icon" src="./../assets/icons/{{card.icon}}" />
+    </div>
     {% endif %}
 
     <div class="wide-card__wrapper">

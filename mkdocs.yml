@@ -6,19 +6,21 @@ theme:
 #        - instant # (still experimental) feature fails to load images when folder changes
     favicon: legacy/media/favicon.ico
     logo: v2.0/assets/icons/logo.svg
+    logobw: v2.0/assets/icons/logo-bw.svg
     palette:
         -   scheme: default
             toggle:
                 icon: assets/icons/dark-mode.svg
-                name: Switch to dark mode
+                name: Night mode
         -   scheme: slate
             toggle:
                 icon: assets/icons/light-mode.svg
-                name: Switch to light mode
+                name: Light mode
     font:
         text: Circular Std
         code: Ubuntu Mono
-
+    icon:
+        repo: fontawesome/brands/github
 markdown_extensions:
     - admonition # https://squidfunk.github.io/mkdocs-material/extensions/admonition/ (in material theme)
     - codehilite
@@ -30,6 +32,16 @@ markdown_extensions:
     - pymdownx.emoji:
         emoji_index: !!python/name:materialx.emoji.twemoji
         emoji_generator: !!python/name:materialx.emoji.to_svg
+
+links:
+    - title: Support
+      url: google.com
+    - title: Community
+      url: google.com
+    - title: FAQ
+      url: google.com
+    - title: Release Notes
+      url: google.com
 plugins:
     - search # necessary for search to work
  #   - autolinks
@@ -59,67 +71,41 @@ copyright: Copyright &copy; 2022. All rights reserved.
 
 extra:
     social:
-      - icon: fontawesome/brands/github-alt
+      - icon: fontawesome/brands/github
         link: https://github.com/VirtoCommerce
-      - icon: fontawesome/brands/youtube
-        link: https://www.youtube.com/c/Virtocommerce/videos
+      - icon: fontawesome/brands/facebook
+        link: https://facebook.com/VirtoCommerce
       - icon: fontawesome/brands/twitter
         link: https://twitter.com/virtocommerce?lang=en
+      - icon: fontawesome/brands/instagram
+        link: google.com
       - icon: fontawesome/brands/linkedin
         link: https://www.linkedin.com/company/virto-commerce/
+      - icon: fontawesome/brands/youtube
+        link: https://www.youtube.com/c/Virtocommerce/videos
     search:
         icon: assets/icons/search.svg
-    rss:
-        icon: assets/icons/rss.svg
     main_page:
         top_cards:
-            -   title: Developer
-                icon: assets/icons/code-square.svg
-                description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
-                links:
-                    -   title: Developers Guide
-                        link: google.com
-                        icon: assets/icons/file-code.svg
-                    -   title: Deployment
-                        link: google.com
-                        icon: assets/icons/desktop-download.svg
-            -   title: Business Analyst
-                icon: assets/icons/briefcase.svg
-                description: I need to know how to implement Virto solutions across my team or externally.
-                links:
-                    -   title: Business Analyst Guide
-                        link: google.com
-                        icon: assets/icons/file-business.svg
-                    -   title: Customer Journey
-                        link: google.com
-                        icon: assets/icons/repo-forked.svg
             -   title: Architect
                 icon: assets/icons/package.svg
                 description: I need to build the platform's architecture or learn how I can do that.
-                links:
-                    -   title: VC Architecture
-                        link: google.com
-                        icon: assets/icons/file-box.svg
-                    -   title: Atomic Architecture
-                        link: google.com
-                        icon: assets/icons/north-star.svg
             -   title: User
                 icon: assets/icons/person.svg
                 description: I use or am going to use Virto solutions on a regular basis.
-                links:
-                    -   title: User Guide
-                        link: google.com
-                        icon: assets/icons/file-person.svg
-                    -   title: Configuration
-                        link: google.com
-                        icon: assets/icons/tools.svg
+            -   title: Developer
+                icon: assets/icons/code-square.svg
+                description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
+            -   title: Business Analyst
+                icon: assets/icons/briefcase.svg
+                description: I need to know how to implement Virto solutions across my team or externally.
         wide_cards:
             -   title: B2C solution
-                icon: platform.svg
+                icon: b2b-second.svg
                 description: Learn how to build an online store your customers will buy goods and services from.
                 link: google.com
-            -   title: B2B solution
-                icon: b2b-second.svg
+            -   title: E-commerce platform
+                icon: platform.svg
                 description: Cloud techs are currently in the forefront of the IT industry. Learn how to them with Virto.
                 link: google.com
             -   title: VirtoCloud
@@ -132,27 +118,17 @@ extra:
                 link: google.com
         education:
             - title: Videos
-              description: Explore our video tutorials where we cover most aspects of using the Virto Commerce ecosystem.
+              description: Explore our video tutorials
               image: assets/icons/videos.png
-            - title: Blog articles
-              description: Hints, tips, useful info and so much more! Check out our blog now.
+            - title: Blog
+              description: Hints, tips and so much more!
               image: assets/icons/articles.png
-            - title: Success stories
-              description: See what our happy customers say about us and our solutions.
+            - title: Videos
+              description: Explore our video tutorials
+              image: assets/icons/videos-second.png
+            - title: Code samples
+              description: Most used code samples
               image: assets/icons/stories.png
-        recommended:
-            - title: Case Studies
-              icon: assets/icons/mortar-board.svg
-              description: Best case studies provided by our dev team.
-              link: google.com
-            - title: VC Dev Blog
-              icon: assets/icons/code-review.svg
-              description: Stay tuned to our dev team progressing every day.
-              link: google.com
-            - title: Code Samples
-              icon: assets/icons/code.svg
-              description: Most used code samples are already in your pocket.
-              link: google.com
 extra_javascript:
     - legacy/scripts/scripts-loader.js
 

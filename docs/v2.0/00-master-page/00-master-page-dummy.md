@@ -109,3 +109,60 @@ Finally, we need to format pieces of code, like this:
 !!! error
     * Type annotations are very useful and help your IDE understand the type of config objects!
 
+!!! tip
+    * Type annotations are very useful and help your IDE understand the type of config objects!
+
+!!! note
+    * Type annotations are very useful and help your IDE understand the type of config objects!
+
+!!! github
+    `this is file name, and the code goes below`
+    ```cs
+    1 public sealed class CsvProductImageWriter : IImportDataWriter
+    2    {
+    3        private readonly bool _debug;
+    4        public CsvProductImageWriter(ImportContext context)
+    5        {
+    6            _debug = Convert.ToBoolean(context.ImportProfile.Settings.FirstOrDefault(x => x.Name == ProductImageImporterSettings.DebugSetting.Name)?.Value ?? false);
+    7        }
+    8        public Task WriteAsync(object[] items, ImportContext context)
+    9        {
+    10            var index = 0;
+    11            try
+    12            {
+    13                foreach (var image in items.OfType<ProductImage>())
+    14                {
+    15                    var line = context.ProgressInfo.ProcessedCount + index;
+    16                    //TODO: Add code for adding image to product
+    17                   if (_debug)
+    18                    {
+    19                        Debug.WriteLine($"Line {line}: {image.ImageUrl} is added to product #{image.ProductId}");
+    20                    }
+    21                    index++;
+    22                }
+    23            }
+    24            catch (Exception ex)
+    25            {
+    26                var errorInfo = new ErrorInfo
+    27                {
+    28                    ErrorLine = context.ProgressInfo.ProcessedCount + index,
+    29                    ErrorMessage = ex.Message,
+    30                };
+    31                context.ErrorCallback(errorInfo);
+    32            }
+    33            return Task.CompletedTask;
+    34        }
+    35
+    36        public void Dispose()
+    37        {
+    38            //nothing to dispose
+    39        }
+    40    }
+    ```
+
+!!! blue-highlight ""
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non egestas molestie integer rutrum curabitur sed adipiscing. Ultrices at ultricies eu eget massa.
+
+
+!!! yellow-highlight ""
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non egestas molestie integer rutrum curabitur sed adipiscing. Ultrices at ultricies eu eget massa.

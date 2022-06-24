@@ -9,7 +9,6 @@
 }
 
 [data-md-toggle=search]:checked~.md-header .md-header__button[for=__search],
-[data-md-toggle=search]:checked~.md-header .md-header__button[id=rss],
 [data-md-toggle=search]:checked~.md-header .md-header__button[data-md-component=palette],
 [data-md-toggle=search]:checked~.md-header .md-tabs {
     max-width: 0;

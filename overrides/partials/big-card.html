@@ -11,14 +11,5 @@
     <div class="big-card__content">
         <p>{{ card.description }}</p>
     </div>
-    {% if "links" in card %}
-    {% if not card.links is mapping %}
-    <div class="big-card__footer">
-        {% for link in card.links %}
-        <a href="{{link.link}}" class="big-card__button"><span class="big-card__button-icon">{% include link.icon %}</span>{{ link.title }}</a>
-        {% endfor %}
-    </div>
-    {% endif %}
-    {% endif %}
 </div>
 {% endif %}

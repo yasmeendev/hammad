@@ -14,7 +14,9 @@
                 aria-label="{{ config.site_name }}"
                 data-md-component="logo"
             >
-                {% include "partials/logo.html" %}
+                {% if config.theme.logo %}
+                <img src="{{ config.theme.logobw | url }}" alt="logo">
+                {% endif %}
             </a>
 
             <!-- Footer title -->
@@ -32,27 +34,26 @@
 
         <!-- Navigation -->
 
-        <div class="md-tabs">
-            <div class="md-tabs__inner md-grid">
-                <ul class="md-tabs__list">
-                    <li class="md-tabs__item">
-                        <a href="#" class="md-tabs__link">Support</a>
-                    </li>
-                    <li class="md-tabs__item">
-                        <a href="#" class="md-tabs__link">FAQ</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                <div class="md-tabs">
+                    <div class="md-tabs__inner md-grid">
+                        {% if not config.links is mapping %}
+                        <ul class="md-tabs__list">
+                            {% for link in config.links %}
+                            <li class="md-tabs__item">
+                                <a href="{{link.url}}" class="md-tabs__link">{{ link.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
 
         <!-- Further information -->
         <div class="md-footer-meta md-typeset">
-            <div class="md-footer-meta__inner md-grid">
-                <!-- Social links -->
-                {% if config.extra.social %}
-                {% include "partials/social.html" %}
-                {% endif %}
-            </div>
+            <!-- Social links -->
+            {% if config.extra.social %}
+            {% include "partials/social.html" %}
+            {% endif %}
         </div>
     </nav>
     <div class="md-footer__bottom">
