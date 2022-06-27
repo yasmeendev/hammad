@@ -77,8 +77,12 @@ extra:
         link: https://facebook.com/VirtoCommerce
       - icon: fontawesome/brands/twitter
         link: https://twitter.com/virtocommerce?lang=en
+      - icon: fontawesome/brands/instagram
+        link: google.com
       - icon: fontawesome/brands/linkedin
         link: https://www.linkedin.com/company/virto-commerce/
+      - icon: fontawesome/brands/youtube
+        link: https://www.youtube.com/c/Virtocommerce/videos
     search:
         icon: assets/icons/search.svg
     rss:

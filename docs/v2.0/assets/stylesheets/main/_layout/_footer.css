@@ -190,19 +190,9 @@ html .md-footer-meta.md-typeset a:is(:focus,:hover) {
         justify-content: center;
     }
 
-    .md-footer-meta {
-        width: 100%;
-        padding: 32px;
-    }
-
     .md-footer__bottom {
         background-color: transparent;
         padding: 0 32px 32px;
-    }
-
-    .md-footer .md-social {
-        display: flex;
-        justify-content: space-between;
     }
 
     .md-footer .md-tabs__link {
