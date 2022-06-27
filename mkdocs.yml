@@ -88,45 +88,53 @@ extra:
             -   title: Architect
                 icon: assets/icons/package.svg
                 description: I need to build the platform's architecture or learn how I can do that.
+                link: ../../../docs/latest/under-construction
             -   title: User
                 icon: assets/icons/person.svg
                 description: I use or am going to use Virto solutions on a regular basis.
+                link: ../../../docs/latest/under-construction
             -   title: Developer
                 icon: assets/icons/code-square.svg
                 description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
+                link: ../../../docs/latest/under-construction
             -   title: Business Analyst
                 icon: assets/icons/briefcase.svg
                 description: I need to know how to implement Virto solutions across my team or externally.
+                link: ../../../docs/latest/under-construction
         wide_cards:
             -   title: B2C solution
                 icon: b2b-second.svg
                 description: Learn how to build an online store your customers will buy goods and services from.
-                link: docs/under-construction.md
+                link: ../../../docs/latest/under-construction
             -   title: E-commerce platform
                 icon: platform.svg
                 description: Cloud techs are currently in the forefront of the IT industry. Learn how to them with Virto.
-                link: docs/under-construction.md
+                link: ../../../docs/latest/under-construction
             -   title: VirtoCloud
                 icon: cloud.svg
                 description: Cloud techs are currently in the forefront of the IT industry. Learn how to them with Virto.
-                link: docs/under-construction.md
+                link: ../../../docs/latest/under-construction
             -   title: Marketplace
                 icon: marketplace.svg
                 description: Virto Commerce allows you to build your very own unique online marketplace. See how!
-                link: docs/under-construction.md
+                link: ../../../docs/latest/under-construction
         education:
             - title: Videos
               description: Explore our video tutorials
               image: assets/icons/videos.png
+              link: ../../../docs/latest/under-construction
             - title: Blog
               description: Hints, tips and so much more!
               image: assets/icons/articles.png
+              link: ../../../docs/latest/under-construction
             - title: Videos
               description: Explore our video tutorials
               image: assets/icons/videos-second.png
+              link: ../../../docs/latest/under-construction
             - title: Code samples
               description: Most used code samples
               image: assets/icons/stories.png
+              link: ../../../docs/latest/under-construction
 extra_javascript:
     - legacy/scripts/scripts-loader.js
 

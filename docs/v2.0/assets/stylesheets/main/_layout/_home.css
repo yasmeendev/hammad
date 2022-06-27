@@ -58,8 +58,10 @@
 .main-container__wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: row;
     margin-bottom: 4rem;
+    width: 100%;
 }
 
 .main-container__cards {
@@ -190,11 +192,12 @@
     }
 
     .main-container__title {
-        font-size: 46px;
+        font-size: 46px !important;
     }
 
     .main-container__desc {
         font-size: 17px !important;
+        margin-bottom: 0 !important;
     }
 
     .main-container__button {
@@ -231,6 +234,10 @@
     .main-container__subscribe-block {
         align-self: center;
     }
+
+    .main-container__wrapper {
+        margin-bottom: 2.8rem;
+    }
 }
 
 @media  screen and (max-width: 660px) {
@@ -249,11 +256,15 @@
     }
 
     .main-container__title {
-        font-size: 36px;
+        font-size: 36px !important;
     }
 
     .main-container__desc {
         font-size: 15px !important;
+    }
+
+    .main-container__wrapper {
+        margin-bottom: 3.2rem;
     }
 }
 
@@ -263,11 +274,15 @@
     }
 
     .main-container__title {
-        font-size: 31px;
+        font-size: 31px !important;
     }
 
     .main-container__desc {
         font-size: 14px !important;
+    }
+
+    .main-container__wrapper {
+        margin-bottom: 2.8rem;
     }
 }
 

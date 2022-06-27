@@ -48,7 +48,7 @@
     --card-border-primary-color: #D3D3D3;
     --card-text-color: #051322;
     --card-desc-color: #222222;
-    --card-hover-color: radial-gradient(75% 75% at 50% 100%, rgba(87, 119, 201, 0.24) 0%, rgba(87, 119, 201, 0) 100%), rgba(34, 34, 34, 0.02);
+    --card-hover-color: radial-gradient(49.26% 56.44% at 5.63% 3.37%, rgba(255, 196, 119, 0.2) 0%, rgba(255, 248, 230, 0.2) 100%), radial-gradient(55.97% 50.25% at 105.97% 49.75%, rgba(103, 209, 255, 0.2) 0%, rgba(164, 228, 255, 0) 100%), #FFFFFF;
     --card-button-hover-color: #D6E9FF;
     --card-button-icon: #4E4E4E;
     --card-icon-holder: rgba(34, 34, 34, 0.05);

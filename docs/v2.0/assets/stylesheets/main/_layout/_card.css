@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-.card:hover {
+.card:hover .card__icon-wrap {
     background: var(--card-hover-color);
 }
 
