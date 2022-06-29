@@ -44,7 +44,7 @@ plugins:
 #    - monorepo
 
 # Project information
-site_name: Developer center
+site_name: Developer Center
 site_description: Documentation portal for enterprise-level Microsoft .NET ecommerce platform Virto Commerce.
 site_author: Virto Commerce
 site_url: https://virtocommerce.com/docs/latest
@@ -56,6 +56,46 @@ edit_uri: edit/dev/docs/
 
 # Copyright
 copyright: Copyright &copy; 2022. All rights reserved.
+
+# Page tree
+nav:
+  - Home: v2.0/dev_docs/index.md
+  - Getting Started:
+    - System Requirements: v2.0/dev_docs/Getting-Started/system-requirements-in-progress.md
+    - Installation Guide:
+      - Windows:
+        - Prerequisites: v2.0/dev_docs/Getting-Started/Installation-Guide/Installing-on-Windows/01-installation-windows-on-premises-prerequisites.md
+        - Installing with Precompiled Binaries: v2.0/dev_docs/Getting-Started/Installation-Guide/Installing-on-Windows/02-installation-windows-on-premises-precompiled-binaries.md
+        - Installing with CLI: v2.0/dev_docs/Getting-Started/Installation-Guide/Installing-on-Windows/03-installation-windows-on-premises-CLI.md
+      - Post Installation Steps:
+        - Setting Up Self Signed SSL Certificate: v2.0/dev_docs/Getting-Started/Post-Installation-Steps/01-setting-up-self-signed-ssl-cert.md
+        - Configuring Email Notifications: v2.0/dev_docs/Getting-Started/Post-Installation-Steps/02-configuring-email-notifications.md
+        - Configuring Asset Blob Storage: v2.0/dev_docs/Getting-Started/Post-Installation-Steps/03-configuring-asset-blob-storage.md
+        - Importing Sample Data: v2.0/dev_docs/Getting-Started/Post-Installation-Steps/04-importing-sample-data.md
+  - Fundamentals:
+    - Caching:
+      - Overview: v2.0/dev_docs/Fundamentals/Caching/01-overview-in-progress.md
+      - Cache Configuration: v2.0/dev_docs/Fundamentals/Caching/02-cache-configuration.md
+      - Setting Up Redis Backplane for Scaling Out: v2.0/dev_docs/Fundamentals/Caching/03-setting-up-Redis.md
+    - Configuration Reference:
+      - Configuring Appsettings.json File: v2.0/dev_docs/Fundamentals/Configuration-Reference/configuring-appsettings.md
+    - Data Import:
+      - Main Concept: v2.0/dev_docs/Fundamentals/Data-Import/01-main-concept.md 
+      - Building Custom Importer: v2.0/dev_docs/Fundamentals/Data-Import/02-building-custom-importer.md
+    - Indexed Search:
+      - Search Query Syntax Reference: v2.0/dev_docs/Fundamentals/Indexed-Search/01-search-query-syntax-reference.md
+    - Modularity:
+      - Overview: v2.0/dev_docs/Fundamentals/Modularity/01-overview-IN-PROGRESS.md
+      - Folder Structure: v2.0/dev_docs/Fundamentals/Modularity/02-folder-structure-IN-PROGRESS.md
+      - Versioning and Dependencies: v2.0/dev_docs/Fundamentals/Modularity/03-versioning-and-dependencies.md
+      - Loading Modules into App Process: v2.0/dev_docs/Fundamentals/Modularity/04-loading-modules-into-app-process.md
+      - Best Practices: v2.0/dev_docs/Fundamentals/Modularity/05-best-practices.md
+      - Module.manifest File: v2.0/dev_docs/Fundamentals/Modularity/06-module-manifest-file.md
+  - Back End Architecture:
+    - Tech Stack: v2.0/dev_docs/Back-End-Architecture/01-tech-stack.md
+    - Conceptual Overview: v2.0/dev_docs/Back-End-Architecture/02-conceptual-overview-in-progress.md
+  - Tutorials:
+    - Creating Custom Module: v2.0/dev_docs/Tutorials/creating-custom-module.md
 
 extra:
     social:
@@ -78,7 +118,7 @@ extra:
                 description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
                 links:
                     -   title: Developer Guide
-                        link: docs/v2.0/dev_docs/index.md
+                        link: v2.0/dev_docs/index.md
                         icon: assets/icons/file-code.svg
                     -   title: Deployment
                         link: google.com
@@ -88,7 +128,7 @@ extra:
                 description: I need to know how to implement Virto solutions across my team or externally.
                 links:
                     -   title: Business Analyst Guide
-                        link: docs/legacy/BA docs/index.md
+                        link: legacy/BA docs/index.md
                         icon: assets/icons/file-business.svg
                     -   title: Customer Journey
                         link: google.com
@@ -98,7 +138,7 @@ extra:
                 description: I need to build the platform architecture or learn how I can do that.
                 links:
                     -   title: VC Architecture
-                        link: docs/legacy/B2B-multiregional.md
+                        link: legacy/B2B-multiregional.md
                         icon: assets/icons/file-box.svg
                     -   title: Atomic Architecture
                         link: google.com
@@ -108,7 +148,7 @@ extra:
                 description: I use or am going to use Virto solutions on a regular basis.
                 links:
                     -   title: User Guide
-                        link: docs/legacy/user-guide
+                        link: legacy/user-guide
                         icon: assets/icons/file-person.svg
                     -   title: Configuration
                         link: google.com
@@ -117,19 +157,19 @@ extra:
             -   title: B2C Solution
                 icon: platform.svg
                 description: Learn how to build an online store your customers will buy goods and services from.
-                link: docs/under-construction.md
+                link: under-construction.md
             -   title: B2B Solution
                 icon: b2b-second.svg
                 description: Explore Virto's B2B opportunities and learn how to leverage them.
-                link: docs/under-construction.md
+                link: under-construction.md
             -   title: VirtoCloud
                 icon: cloud.svg
                 description: Cloud techs are currently in the forefront of the IT industry. Learn how to work with them using Virto.
-                link: docs/under-construction.md
+                link: under-construction.md
             -   title: Marketplace
                 icon: marketplace.svg
                 description: Virto Commerce allows you to build your very own unique online marketplace. See how!
-                link: docs/under-construction.md
+                link: under-construction.md
         education:
             - title: Videos
               description: Explore our video tutorials where we cover most aspects of using the Virto Commerce ecosystem.
@@ -138,16 +178,16 @@ extra:
             - title: Blog articles
               description: Hints, tips, useful info, and so much more! Check out our blog now.
               image: assets/icons/articles.png
-              link: docs/under-construction.md
+              link: under-construction.md
             - title: Success stories
               description: See what our happy customers say about us and our solutions.
               image: assets/icons/stories.png
-              link: docs/under-construction.md
+              link: under-construction.md
         recommended:
             - title: Case Studies
               icon: assets/icons/mortar-board.svg
               description: Best case studies provided by our dev team.
-              link: docs/under-construction.md
+              link: under-construction.md
             - title: VC Dev Blog
               icon: assets/icons/code-review.svg
               description: Stay tuned to our dev team progressing every day.
@@ -155,7 +195,7 @@ extra:
             - title: Code Samples
               icon: assets/icons/code.svg
               description: Most used code samples are already in your pocket.
-              link: docs/under-construction.md
+              link: under-construction.md
 extra_javascript:
     - legacy/scripts/scripts-loader.js
 

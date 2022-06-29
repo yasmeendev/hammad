@@ -1,4 +1,4 @@
-﻿# System Requirements -- In Progress
+﻿# System Requirements
 This guide will explain you the basic hardware and software requirements to installing the Virto Commerce platform.
 
 ## Minimum Hardware Requirements

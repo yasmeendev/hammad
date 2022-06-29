@@ -130,7 +130,7 @@ You can also use wildcard search in the middle of a term, e.g.:
 `te*t`
 
 ## Escaping Special Characters
-Inside the double quotes block, you might use any unsafe characters; to escape double quote character, use slash (`\`):
+Inside the double quotes block, you might use any unsafe characters; to escape double quote character, use backslash (`\`):
 
 `\"my cool property\":\"&~!'\"`
 
