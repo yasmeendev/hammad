@@ -95,7 +95,7 @@ extra:
                         icon: assets/icons/repo-forked.svg
             -   title: Architect
                 icon: assets/icons/package.svg
-                description: I need to build the platform's architecture or learn how I can do that.
+                description: I need to build the platform architecture or learn how I can do that.
                 links:
                     -   title: VC Architecture
                         link: docs/legacy/B2B-multiregional.md
@@ -124,7 +124,7 @@ extra:
                 link: docs/under-construction.md
             -   title: VirtoCloud
                 icon: cloud.svg
-                description: Cloud techs are currently in the forefront of the IT industry. Learn how to work them with Virto.
+                description: Cloud techs are currently in the forefront of the IT industry. Learn how to work with them using Virto.
                 link: docs/under-construction.md
             -   title: Marketplace
                 icon: marketplace.svg
