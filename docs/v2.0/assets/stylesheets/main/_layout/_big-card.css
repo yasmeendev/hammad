@@ -1,12 +1,10 @@
 .big-card {
-    padding: 34px 34px 40px;
+    padding: 24px;
     background: var(--card-primary-color);
-    border: 1px solid var(--card-border-primary-color);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-    border-radius: 8px;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex: 1 1 auto;
 }
 
@@ -25,9 +23,10 @@
 }
 
 .big-card__title {
-    font-family: 'Circular Std Book', sans-serif;
+    font-family: 'Circular Std', sans-serif;
+    font-weight: 450;
     font-size: 20px;
-    line-height: 26px;
+    line-height: 25px;
     letter-spacing: 0.01em;
     color: var(--card-text-color);
     display: flex;
@@ -48,7 +47,7 @@
 }
 
 .big-card__title-icon svg path {
-    fill: var(--card-desc-color);
+    stroke: var(--card-desc-color);
 }
 
 .big-card__content p {
@@ -59,16 +58,7 @@
     line-height: 24px;
     letter-spacing: 0.01em;
     color: var(--card-desc-color);
-    margin: 20px 0 0;
-}
-
-.big-card__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 26px;
-    flex: 1 1 auto;
-    justify-content: flex-end;
+    margin: 24px 0 0;
 }
 
 .big-card__button {
@@ -102,3 +92,59 @@
         flex: 1 1 auto;
     }
 }
+
+@media  screen and (max-width: 1024px) {
+    .big-card__title {
+        font-size: 18px;
+        line-height: 150%;
+    }
+
+    .big-card__content p {
+        font-size: 15px;
+        line-height: 130%;
+    }
+}
+
+@media  screen and (max-width: 960px) {
+    .big-card {
+        padding: 16px;
+    }
+
+    .big-card__content p {
+        margin: 16px 0 0;
+    }
+
+    .big-card__title {
+        font-size: 17px;
+    }
+}
+
+@media  screen and (max-width: 720px) {
+    .big-card__content p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+@media  screen and (max-width: 428px) {
+    .big-card__title {
+        font-size: 15px;
+    }
+
+    .big-card__content p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media  screen and (max-width: 320px) {
+    .big-card__title {
+        font-size: 14px;
+    }
+
+    .big-card__content p {
+        font-size: 12px;
+        line-height: 130%;
+    }
+}
+

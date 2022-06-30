@@ -92,6 +92,10 @@
     position: relative;
 }
 
+.md-sidebar.md-sidebar--secondary .md-nav__list[data-md-component=toc] > .md-nav__item {
+    padding: 0;
+}
+
 .md-sidebar.md-sidebar--secondary .md-nav__link:is(:focus,:hover) {
     background-color: transparent;
     color: var(--primary-70);

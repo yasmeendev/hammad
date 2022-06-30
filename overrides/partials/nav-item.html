@@ -10,13 +10,6 @@
 <!-- Main navigation item with nested items -->
 {% if nav_item.children %}
 
-<!-- Determine whether to render item as a section -->
-{% if "navigation.sections" in features and level == 1 + (
-"navigation.tabs" in features
-) %}
-{% set class = class ~ " md-nav__item--section" %}
-{% endif %}
-
 <!-- Render item with nested items -->
 <li class="{{ class }} md-nav__item--nested">
 
@@ -55,6 +48,7 @@
     {% if not indexes %}
     <label class="md-nav__link" for="{{ path }}">
         {{ nav_item.title }}
+        <span class="md-nav__icon md-icon"></span>
     </label>
 
     <!-- Render link to index page + toggle -->
@@ -67,6 +61,7 @@
         <!-- Only render toggle if there's at least one more page -->
         {% if nav_item.children | length > 1 %}
         <label for="{{ path }}">
+            <span class="md-nav__icon md-icon"></span>
         </label>
         {% endif %}
     </div>
@@ -79,6 +74,7 @@
         data-md-level="{{ level }}"
     >
         <label class="md-nav__title" for="{{ path }}">
+            <span class="md-nav__icon md-icon"></span>
             {{ nav_item.title }}
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
@@ -140,6 +136,7 @@
 </li>
 {% endif %}
 {% endmacro %}
+<!-- Color palette -->
 
 <!-- Render current and nested navigation items -->
 {{ render(nav_item, path, level) }}

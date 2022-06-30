@@ -1,8 +1,10 @@
 <!-- Card -->
 {% if card %}
-<div class="card">
+<a class="card" href="{{card.link}}">
     {% if "image" in card %}
-    <div class="card__icon" style="background-image: url('{{card.image}}')"></div>
+    <div class="card__icon-wrap">
+        <div class="card__icon" style="background-image: url('{{card.image}}')"></div>
+    </div>
     {% endif %}
     <div class="card__wrapper">
         <div class="card__header">
@@ -14,5 +16,5 @@
         </div>
     </div>
 
-</div>
+</a>
 {% endif %}

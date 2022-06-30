@@ -1,5 +1,4 @@
 @import "main/_layout/_header.css";
-@import "main/_layout/_tabs.css";
 @import "main/_layout/_search.css";
 @import "main/_layout/_source-file.css";
 @import "main/_layout/_sidebar.css";
@@ -9,6 +8,8 @@
 @import "main/_layout/_wide-card.css";
 @import "main/_layout/_card.css";
 @import "main/_layout/_home.css";
+@import "main/_layout/_nav.css";
+@import "main/_layout/_source.css";
 @import "main/_icons.css";
 @import "main/_typeset.css";
 @import "main/_colors.css";
