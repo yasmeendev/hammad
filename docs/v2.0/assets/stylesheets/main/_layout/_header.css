@@ -77,7 +77,7 @@
 }
 
 .md-header__button.md-icon:not([for="__drawer"]) :-webkit-any(img,svg) {
-    height: auto;
+    height: 15px;
     width: auto;
 }
 
@@ -93,6 +93,13 @@
 
 .md-header__button[for=__search] {
     display: block;
+}
+
+@media screen and (max-width: 1599px) {
+    .md-header__button.md-icon:not([for="__drawer"]) :-webkit-any(img,svg) {
+        height: auto;
+        width: auto;
+    }
 }
 
 @media screen and (max-width: 76.1875em) {
