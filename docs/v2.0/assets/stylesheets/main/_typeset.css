@@ -48,15 +48,6 @@
     margin: 0.667rem 0;
 }
 
-.md-typeset em {
-    font-family: 'Circular Std Book', sans-serif;
-    font-style: italic;
-    font-weight: 450;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.01em;
-}
-
 .md-typeset ol, .md-typeset ul {
    margin: 8px 0;
 }
