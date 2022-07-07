@@ -8,7 +8,7 @@ This components must be installed in your Windows environment before running the
  - [MS SQL Server 2017 or above](https://www.microsoft.com/en-us/sql-server/sql-server-downloads "Installing MS SQL Server")
 
 !!! note
-    *After installing MS SQL server, please switch its authentication to mixed mode, as described [here](https://www.top-password.com/knowledge/sql-server-authentication-mode.html).
+    * After installing MS SQL server, please switch its authentication to mixed mode, as described [here](https://www.top-password.com/knowledge/sql-server-authentication-mode.html).
 
 ![Selecting server authentication mode](media/01-selecting-server-authentication.png)
 
