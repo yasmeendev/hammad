@@ -132,19 +132,19 @@ extra:
             -   title: Architect
                 icon: assets/icons/package.svg
                 description: I need to build the platform's architecture or learn how I can do that.
-                link: under-construction
+                link: https://docs.virtocommerce.org/architecture-center/B2B-multiregional/
             -   title: User
                 icon: assets/icons/person.svg
                 description: I use or am going to use Virto solutions on a regular basis.
-                link: under-construction
+                link: https://docs.virtocommerce.org/user-guide/getting-started/
             -   title: Developer
                 icon: assets/icons/code-square.svg
                 description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
-                link: under-construction
+                link: dev_docs/index.md
             -   title: Business Analyst
                 icon: assets/icons/briefcase.svg
                 description: I need to know how to implement Virto solutions across my team or externally.
-                link: under-construction
+                link: https://docs.virtocommerce.org/BA%20docs/
         wide_cards:
             -   title: B2C solution
                 icon: b2b-second.svg
@@ -152,7 +152,7 @@ extra:
                 link: under-construction
             -   title: E-commerce platform
                 icon: platform.svg
-                description: Cloud techs are currently in the forefront of the IT industry. Learn how to them with Virto.
+                description: Explore Virto's e-commerce opportunities and learn how to leverage them.
                 link: under-construction
             -   title: VirtoCloud
                 icon: cloud.svg
@@ -166,11 +166,11 @@ extra:
             - title: Videos
               description: Explore our video tutorials
               image: ./v2.0/assets/icons/videos.png
-              link: under-construction
+              link: https://www.youtube.com/c/Virtocommerce
             - title: Tech Blog
-              description: Hints, tips and so much more!
+              description: Hints, tips, and so much more!
               image: ./v2.0/assets/icons/articles.png
-              link: under-construction
+              link: https://www.virtocommerce.org/
             - title: Case Studies
               description: Best case studies provided by our dev team
               image: ./v2.0/assets/icons/videos-second.png
