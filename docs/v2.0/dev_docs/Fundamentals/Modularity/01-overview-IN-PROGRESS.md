@@ -8,7 +8,8 @@ A module encapsulates a portion of the application's overall functionality and t
 
 Modules are independent of one another but can communicate with each other in a loosely coupled fashion. Either way, it is important to keep the communication between modules to a minimum to avoid dependency issues. Overall, modular architecture makes it easier for you to develop, test, deploy, and maintain your application.
 
-> ***Note:*** When designing your modules, you have to stick to the the loosely coupled and shared-nothing infrastructure principles.
+!!! note
+    * When designing your modules, you have to stick to the the loosely coupled and shared-nothing infrastructure principles.
 
 The following chart shows the overall design concept of the platform application:
 
@@ -62,7 +63,7 @@ Each Virto module breaks down into multiple layers and encapsulates and groups a
 
 Instead of being coupled across a layer, a module is coupled vertically along a slice, while minimizing coupling between slices and maximizing it within a slice. This architecture is very convenient, as, when it comes to adding or changing a feature in an module, logically, e.g., changing the user interface, adding fields to models, modifying validation, and so on, you can do it all on each layer and then couple it vertically along a slice.
 
-For module solution, there is also a determined folder structure that reflects this logical structure, which is described in detail [here](insert-link-to-Module-solution-folder-structure).
+For module solution, there is also a determined folder structure that reflects this logical structure, which is described in detail [here](02-folder-structure-IN-PROGRESS.md).
 
 ## Modules Relationships
 
@@ -94,7 +95,7 @@ Apart from the above, there are several loosely coupled communication patterns, 
     
 -  **Shared services:** A shared service is a class that can be accessed through a common interface. Typically, shared services are located in shared assemblies and provide system-wide services, such as authentication, logging, or configuration.
 
-You can read more about modules versioning and dependencies [here](insert-link-to-Module-versioning-and-dependencies).
+You can read more about modules versioning and dependencies [here](03-versioning-and-dependencies.md).
 
 ## Module Installation, Update, and Deployment Processes
 
@@ -115,6 +116,7 @@ The **Runtime** mode is used to update and install modules on a working system o
 9 }
 10 ...
 ```
+
 When using Virto Commerce in your production environment, you will rather have to deal with a list of your custom modules that have dependencies to the Virto modules that are not upgraded to the latest version. If this is the case, it is better to define your own version of the `modules.json` file that will contain a list of your custom and Virto modules with specific versions for your solution. Having your own `modules.json` file is basically the same as having `package.json` for NPM dependencies; the difference lies in the shared nature and the option to use it globally.
 
 The **Design time** mode is often leveraged during the development process, when you manage the installed versions of modules, or install or update them manually on the local computer or in any other public environment. Virto provides a special CLI tool for this that, more info on which can be found [here](https://github.com/VirtoCommerce/vc-build/blob/main/docs/CLI-tools/package-management.md "https://github.com/VirtoCommerce/vc-build/blob/main/docs/CLI-tools/package-management.md").

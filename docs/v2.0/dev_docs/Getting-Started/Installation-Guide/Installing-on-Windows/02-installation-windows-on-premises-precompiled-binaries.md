@@ -11,7 +11,8 @@ Unpack the zipped archive to a local directory, e.g., `C:\vc-platform-3`. That's
 ## Updating Settings File
 Once you have downloaded and unpacked the files, you will need to adjust the settings. Open the *appsettings.json* file in your text editor and change the `VirtoCommerce` string in the `ConnectionStrings` section.
 
-> ***Important:*** *The provided user must have enough permissions to create a new database.*
+!!! warning
+    * The provided user must have enough permissions to create a new database.
 
 <details><summary>ConnectionStrings Section Example</summary>
 
@@ -25,8 +26,9 @@ Once you have downloaded and unpacked the files, you will need to adjust the set
 This is how the string in question may look like after you change it:
 
 `appsettings.json`
-
+```json
 `"VirtoCommerce": "Data Source=(local);Initial Catalog=VirtoCommerce3;Persist Security Info=True;User ID=virto;Password=virto;Connect Timeout=30",`
+```
 
 ## Installing Self Signed SSL Certificate
 Another step before launching the platform is installing and trusting the HTTPS certificate.
@@ -42,7 +44,9 @@ In order to launch the platform, run this command:
 ```
 dotnet VirtoCommerce.Platform.Web.dll
 ```
-*Note: The command above will run the Platform enforcing the HTTPS schema. You can also add HTTP URLs in the `--urls` argument of the `dotnet` command for development or demo purposes (see below). For security reasons, however, you should never use it in the production mode.*
+
+!!! note
+    *The command above will run the Platform enforcing the HTTPS schema. You can also add HTTP URLs in the `--urls` argument of the `dotnet` command for development or demo purposes (see below). For security reasons, however, you should never use it in the production mode.
 ```
 dotnet VirtoCommerce.Platform.Web.dll --urls=http://localhost:5000
 ```

@@ -45,12 +45,14 @@ All module and platform dependencies must be described in the `module.manifest` 
 
 The Virto dependency version resolving logic always interprets all versions as **^major.minor.path** (Next Significant Release [Caret Version Range](https://getcomposer.org/doc/articles/versions.md) operator), and it will always allow non-breaking updates. This is the best explained by the following example:
 
-> ^1.2.3 is equivalent to >=1.2.3 <2.0.0 as none of the releases until 2.0 should break backwards compatibility.
+!!! note
+    * ^1.2.3 is equivalent to >=1.2.3 <2.0.0 as none of the releases until 2.0 should break backwards compatibility.
 
 ## Managing Third Party Dependencies for Modules
 
 As all module assemblies are copied into the *probing* folder before being loaded into the platform application process, except the assemblies of the module in question, the platform module manager copies all third party dependency assemblies and applies the same version conflict resolution policy:
 
-> The assembly with the highest version or the one that was modified last, wins.
+!!! note
+    * The assembly with the highest version or the one that was modified last, wins.
 
 This fact may lead to an unexpected update of third party dependencies for other modules and the platform application itself when resolving an assembly at runtime. You should always consider this fact when updating dependencies for your custom modules.

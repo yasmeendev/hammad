@@ -25,4 +25,5 @@ Virto Commerce uses a set of well known components and libraries:
     
 -   Scriban: A fast, powerful, safe, and lightweight scripting language and engine for .NET, which was primarily developed for text templating with a compatibility mode for parsing `liquid` templates.
 
-> ***Note:*** You can find the full list of used third party components on our [GitHub repository](https://github.com/VirtoCommerce/vc-platform/blob/dev/3rd-party-components.md).
+!!! note
+    * You can find the full list of used third party components on our [GitHub repository](https://github.com/VirtoCommerce/vc-platform/blob/dev/3rd-party-components.md).

@@ -15,6 +15,16 @@ As well as numbered lists:
 2. Cillum dolore eu fugiat nulla pariatur
 3. Excepteur sint occaecat cupidatat non proident
 
+Finally, we may also have nested lists, like this:
+
++ Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    
+	o Duis aute irure dolor in reprehenderit in voluptate velit esse
+    
+	o Cillum dolore eu fugiat nulla pariatur
+    
+	o Excepteur sint occaecat cupidatat non proident
+
 ## This is Heading 2
 This is some text below Heading 2.
 

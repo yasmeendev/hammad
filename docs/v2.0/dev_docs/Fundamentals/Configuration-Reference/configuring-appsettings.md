@@ -4,7 +4,8 @@ As Virto Commerce Platform (VC Platform) is an ASP.NET Core based application, i
 ## Configuration Settings
 The configuration keys are hierarchic, and the most convenient way to manage them is working with the _appsettings.json_ file. The table below shows the overall file structure, provides default values, and explains what each key is about.
 
-> **_Note:_** _All settings listed below are optional unless marked **Required**._
+!!! note
+    * All settings listed below are optional unless marked **Required**.
 
 | Top Configuration Node | Child Node(s) | Default or Sample Value  | Description  |
 | ---------------------- | ------------- | ------------------------ | ------------ |

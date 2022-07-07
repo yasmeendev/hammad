@@ -33,5 +33,5 @@ As you can clearly see, VC Data Import is based on three main objects:
         
     -   _Settings_, which provides settings that can be used to configure _ImportProfile_ linked to the importer in question.
         
-
-> ***Note:*** *You can also create your own data importers, which we explain [here](02-building-custom-importer.md).*
+!!! note
+    * You can also create your own data importers, which we explain [here](02-building-custom-importer.md).

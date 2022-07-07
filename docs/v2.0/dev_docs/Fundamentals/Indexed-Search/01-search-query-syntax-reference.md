@@ -101,7 +101,7 @@ You can skip one of the values to ignore either the lower or the upper bound:
 
 `price:(TO 100]`,
 
-which means the price must be less than or equal to 100
+which means the price must be less than or equal to 100.
 
 ## Boolean Operators
 Having multiple field terms separated by a space delimiter in a single filter expression will combine them with an *AND* operator.
@@ -110,7 +110,8 @@ The following example search request filters products of a certain brand, Onkyo,
 
 `color:Black brand:Onkyo`
 
-> Important: At the moment, only logical *AND* operators are supported for filter expressions.
+!!! warning
+    * At the moment, only logical ***AND*** operators are supported for filter expressions.
 
 ## Wildcard Search
 You can use single and multiple character wildcard search within a single phrase or phrase terms. To perform a single character wildcard search, use a quotation mark (`?`), while for a multiple character wildcard search use an asterisk (`*`).

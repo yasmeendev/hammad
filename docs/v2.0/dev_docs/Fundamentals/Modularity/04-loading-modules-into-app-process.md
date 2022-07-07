@@ -5,11 +5,12 @@ The process of loading modules into the Virto platform application process inclu
 
 - Copying module assemblies into the probing folder to apply the version conflict resolution.
 
-> The current policy is as follows: the assembly with the latest version or latest date of modification always prevails when copying.
-> 
-> Copying assemblies into the probing folder prevents assembly lock issues that might happen when the same assemblies loaded into the application process at the same time can be modified during development or other activity.
-> 
-> In multi-instance platform configurations, only one instance checks or copies assemblies into the probing folder. This is achieved by distributed locking between instances through Redis: the instance that was started first copies the files, while other instances skip this process.
+!!! note
+    * The current policy is as follows: the assembly with the latest version or latest date of modification always prevails when copying.
+	
+	* Copying assemblies into the probing folder prevents assembly lock issues that might happen when the same assemblies loaded into the application process at the same time can be modified during development or other activity.
+	
+	* In multi-instance platform configurations, only one instance checks or copies assemblies into the probing folder. This is achieved by distributed locking between instances through Redis: the instance that was started first copies the files, while other instances skip this process.
 
 - Loading modules: The assemblies that contain the modules are loaded into the `AssemblyLoadContex.Default` default context of the application process. This phase requires the module assemblies to be retrieved from the probing folder.
     
@@ -21,4 +22,5 @@ The chart below shows the module loading process:
 
 ![Module loading process](media/04-module-loading-process.png)
 
-> Note: The Virto platform's modularity engine supports only eager loading from local disk for modules.
+!!! note
+    * The Virto platform's modularity engine supports only eager loading from local disk for modules.

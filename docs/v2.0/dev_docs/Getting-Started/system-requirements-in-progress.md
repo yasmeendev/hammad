@@ -4,7 +4,7 @@ This guide will explain you the basic hardware and software requirements to inst
 ## Minimum Hardware Requirements
 Before installing the Virto platform, make sure the computer you are going to install it on satisfies these minimum requirements:
 
-|  |  |
+| Parameter | Value |
 |-|-|
 | RAM | 1GB |
 |Disk space | 1GB |
@@ -27,9 +27,7 @@ For the Windows family, the requirements are as follows:
 |Windows Server Core|2012+|x64, x86|
 |Nano Server|1809+|x64|
 
-For Linux, the requirements are the following:
-
- - TBA
+<!--- ADD THIS FOR LINUX IF/WHEN IT BECOMES APPLICABLE: For Linux, the requirements are the following: ... --->
 
 ## Supported Databases
 The Virto platform supports MS SQL Server 2017 and above.
@@ -39,7 +37,8 @@ The Virto platform supports the following browsers:
 
 -   Microsoft Internet Explorer 9 and above
 
-*Note: Virto Commerce previously supported IE6 and IE7 in versions prior to 3.60, while IE8 was supported in versions prior to 4.10.*
+!!! note
+    * Virto Commerce previously supported IE6 and IE7 in versions prior to 3.60, while IE8 was supported in versions prior to 4.10.
     
 -   Mozilla Firefox 2.0 and above
     

@@ -1,5 +1,5 @@
 ﻿# Module Solution Folder Structure
-///TODO: Add chart with folder structure + notes///
+<!---TODO: Add chart with folder structure + notes --->
 
 Typically, any Virto module solution is organized in the following way:
 
@@ -15,7 +15,7 @@ Typically, any Virto module solution is organized in the following way:
 
 + **Module.Data**: This project is comprised of business layers and may include repositories and domain service implementations. It is also of the class library type and can be packaged and distributed as a **NuGet** package and used as a reference from other modules.
 
-+ **Caching**: Contains strongly typed cache regions used in the module (**!add link to how Virto cache works!**).
++ **Caching**: Contains strongly typed cache regions used in the module<!---add link to how Virto cache works!--->.
     
 + **Handlers**: Houses domain and integration event handlers.
     

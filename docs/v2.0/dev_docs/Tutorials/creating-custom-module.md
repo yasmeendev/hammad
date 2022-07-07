@@ -334,7 +334,8 @@ After you are done creating your module, you need then to install it from your s
 	mklink /d c:\source\vc-platform\src\VirtoCommerce.Platform.Web\modules\my-cool-module\ c:\source\vc-module-MyCoolModule\src\MyCoolCompany.MyCoolModule.Web\
 ```
 
-> Note: In the above example, `c:\source\` means the path to your repository.
+!!! note
+    * In the above example, `c:\source\` means the path to your repository.
 
 * Restart the platform
 
@@ -466,7 +467,8 @@ This is what you will get:
 
 ![Build tools](media/04-build-tools.png)
 
-> The new module package will be created in the *Artifacts* folder. 
+!!! note
+    * The new module package will be created in the *Artifacts* folder. 
 
 ## Distribution and Installation
 

@@ -134,7 +134,8 @@ This will output the following:
 
 **Line 7: Cache expiration and eviction.** We get a `CancellationTokenSource` object that is associated with the cache data and a strongly typed cache region, which allows multiple cache entries to be evicted as a group (see [ASP.NET Core Memory Cache Dependencies](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory?view=aspnetcore-3.1#cache-dependencies)).
 
-> Important: We intentionally disable the inheritance for cached entry expiration tokens and time-based expiration settings. When one cache entry is used to create another, the child copies the parent entry expiration settings and cannot get expired by manually removing or updating the parent entry. This leads to unpredictable side effects, and it is hard to maintain and debug such cache dependencies.
+!!! warning
+    * We intentionally disable the inheritance for cached entry expiration tokens and time-based expiration settings. When one cache entry is used to create another, the child copies the parent entry expiration settings and cannot get expired by manually removing or updating the parent entry. This leads to unpredictable side effects, and it is hard to maintain and debug such cache dependencies.
 
 We avoid manual control of the cached data lifetime in our code. The platform has a special `CachingOptions` object that contains the settings for **Absolute** or **Sliding** lifetimes for all cached data (see below).
 
@@ -174,7 +175,7 @@ By default, the platform caches null values. If you opt for negative caching, th
 
 ## Cache Settings
 
-To learn how to configure cache settings, see <!-- TODO: Link to cache settings -->.
+To learn how to configure cache settings, see [this article](02-cache-configuration.md)<!-- Update link if required -->.
 
 ## Scaling
 
@@ -202,4 +203,4 @@ To learn more about the things covered by this article, you might also want to c
     
 -   [Caching in Azure by Microsoft](https://docs.microsoft.com/en-us/azure/architecture/patterns/cache-aside)
     
--   [Cache Configuration by Virto Commerce](link-to-cache-configuration)
+-   [Cache Configuration by Virto Commerce](02-cache-configuration.md)<!-- Update link if required -->

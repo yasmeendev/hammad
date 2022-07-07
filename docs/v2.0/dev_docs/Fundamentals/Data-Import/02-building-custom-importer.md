@@ -2,9 +2,10 @@
 
 This section will guide you through building your own data importer of a specific type. All steps described below are based on a real example of importing product images from a CSV file.
 
-> ***Note:*** *Currently, we only support CSV for out-of-the-box import. You can, however, create your own file reader if you want to use a different format.*
+!!! note
+    * Currently, we only support CSV for out-of-the-box import. You can, however, create your own file reader if you want to use a different format.
 
-Link to source code - TBA
+<!--- Link to source code - TBA --->
 
 ## Prerequisites
 
@@ -118,13 +119,10 @@ At this step, we will create a new class, naming it _CsvProductImageWriter_, wit
 40    }
 ```
 
-***Notes:***
-
-Line 6: Getting a value for setting from the profile. This setting value can be provided by user for the particular import profile instance.
-
-Line 13: Creating a loop between passed objects of the `ProductImage` type. Inside this loop, you can add a piece of code that saves the passed object within the system.
-
-Line 31: This line notifies the one who runs the importer about any possible error when writing the data being imported  through `context.ErrorCallback`.
+!!! note
+    * Line 6: Getting a value for setting from the profile. This setting value can be provided by user for the particular import profile instance.
+	* Line 13: Creating a loop between passed objects of the `ProductImage` type. Inside this loop, you can add a piece of code that saves the passed object within the system.
+	*Line 31: This line notifies the one who runs the importer about any possible error when writing the data being imported  through `context.ErrorCallback`.
 
 ## Creating Custom Importer
 
@@ -180,9 +178,8 @@ In order to define new importer, we will create a new class, _CsvProductImageImp
 44    }
 ```
 
-***Notes:***
-
-Lines 23 and 34: Factory methods that return both the reader and writer and get executed by the import process manager.
+!!! note
+    * Lines 23 and 34: Factory methods that return both the reader and writer and get executed by the import process manager.
 
 ## Registering Data Importer
 
@@ -203,11 +200,9 @@ Now that we have everything at hand to wire up our new _CsvProductImageImporter_
 11 }
 ```
 
-***Notes:***
-
-Line 3: Registering `CsvProductImageImporter` in the DI
-
-Line 8: Registering `CsvProductImageImporter` in the global importer registry, so that the new importer may become available for import profile creation and for running the import process.
+!!! note
+    * Line 3: Registering `CsvProductImageImporter` in the DI
+	* Line 8: Registering `CsvProductImageImporter` in the global importer registry, so that the new importer may become available for import profile creation and for running the import process.
 
 ## Running Data Importer
 

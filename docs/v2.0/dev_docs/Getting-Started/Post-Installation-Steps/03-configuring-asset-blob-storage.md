@@ -23,19 +23,17 @@ This provider uses the local file system to store and provide public access to a
 7    },
 ```
 
-***Notes:***
-
-Line 2: Specify `FileSystem` as your default asset provider.
-
-Line 4: For `RootPath`, provide the base path to the `wwwroot` directory inside app folder.
-
-Line 5: Provide the base URL that will be used when generating a public URI [ASP.NET](http://asp.net/ "http://ASP.NET") Core app serves directly. Make sure both host and port are up-to-date and valid for your platform instance.
+!!! note
+    * Line 2: Specify `FileSystem` as your default asset provider.
+	* Line 4: For `RootPath`, provide the base path to the `wwwroot` directory inside app folder.
+	*Line 5: Provide the base URL that will be used when generating a public URI [ASP.NET](http://asp.net/ "http://ASP.NET") Core app serves directly. Make sure both host and port are up-to-date and valid for your platform instance.
 
 ## Example
 
 Let's assume you have an image file named `MyImage.jpg` that is stored at `wwwroot/assets/MyImage.jpg`. This file will be accessible through `https://localhost:5001/assets/MyImage.jpg` (a public URI), since [ASP.NET](http://asp.net/ "http://ASP.NET") marks all files in [wwwroot](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-6.0#web-root "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-6.0#web-root") as servable.
 
-> ***Please note:*** *This mode is good for local development purposes and not recommended for production because it lacks scalability.*
+!!! note
+    * This mode is good for local development purposes and not recommended for production because it lacks scalability.
 
 ### Setting up Azure Blob Storage in Production Mode
 
@@ -53,12 +51,12 @@ Once your blob storage has been created, open `appsettings.json` and add the con
 6    },
 ```
 
-***Notes:***
+!!! note
+    * Line 2: Specify `AzureBlobStorage` as your default asset provider.
+	* Line 4: In `ConnectionString`, provide the connection string of your storage account.
 
-Line 2: Specify `AzureBlobStorage` as your default asset provider.
+!!! tip
+    * You can get your connection string from your Azure Portal under the Access Keys section.
 
-Line 4: In `ConnectionString`, provide the connection string of your storage account.
-
-_Tip: You can get your connection string from your Azure Portal under the Access Keys section._
-
-> ***Please note:*** *This mode is recommended for using in production environment since it enables sharing the asset storage across multiple platform instances.*
+!!! note
+    * This mode is recommended for using in production environment since it enables sharing the asset storage across multiple platform instances.

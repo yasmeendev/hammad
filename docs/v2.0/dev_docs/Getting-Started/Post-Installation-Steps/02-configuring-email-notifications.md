@@ -26,7 +26,8 @@ To enable sending notifications through Gmail, turn on the  `Allow less secure a
 12 ....
 ```
 
-> ***Important***: *After making any changes to the appsettings.json file, be sure to restart the application for those changes to apply.*
+!!! warning
+    * After making any changes to the appsettings.json file, be sure to restart the application for those changes to apply.
 
 ## Configuring SendGrid Email Settings
 In order to work with the SendGrid settings, you must have a SendGrid account. To learn how to set up one, as well as other relevant details, refer to [this SendGrid article](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021).
