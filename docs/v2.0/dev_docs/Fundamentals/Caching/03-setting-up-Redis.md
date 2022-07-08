@@ -19,10 +19,10 @@ The chart below shows how it all works:
 Redis Pub/Sub is used to send messages to the Redis server on any key change, clear cache, clear region, or remove key operation. Every cache instance with the same configuration gets subscribed to the same channel and can react on those messages to keep other cache handles in sync with the master.
 
 You can add a Redis cache backplane to the Virto platform at the stage of its configuration by copying the primary connection string (`StackExchange.Redis`) to [Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0):
-    
-    -   For local deployment: Save the connection string with [Secret Manager](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0#secret-manager) or `appsetting.json`.
+    	
+    - For local deployment: Save the connection string with [Secret Manager](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0#secret-manager) or `appsetting.json`.
         
-    -   For Azure based instance: Save the connection string in App Service Configuration or another secure storage.
+    - For Azure based instance: Save the connection string in App Service Configuration or another secure storage.
 
 The following example shows you how to set up the Redis backplane for memory cache in `appsettings.json`:
 
@@ -37,7 +37,8 @@ The following example shows you how to set up the Redis backplane for memory cac
 6    },
 ```
 
-> Note: You will have to use the same `RedisConnectionString` for all platform instances, the local cache instances of which must also be synchronized.
+!!!warning
+	* You will have to use the same `RedisConnectionString` for all platform instances, the local cache instances of which must also be synchronized.
 
 ### How It Works
 

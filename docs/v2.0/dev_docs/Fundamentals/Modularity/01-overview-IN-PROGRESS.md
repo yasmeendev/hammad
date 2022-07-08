@@ -135,7 +135,7 @@ Now that we explained some basic things about Virto's modular architecture, feel
 
 -   [Module Solution Folder Structure](link-to-module-solution-folder-structure)
     
--   [How to Create New Module](link-to-how-to-create-new-module) 
+-   [How to Create New Module](link-to-how-to-create-new-module)<!---how to create new module---> 
 
 ## Related Sources
 
