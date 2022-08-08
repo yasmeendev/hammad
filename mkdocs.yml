@@ -103,6 +103,23 @@ nav:
       - Loading Modules into App Process: v2.0/dev_docs/Fundamentals/Modularity/04-loading-modules-into-app-process.md
       - Best Practices: v2.0/dev_docs/Fundamentals/Modularity/05-best-practices.md
       - Module.manifest File: v2.0/dev_docs/Fundamentals/Modularity/06-module-manifest-file.md
+    - Extensibility:
+      - Overview: v2.0/dev_docs/Fundamentals/Extensibility/overview.md
+      - Extending Domain Models: v2.0/dev_docs/Fundamentals/Extensibility/extending-domain-models.md
+      - Extending through Events: v2.0/dev_docs/Fundamentals/Extensibility/extending-using-events.md
+      - Style Guide: v2.0/dev_docs/Fundamentals/Extensibility/style-guide.md
+      - Extending Main Menu: v2.0/dev_docs/Fundamentals/Extensibility/extending-main-menu.md
+      - Blades and Navigation: v2.0/dev_docs/Fundamentals/Extensibility/blades-and-navigation.md
+      - Metaform: v2.0/dev_docs/Fundamentals/Extensibility/metaform.md
+      - Widgets: v2.0/dev_docs/Fundamentals/Extensibility/widgets.md
+      - Blade Toolbar: v2.0/dev_docs/Fundamentals/Extensibility/blade-toolbar.md
+      - Extending Authorization Policies: v2.0/dev_docs/Fundamentals/Extensibility/extending-authorization-policies.md
+      - Extending Grid Columns: v2.0/dev_docs/Fundamentals/Extensibility/extending-grid-columns.md
+      - Registering New Payment Method: v2.0/dev_docs/Fundamentals/Extensibility/new-payment-method-registration.md
+      - Registering New Shipping Method: v2.0/dev_docs/Fundamentals/Extensibility/new-shipping-method-registration.md
+      - Registering New Tax Provider: v2.0/dev_docs/Fundamentals/Extensibility/new-tax-provider-registration.md
+      - UI Scroll Directive: v2.0/dev_docs/Fundamentals/Extensibility/ui-scroll-directive.md
+      - Using Dymanic Properties: v2.0/dev_docs/Fundamentals/Extensibility/using-dynamic-properties.md
   - Back End Architecture:
     - Tech Stack: v2.0/dev_docs/Back-End-Architecture/01-tech-stack.md
     - Conceptual Overview: v2.0/dev_docs/Back-End-Architecture/02-conceptual-overview-in-progress.md
