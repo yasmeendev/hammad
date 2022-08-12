@@ -1,18 +1,18 @@
 VirtoCommerce Platform enables adding new properties to entities at runtime. 
 
-## Add New Dynamic Property for Existing Type from UI
+## Adding New Dynamic Property for Existing Type from UI
 
 In the left toolbar menu, click *More > Dynamic Properties* and select one of the available objects:
 
-![List of dynamic properties](media/12-selecting-dynamic-properties.png)
+![List of dynamic properties](media/01-selecting-dynamic-properties.png)
 
 Select the required object:
 
-![Choosing dynamic property](media/13-choosing-dynamic-property.png)
+![Choosing dynamic property](media/02-choosing-dynamic-property.png)
 
 Click the *Create* button:
 
-![Create button](media/14-create-button.png)
+![Create button](media/03-create-button.png)
 
 Enter the new property name, select value type and other options.
 
@@ -25,10 +25,10 @@ You can also define the property name for each of the registered languages:
 
 ## Editing Object Values
 
-Open the object details and click the *Dynamic properties* widget:
+Open the object details and click the *Dynamic Properties* widget:
 
-![Dynamic properties widget](media/15-dynamic-properties-widget.png)
+![Dynamic Properties widget](media/04-dynamic-properties-widget.png)
 
 In the new blade, you will see the list of available properties with input controls for entering values:
 
-![Controls for entering values](media/16-controls-for-entering-values.png)
+![Controls for entering values](media/05-controls-for-entering-values.png)

@@ -1,7 +1,7 @@
-
+# Extending Domain Models
 VirtoCommerce supports extension of managed code domain types. This article will show you how to use various techniques to extend an existing domain type without direct code modification.
 
-[View or download sample code](https://github.com/VirtoCommerce/vc-module-order/tree/dev/samples/VirtoCommerce.OrdersModule2.Web)
+To view or download our sample code, click [here](https://github.com/VirtoCommerce/vc-module-order/tree/dev/samples/VirtoCommerce.OrdersModule2.Web).
 
 ## Extending through Type Inheritance
 

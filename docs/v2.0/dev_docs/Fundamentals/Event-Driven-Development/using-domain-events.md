@@ -1,4 +1,4 @@
-
+#Using Domain Events
 As its name soggests, a domain event is something that happened in a particular domain, and something you want other parts of the same domain to be aware of and potentially react to (the in-process principle).
 
 An important benefit of domain events is that any side effects of something happening in a domain can be expressed explicitly and not implicitly. Those side effects must be consistent, i.e. either all operations related to the task happen, or none. In addition, domain events enable a better separation of concerns among classes within the same domain.

@@ -2,7 +2,7 @@
 
 Virto Commerce Platform's UI is organized and divided into multiple screens called blades. Blades are ordered left to right and share parent-child hierarchy. Any parent blade has one or more child ones, while every child has a reference to its parent. The hierarchy depth is virtually unlimited.
 
-![Blade hierarchy example](media/09-blades-and-navigation.png)
+![Blade hierarchy example](media/01-blades-and-navigation.png)
 *Example of unlimited parent-child blade hierarchy*
 
 ## Blade Structure and Properties

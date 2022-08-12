@@ -105,26 +105,36 @@ nav:
       - Module.manifest File: v2.0/dev_docs/Fundamentals/Modularity/06-module-manifest-file.md
     - Extensibility:
       - Overview: v2.0/dev_docs/Fundamentals/Extensibility/overview.md
-      - Extending Domain Models: v2.0/dev_docs/Fundamentals/Extensibility/extending-domain-models.md
-      - Extending through Events: v2.0/dev_docs/Fundamentals/Extensibility/extending-using-events.md
-      - Style Guide: v2.0/dev_docs/Fundamentals/Extensibility/style-guide.md
-      - Extending Main Menu: v2.0/dev_docs/Fundamentals/Extensibility/extending-main-menu.md
-      - Blades and Navigation: v2.0/dev_docs/Fundamentals/Extensibility/blades-and-navigation.md
-      - Metaform: v2.0/dev_docs/Fundamentals/Extensibility/metaform.md
-      - Widgets: v2.0/dev_docs/Fundamentals/Extensibility/widgets.md
-      - Blade Toolbar: v2.0/dev_docs/Fundamentals/Extensibility/blade-toolbar.md
-      - Extending Authorization Policies: v2.0/dev_docs/Fundamentals/Extensibility/extending-authorization-policies.md
-      - Extending Grid Columns: v2.0/dev_docs/Fundamentals/Extensibility/extending-grid-columns.md
-      - Registering New Payment Method: v2.0/dev_docs/Fundamentals/Extensibility/new-payment-method-registration.md
-      - Registering New Shipping Method: v2.0/dev_docs/Fundamentals/Extensibility/new-shipping-method-registration.md
-      - Registering New Tax Provider: v2.0/dev_docs/Fundamentals/Extensibility/new-tax-provider-registration.md
-      - UI Scroll Directive: v2.0/dev_docs/Fundamentals/Extensibility/ui-scroll-directive.md
-      - Using Dymanic Properties: v2.0/dev_docs/Fundamentals/Extensibility/using-dynamic-properties.md
+    - Event Driven Development:
+      - Using Domain Events: v2.0/dev_docs/Fundamentals/Event-Driven-Development/using-domain-events.md
+    - Integration:
+      - Payment Gateways:
+        - Registering New Payment Method: v2.0/dev_docs/Fundamentals/Integration/Payment-Gateways/new-payment-method-registration.md
+      - Shipping Providers:
+        - Registering New Shipping Method: v2.0/dev_docs/Fundamentals/Integration/Shipping-Providers/new-shipping-method-registration.md
+      - Tax Providers:
+        - Registering New Tax Provider: v2.0/dev_docs/Fundamentals/Integration/Tax-Providers/new-tax-provider-registration.md
+    - Security:
+      - Extending Authorizarion Policies: v2.0/dev_docs/Fundamentals/Security/extending-authorization-policies.md
   - Back End Architecture:
     - Tech Stack: v2.0/dev_docs/Back-End-Architecture/01-tech-stack.md
     - Conceptual Overview: v2.0/dev_docs/Back-End-Architecture/02-conceptual-overview-in-progress.md
-  - Tutorials:
-    - Creating Custom Module: v2.0/dev_docs/Tutorials/creating-custom-module.md
+  - Platform Manager:
+    - Style Guide: v2.0/dev_docs/Platform-Manager/style-guide.md
+    - UI Scroll Directive: v2.0/dev_docs/Platform-Manager/ui-scroll-directive.md
+    - Extensibility Points:
+      - Extending Main Menu: v2.0/dev_docs/Platform-Manager/Extensibility-Points/extending-main-menu.md
+      - Blades and Navigation: v2.0/dev_docs/Platform-Manager/Extensibility-Points/blades-and-navigation.md
+      - Metaform: v2.0/dev_docs/Platform-Manager/Extensibility-Points/metaform.md
+      - Widgets: v2.0/dev_docs/Platform-Manager/Extensibility-Points/widgets.md
+      - Extending Grid Columns: v2.0/dev_docs/Platform-Manager/Extensibility-Points/extending-grid-columns.md
+      - Blade Toolbar: v2.0/dev_docs/Platform-Manager/Extensibility-Points/blade-toolbar.md
+  - Dynamic Properties:
+    - Overview: v2.0/dev_docs/Dynamic-Properties/overview.md
+  - Tutorials and How-tos:
+    - Tutorials:
+      - Creating Custom Module: v2.0/dev_docs/Tutorials-and-How-tos/Tutorials/creating-custom-module.md
+      - Extending Domain Models: v2.0/dev_docs/Tutorials-and-How-tos/Tutorials/extending-domain-models.md
 
 extra:
     social:

@@ -2,7 +2,7 @@
 
 Blade toolbar represents a dedicated area inside a **blade**, where one can add **controls**, which we will call, for convenience, **toolbar items**.
 
-![Blade toolbar](media/10-blade-toobar.png)
+![Blade toolbar](media/02-blade-toobar.png)
 
 *Four toolbar items nested in the blade toolbar*
 
