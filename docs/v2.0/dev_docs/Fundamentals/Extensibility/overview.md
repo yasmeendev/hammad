@@ -124,20 +124,20 @@ The Virto platform encompasses the **extension concept** based on various techni
 To address crucial extension requirements, the platform contains various **extensions points** for all three main parts: the Platform application, Modules, and Storefront. Such extension points enable performing multiple customizations without direct code modification. The list below mentions the important ones:
 
 * Domain and business logic extension:
-    * [Extending domain models](/docs/latest/v2.0/dev_docs/Tutorials-and-How-tos/Tutorials/extending-domain-models/)
-    * [Extending through domain events](./Event-Driven-Development/using-domain-events.md)
-    * [Extending authorization policies](extending-authorization-policies.md)
-    * [Dynamic properties](using-dynamic-properties.md)
+    * [Extending domain models](../../Tutorials-and-How-tos/Tutorials/extending-domain-models.md)
+    * [Extending through domain events](../Event-Driven-Development/using-domain-events.md)
+    * [Extending authorization policies](../Security/extending-authorization-policies.md)
+    * [Dynamic properties](../../Dynamic-Properties/using-dynamic-properties.md)
 * Platform manager UI extension:
-    * [Extending main menu](extending-main-menu.md)
-    * [Working with widgets](widgets.md)
-    * [Metaforms](metaform.md)
-    * [Extending blade toolbar](blade-toolbar.md)
-    * [Extending grid columns](extending-grid-columns.md)
+    * [Extending main menu](../../Platform-Manager/Extensibility-Points/extending-main-menu.md)
+    * [Working with widgets](../../Platform-Manager/Extensibility-Points/widgets.md)
+    * [Metaforms](../../Platform-Manager/Extensibility-Points/metaform.md)
+    * [Extending blade toolbar](../../Platform-Manager/Extensibility-Points/blade-toolbar.md)
+    * [Extending grid columns](../../Platform-Manager/Extensibility-Points/extending-grid-columns.md)
 * Extending commerce logic:
-    * [New payment method registration](new-payment-method-registration.md)
-    * [New shipping method registration](new-shipping-method-registration.md)
-    * [New tax provider registration](new-tax-provider-registration.md)
+    * [New payment method registration](../Integration/Payment-Gateways/new-payment-method-registration.md)
+    * [New shipping method registration](../Integration/Shipping-Providers/new-shipping-method-registration.md)
+    * [New tax provider registration](../Integration/Tax-Providers/new-tax-provider-registration.md)
 
   
 ## Customization Type Comparison
