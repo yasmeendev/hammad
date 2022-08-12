@@ -167,7 +167,7 @@ extra:
             -   title: Developer
                 icon: assets/icons/code-square.svg
                 description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
-                link: dev_docs/index.md
+                link: v2.0/dev_docs
             -   title: Business Analyst
                 icon: assets/icons/briefcase.svg
                 description: I need to know how to implement Virto solutions across my team or externally.
