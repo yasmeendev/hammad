@@ -4,7 +4,7 @@ In order to calculate taxes in Virto Commerce, you've got to register at least o
 
 In order to define a new tax provider, you need to:
 
-+ Create a new module by following [this guide](docs/v2.0/dev_docs/tutorials/creating-custom-module.md)
++ Create a new module by following [this guide](../../../Tutorials-and-How-tos/Tutorials/creating-custom-module.md)
 + Create a class derived from the `TaxProvider` abstract class and override the `CalculateRate` method:
 
 ```C#

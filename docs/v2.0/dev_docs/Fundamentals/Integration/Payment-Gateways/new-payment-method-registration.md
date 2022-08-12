@@ -17,7 +17,7 @@ This chart shows how the off-site payment method works:
 
 In order to define a new payment method, you need to:
 
-+ Create a new module by following [this guide](docs/v2.0/dev_docs/tutorials/creating-custom-module.md)
++ Create a new module by following [this guide](../../../Tutorials-and-How-tos/Tutorials/creating-custom-module.md)
 + Create a class derived from the `PaymentMethod` abstract class and override all abstract methods; each of them will be called on the appropriate stage of the payment processing workflow:
 
 ```C#
