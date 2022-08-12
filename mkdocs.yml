@@ -114,6 +114,8 @@ nav:
         - Registering New Shipping Method: v2.0/dev_docs/Fundamentals/Integration/Shipping-Providers/new-shipping-method-registration.md
       - Tax Providers:
         - Registering New Tax Provider: v2.0/dev_docs/Fundamentals/Integration/Tax-Providers/new-tax-provider-registration.md
+    - Dynamic Properties:
+      - Overview: v2.0/dev_docs/Fundamentals/Dynamic-Properties/overview.md
     - Security:
       - Extending Authorizarion Policies: v2.0/dev_docs/Fundamentals/Security/extending-authorization-policies.md
   - Back End Architecture:
@@ -129,8 +131,6 @@ nav:
       - Widgets: v2.0/dev_docs/Platform-Manager/Extensibility-Points/widgets.md
       - Extending Grid Columns: v2.0/dev_docs/Platform-Manager/Extensibility-Points/extending-grid-columns.md
       - Blade Toolbar: v2.0/dev_docs/Platform-Manager/Extensibility-Points/blade-toolbar.md
-  - Dynamic Properties:
-    - Overview: v2.0/dev_docs/Dynamic-Properties/overview.md
   - Tutorials and How-tos:
     - Tutorials:
       - Creating Custom Module: v2.0/dev_docs/Tutorials-and-How-tos/Tutorials/creating-custom-module.md
