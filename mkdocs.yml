@@ -131,6 +131,33 @@ nav:
       - Widgets: v2.0/dev_docs/Platform-Manager/Extensibility-Points/widgets.md
       - Extending Grid Columns: v2.0/dev_docs/Platform-Manager/Extensibility-Points/extending-grid-columns.md
       - Blade Toolbar: v2.0/dev_docs/Platform-Manager/Extensibility-Points/blade-toolbar.md
+  - GraphQL Storefront API Reference (xAPI):
+    - Overview: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/index.md
+    - Getting Started: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/getting-started.md
+    - Catalog:
+      - Overview: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/overview.md
+      - Queries:
+        - Product: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/queries/01-product.md
+        - Products: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/queries/02-products.md
+        - Categories: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/queries/03-categories.md
+        - Properties: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/queries/04-properties.md
+        - Property: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/queries/05-property.md
+        - Fulfullment Center: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/queries/06-fulfillment-center.md
+        - Fulfullment Centers: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/queries/07-fulfillment-centers.md
+      - Objects:
+        - ProductType: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/objects/01-ProductType.md
+        - CategoryType: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/objects/02-CategoryType.md
+        - FulfullmentCenterType: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/objects/03-FulfillmentCenterType.md
+      - Examples:
+        - Full Text Search: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/examples/01-full-text-search.md
+        - Fuzzy Search: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/examples/02-fuzzy-search.md
+        - Filter Syntax: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/examples/03-filter-syntax.md
+        - Filtering: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/examples/04-filtering.md
+        - Facets: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/examples/05-facets.md
+        - Multi Select Faceting Search: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/Catalog/examples/06-multi-select-faceting-search.md
+    - xAPI Extensions: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/x-api-extensions.md
+    - Troubleshooting: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/troubleshooting.md
+    - Samples and Recommendations: v2.0/dev_docs/GraphQL-Storefront-API-Reference-xAPI/recommendations.md
   - Tutorials and How-tos:
     - Tutorials:
       - Creating Custom Module: v2.0/dev_docs/Tutorials-and-How-tos/Tutorials/creating-custom-module.md
