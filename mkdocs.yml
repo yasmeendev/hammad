@@ -101,7 +101,7 @@ nav:
         - Indexing:
           - Overview: v2.0/dev_docs/Fundamentals/Search/Indexed-Search/indexing/overview.md
         - Search:
-          - Overview: v2.0/dev_docs/Fundamentals/Search/Indexed-Search/overview.md
+          - Overview: v2.0/dev_docs/Fundamentals/Search/Indexed-Search/search/overview.md
     - Modularity:
       - Overview: v2.0/dev_docs/Fundamentals/Modularity/01-overview-IN-PROGRESS.md
       - Folder Structure: v2.0/dev_docs/Fundamentals/Modularity/02-folder-structure-IN-PROGRESS.md
