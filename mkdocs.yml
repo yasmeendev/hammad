@@ -94,8 +94,14 @@ nav:
     - Data Import:
       - Main Concept: v2.0/dev_docs/Fundamentals/Data-Import/01-main-concept.md
       - Building Custom Importer: v2.0/dev_docs/Fundamentals/Data-Import/02-building-custom-importer.md
-    - Indexed Search:
-      - Search Query Syntax Reference: v2.0/dev_docs/Fundamentals/Indexed-Search/01-search-query-syntax-reference.md
+    - Search:
+      - Overview: v2.0/dev_docs/Fundamentals/Search/overview.md 
+      - Search Query Syntax Reference: v2.0/dev_docs/Fundamentals/Search/search-query-syntax-reference.md
+      - Indexed Search:
+        - Indexing:
+          - Overview: v2.0/dev_docs/Fundamentals/Search/Indexed-Search/indexing/overview.md
+        - Search:
+          - Overview: v2.0/dev_docs/Fundamentals/Search/Indexed-Search/overview.md
     - Modularity:
       - Overview: v2.0/dev_docs/Fundamentals/Modularity/01-overview-IN-PROGRESS.md
       - Folder Structure: v2.0/dev_docs/Fundamentals/Modularity/02-folder-structure-IN-PROGRESS.md
