@@ -1,12 +1,11 @@
-﻿
-# Indexing in Platform Manager
+﻿# Indexing in Platform Manager
 You can work with various indexing features through Platform Manager.
 
 ## Manual Indexing
 
 You can initiate the indexing process manually by following these steps:
 
-1. Go to **Search Index** → Select the required document type -> Then click the **Build** button to start indexing → Select one of the two options:
+1. Go to **Search Index**, select the required document type, click the **Build** button to start indexing. At this point, you will need to choose one of the two options:
 
 * Build: Index all data without recreating
 

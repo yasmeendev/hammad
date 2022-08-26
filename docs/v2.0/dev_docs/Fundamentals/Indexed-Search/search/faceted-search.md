@@ -1,8 +1,11 @@
 ﻿# Faceted Search Overview and Configuration
 
-Faceted search (sometimes also called faceted navigation) allows users to navigate through a web site by applying filters for categories, attributes, price ranges and so on. The main idea behind faceted search is to present the attributes of the documents of the previous search result as filters, which can be used by the user to narrow down search results along with calculate statistical counts to aid.
+Faceted search (sometimes also called faceted navigation) allows users to navigate through a website by applying filters for categories, attributes, price ranges, and so on. The main idea behind faceted search is to present the attributes of the documents of the previous search result as filters, which can be used by the user to narrow down search results, along with calculating statistical counts to aid.
 
-For example, we need to query for all the shirts that are in color blue. The search engine has configured a facet on a category and one on the color attribute. Therefore, the search query will be executed using these 2 facets. The search result will return the entries that are aggregated both in the category facet with the shirt category ID and in the color facet with the value blue.
+For example, let's assume we need to query for all blue shirts. The search engine has a facet configured 
+on the category category level, and another one on the color attribute level. This way, the search query 
+will be executed using these two facets. The search result will return the entries that are aggregated 
+both in the category facet with the shirt category ID and in the color facet with the value *blue*.
 
 ![Faceted search example](media/02-faceted-search.png)
 
@@ -18,12 +21,12 @@ The muti-select faceting search policy is enabled by default and you do not need
 
 This section is based on example of catalog entities, where the properties available for faceted search are configured at the **Store** level in Platform Manager.
 
-1.  Open Stores → Select store → Click on the “Aggregation properties” widget → Pick catalog properties eligible for filtering in this Store:
+1.  Open **Stores**, select an appropriate store, click the **Aggregation Properties** widget, and pick catalog properties eligible for filtering in this store:
 
 ![Configuring Faceted Search](media/03-configuring-faceted-search.png)
 
-There are two facet types (aggregation types) are supported for configure:
+There are two facet types (aggregation types) that are supported for configuration:
 
--   Attribute facet: Displays and enables using all or selected values of the selected property for facet filters e.g `color: Red(1), Blue(22)` etc.
+-   Attribute facet: Displays and enables using all or selected values of the selected property for facet filters, e.g `color: Red(1), Blue(22)`, etc.
     
 -   Range facet: Enables aggregating facet counts across ranges of values. This type is applicable to the date, time, datetime, number, and money type fields.

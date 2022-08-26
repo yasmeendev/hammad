@@ -8,11 +8,11 @@ Starting version 3.201.0, Elasticsearch supports blue-green indexing. This means
 2. The indexing process will be run against this backup index.
 3. During the full indexation process, the current index will remain intact and one will be able to perform all search operations against it.
 4. After re-indexing is complete, the index will get swapped: the backup index will now become active, while the current one's role will switch to backup.
-5. To roll back to using the previous index, use the Swap Index feature: click *Show Backup Indices*, right click the row for the selected document type you want to switch to, and click *Swap Indices*; this will cause the backup and active indices to swap their roles again.
+5. To roll back to using the previous index, use the *Swap Index* feature: click *Show Backup Indices*, right click the row for the selected document type you want to switch to, and click *Swap Indices*; this will cause the backup and active indexes to swap their roles again.
 
-![Show Backup Indices](media/06-blue-green-show-backup.png)
+![Show Backup Indexes](media/06-blue-green-show-backup.png)
 
-![Swap Indices](media/07-blue-green-swap-indices.png)
+![Swap Indexes](media/07-blue-green-swap-indices.png)
 
 6. If you start the re-indexing process again, the previous backup index will be lost and all indexing jobs will run against the new backup index instead.
 
