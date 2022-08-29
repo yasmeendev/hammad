@@ -257,7 +257,7 @@ extra:
             -   title: User
                 icon: assets/icons/person.svg
                 description: I use or am going to use Virto solutions on a regular basis.
-                link: https://docs.virtocommerce.org/user-guide/getting-started/
+                link: v2.0/user_docs
             -   title: Developer
                 icon: assets/icons/code-square.svg
                 description: I need to know how the Virto platform works so that I may customize it best for my team or customers.
