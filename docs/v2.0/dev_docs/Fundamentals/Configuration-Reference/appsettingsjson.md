@@ -6,7 +6,7 @@ The configuration keys are hierarchic, and the most convenient way to manage the
 
 !!! note
     * All settings listed below are optional unless marked **Required**.
-<!---Rework Table to Bulleted List--->
+
 | Top Configuration Node | Child Node(s) | Default or Sample Value  | Description  |
 | ---------------------- | ------------- | ------------------------ | ------------ |
 | ConnectionStrings    |  |  | These **required** settings represent connection strings for VC Platform and modules.

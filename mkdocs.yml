@@ -91,6 +91,7 @@ nav:
       - Setting Up Redis Backplane for Scaling Out: v2.0/dev_docs/Fundamentals/Caching/03-setting-up-Redis.md
     - Configuration Reference:
       - Appsettings.json: v2.0/dev_docs/Fundamentals/Configuration-Reference/appsettingsjson.md
+      - Appsettings.json New: v2.0/dev_docs/Fundamentals/Configuration-Reference/appsettingsjson_new.md
     - Data Import:
       - Main Concept: v2.0/dev_docs/Fundamentals/Data-Import/01-main-concept.md
       - Building Custom Importer: v2.0/dev_docs/Fundamentals/Data-Import/02-building-custom-importer.md
