@@ -1,21 +1,35 @@
 # Adding New Catalog
 
-In order to add a new catalog, the user should pass through the following steps:
+To add a new catalog, you need to follow these steps:
 
-1. Navigate to the Catalog Module and click the ‘Add’ button;  
-1. The system will display the ‘New catalog’ blade and prompt the user to choose new catalog type;
-![New catalog](media/screen-new-catalog.png)
-1. The user selects the ‘Catalog’ button;
-1. The system will display the next blade ‘Catalog details’ and the user will be prompted to enter the Catalog name and specify the languages;
++ Navigate to the **Catalog** module and click the **Add** button.  
++ The **New catalog** screen will show up, and you will be prompted to choose the new catalog type:
+
+![New catalog](media/screen-new-catalog.png)<!---Fix image when new loc version is live-->
+
++ Select either **Physical Catalog** or **Virtual Catalog**, depending on what kind of catalog you need.
+
+!!! note
+	Physical and virtual catalogs are used for different purposes. While physical catalogs just house the relevant categories and products, virtual ones allow you to pick various items from other catalogs, while keeping the original linking. For instance, you may need to display seasonal goods together, each item belomnging technically to a different catalog. You may create any reasonable number of physical and virtual catalogs, as you deem fit.
+	
+!!! tip	
+	For more info on how physical and virtual catalogs differ, refer to the [Overview](index.md) and [Terminology](glossary.md) sections. 
+
++ The next screen, **Catalog Details**, will show up, prompting you to enter the catalog's name and specify the languages:
 
 ![New catalog](media/screen-new-catalog-details.png)
 
-1. The user enters the catalog name into the input filed and specifies the catalog languages by navigating to ‘Manage languages’ blade:
++ Provide the catalog name and specify the default and additional languages:
 
-     1. The user selects the default language from the drop-down box;
-     1. The user selects additional languages from the drop- down box;
-1. The user confirms selection by clicking the ‘OK’ button OR cancel the operation using the ‘Cancel’ button.
-1. The default and additional languages will be added to the new catalog.
+<!---image needed!--->
+	
++ Confirm your selection by clicking **OK**.
+
++ Click **Create**. Your catalog is ready to use!
+
+!!! tip
+	You can easily tell physical catalogs from virtual ones by the respective folder  or cloud icons:
+	<!---image--->
 
 ## Editing Default Language  
 

@@ -26,13 +26,15 @@ This section lists the most important terms, along with their definitions, used 
 
 **Bill of materials:** A special type of *Product* that is actually list of materials required for a specific item being purchased by the customer, which one may generate for internal purposes.
 
-***Note:*** *Bills of materials are internal entities that cannot be viewed by customers.*
+!!! note
+	Bills of materials are internal entities that cannot be viewed by customers.
 
 **Facet:** A set of *Properties* grouped together (e.g. size and color).
 
 **Variation:** Each *Product* may have one or more variations; for instance, a cell phone may come with various colors: blue, white, black, etc. You may create variations based on color, size, and other properties you configure.
 
-***Note:*** *Any variation is a separate entity that is created as a new Product; however, it does have to be linked to its master Product.*
+!!! note
+	Any variation is a separate entity that is created as a new Product; however, it does have to be linked to its master Product.
 
 **Association:** A tool that enables adding a block of related items to a *Product* or multiple products. For instance, that could be a widget with related products or accessories that go with the *Product* in question.
 
