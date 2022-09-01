@@ -228,6 +228,21 @@ nav:
     - Tutorials:
       - Creating Custom Module: v2.0/dev_docs/Tutorials-and-How-tos/Tutorials/creating-custom-module.md
       - Extending Domain Models: v2.0/dev_docs/Tutorials-and-How-tos/Tutorials/extending-domain-models.md
+  - User Documentation:
+    - Catalog:
+      - Overview: v2.0/user_docs/catalog/index.md
+      - Terminology: v2.0/user_docs/catalog/glossary.md
+      - Adding New Catalog: v2.0/user_docs/catalog/add-new-catalog.md
+      - Catalog Search: v2.0/user_docs/catalog/catalog-search.md
+      - Managing Categories: v2.0/user_docs/catalog/managing-categories.md
+      - Managing Products: v2.0/user_docs/catalog/managing-products.md
+      - Managing Product Variations: v2.0/user_docs/catalog/managing-product-variations.md
+      - Managing Properties: v2.0/user_docs/catalog/managing-properties.md
+      - Managing Search Index: v2.0/user_docs/catalog/managing-search-index.md
+      - Product Indexing: v2.0/user_docs/catalog/product-indexing.md
+      - Search Engine Architecture: v2.0/user_docs/catalog/search-engine-architecture-details.md
+      - Viewing Catalog and Product Details: v2.0/user_docs/catalog/view-catalogs-and-physical-items.md
+      - Viewing Catalog Properties: v2.0/user_docs/catalog/view-properties.md
 
 extra:
     social:

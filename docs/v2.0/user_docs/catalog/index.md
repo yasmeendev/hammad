@@ -31,11 +31,6 @@ In a nutshell, a physical catalog is a list of products or services that a compa
 ![Physical Catalogs](./media/overview/03_catalog_list_of_physical_catalogs.png)
 <p align=center><i>Figure 1: A list of physical catalogs</i></p>
 
-!!!tip
-	You can read more about physical catalogs here:<br>
-	[Viewing Catalogs and Physical Item Details](view-catalogs-and-physical-items.md)<br>
-	[How to Add a New Catalog](add-new-catalog.md)
-
 ## Virtual Catalogs
 
 You can create virtual catalogs based on one or more physical ones. For example, a virtual catalog may be used to display seasonal goods that, in technical terms, would be various products picked from multiple physical catalogs.
@@ -48,8 +43,9 @@ Basically, a virtual catalog is none other than just a way to display (visualize
 <p align=center><i>Figure 2: Creating virtual catalogs based on physical ones</i></p>
 
 !!!tip
-	You can read more about virtual catalogs here:	
-	[How to Add a Virtual Catalog](add-virtual-catalog.md)
+	You can read more about catalogs here:<br>
+	[Viewing Catalogs and Physical Item Details](view-catalogs-and-physical-items.md)<br>
+	[How to Add a New Catalog](add-new-catalog.md)
 
 ## Categories
 
@@ -107,7 +103,7 @@ You can configure the following attributes for your products:
 	You can read more about products here:<br>
 	[Managing Products](managing-products.md)<br>
 	[Product Indexing](product-indexing.md)<br>
-	[Managing Product Variations](managing-productt-variations.md)
+	[Managing Product Variations](managing-product-variations.md)
 
 ## Properties
 
