@@ -79,6 +79,9 @@ Any product may also have one or more variations; for consumer electronics, thos
 
 All variations inherit property values of the master product, such as description and assets, but may also override those values, when required.
 
+!!! note
+	You can also read more about variations in the Product Variation Concept section below.
+
 You can configure the following attributes for your products:
 
 1.	Custom properties
@@ -104,6 +107,13 @@ You can configure the following attributes for your products:
 	[Managing Products](managing-products.md)<br>
 	[Product Indexing](product-indexing.md)<br>
 	[Managing Product Variations](managing-product-variations.md)
+
+## Product Variation Concept
+In ecommerce, there is an ambiguity when it comes to defining a regular product and a product with variations. According to one point of view, a product is a real SKU that can be identified in the accounting system, can have its own description and price, etc. The other one regards a product as not a real SKU item but a container for a group of real products or variations that differ only in some variative properties.
+
+In Virto Commerce, we decided to get rid of this ambiguity; this is why we define only products as SKUs. In case you add any variations to a product, this product and its variation(s) will be linked. Thus, a product with variations is regarded as a collection of products or variations, one of them being the title product (master product), and, technically, being one of the variations at the same time. Every product linked to the master product may inherit its property values, such as description, assets, etc.); however, it may also override the values of those properties if they differ from those of the master product.
+
+For displaying a product with variations in Storefront, we use the master product, which is loaded into the system with all related variations. For product description, we also use the master product property values. The SKU selector for such a product is built using variation properties of the master product and all its variations.
 
 ## Properties
 
