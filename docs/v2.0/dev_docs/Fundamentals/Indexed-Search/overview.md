@@ -54,4 +54,6 @@ Here is how an index may look like:
 
 + [Elasticsearch](integration/configuring-elasticsearch.md)
 
++ [Elastic App Search](integration/configuring-elastic-app-search.md)
+
 + [Azure Cognitive Search](integration/configuring-azure-cognitive-search.md)
