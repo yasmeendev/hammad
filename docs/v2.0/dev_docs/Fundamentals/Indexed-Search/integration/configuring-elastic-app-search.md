@@ -1,4 +1,4 @@
-# Elastic App Search Guide
+# Configuring Elastic App Search
 
 This guide will explain how to configure and run Elastic App Search for your environment.
 
@@ -15,7 +15,7 @@ In order to start using Elastic App Search, you need to:
   npm install --global yarn
   ```
 
-### Install `vc-storefront`
+### Installing `vc-storefront`
 You will also need to install `vc-storefront` by:
 
 + Cloning [https://github.com/VirtoCommerce/vc-storefront](https://github.com/VirtoCommerce/vc-storefront) in to a local folder
@@ -258,8 +258,8 @@ To deploy Elastic App Search using Docker, do the following:
             driver: local
         ```
 
- !!! note
-	 There are custom settings for `enterprisesearch` in the `.yml` file:
+!!! note
+	There are custom settings for `enterprisesearch` in the `.yml` file:
 	 
    ```     
   app_search.engine.total_fields.limit=128

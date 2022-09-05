@@ -107,7 +107,7 @@ nav:
       - Integration:
         - Configuring Elasticsearch: v2.0/dev_docs/Fundamentals/Indexed-Search/integration/configuring-elasticsearch.md
         - Configuring Azure Cognitive Search: v2.0/dev_docs/Fundamentals/Indexed-Search/integration/configuring-azure-cognitive-search.md
-        - 
+        - Elastic App Search Overview: v2.0/dev_docs/Fundamentals/Indexed-Search/integration/elastic-app-search-overview.md
         - Configuring Elastic App Search: v2.0/dev_docs/Fundamentals/Indexed-Search/integration/configuring-elastic-app-search.md
     - Modularity:
       - Overview: v2.0/dev_docs/Fundamentals/Modularity/01-overview-IN-PROGRESS.md

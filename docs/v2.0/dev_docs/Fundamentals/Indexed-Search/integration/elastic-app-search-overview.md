@@ -1,339 +1,120 @@
-# Elastic App Search Guide
+# Elastic Search App Overview
 
-This guide will explain how to configure and run Elastic App Search for your environment.
+Search powers the way people shop and helps them find exactly what they are looking for, instantly. Virto Commerce can bring unparalleled relevance and personalized suggestions, optimize product discovery, turning browsers into buyers with seamless transactions that inspire repeat purchases.
+
+Virto Commerce and Elastic App Search bring the next level of ecommerce administration experience. You can use analytics to improve ecommerce search relevance without any development effort.
 
 ## Prerequisites
-In order to start using Elastic App Search, you need to:
 
-+ Install the latest version of `vc-platform` (3.x), either [on Windows](https://github.com/VirtoCommerce/vc-platform/blob/master/docs/getting-started/deploy-from-precompiled-binaries-windows.md) or [on Linux](https://github.com/VirtoCommerce/vc-platform/blob/master/docs/getting-started/deploy-from-precompiled-binaries-linux.md)
-+ Install the `vc-module-experience-api` module using [this guide](https://github.com/VirtoCommerce/vc-module-experience-api/blob/dev/docs/getting-started.md)
-+ Install the [vc-module-profile-experience-api](https://github.com/VirtoCommerce/vc-module-profile-experience-api) module
-+ Install [Node.js](https://nodejs.org/en/download/) v.16.X
-+ Install [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable) Package Manager by running this command:
+To start using Elastic App Search, you will need to install and configure the following:
 
-  ```
-  npm install --global yarn
-  ```
+1.  [Elastic App Search 8.x](https://www.elastic.co/enterprise-search)
+2.  [Virto Commerce 3.2xx](https://github.com/VirtoCommerce/)
+3.  [Elastic App Search Virto Commerce Module 3.2xx](https://docs.virtocommerce.org/modules/elastic-app-search/eas-setup-guide/)
+4.  [Virto Storefront 6.x](https://github.com/VirtoCommerce/)
+5.  [Vue B2B Theme 1.x](https://github.com/VirtoCommerce/)
 
-### Install `vc-storefront`
-You will also need to install `vc-storefront` by:
+!!! note
+	After completing the above steps, you will also need to rebuild the index in Virto Commerce.
 
-+ Cloning [https://github.com/VirtoCommerce/vc-storefront](https://github.com/VirtoCommerce/vc-storefront) in to a local folder
-+ Opening the **appsettings.json** file in a text editor
-- In the **Endpoint** section, changing **Url**, **UserName**, and **Password** with the correct path and credentials for Virto Commerce Platform:
+!!! note
+	If you are already using Virto Commerce, we recommend you testing it by using the Elastic App Search module.
 
-```json
- "Endpoint": {
-     "Url": "https://localhost:5001",
-     "UserName": "admin",
-     "Password": "store"
- }
-```
+## Using Analytics
 
-### Setting up `Vue B2B Theme`
-Finally, you will also need to set up `Vue B2B Theme`:
+Every time a customer searches for something on your website, they provide your business with valuable information about what they are looking for.
 
-+ Clone the repo into the folder where Storefront is installed:
+To view this info, you can use Kibana and Open:  **Enterprise Search**  →  **App Search**  →  **Engines**:
 
-```bash
-    git clone https://github.com/VirtoCommerce/vue-starter-theme.git "C:\vc-storefront\VirtoCommerce.Storefront\wwwroot\cms-content\themes\{store-name}\default"
-```
+![Kibana Engines](media/kibana-engines.png)
 
-+ Change the current directory to the default theme directory (change `{store-name}` to the store you want to use, e.g., `B2B-store`) :
+By default, Virto Commerce adds four engines: ***Product***, ***Category***, ***CustomerOrder***, and ***Member***.
 
-```bash
-    cd C:\vc-storefront\VirtoCommerce.Storefront\VirtoCommerce.Storefront\wwwroot\cms-content\themes\{store-name}\default
-```
-+ Install the dependencies:
+Choose the ***Product*** engine and review the `Overview`  section, where you can find basic information on product queries and API requests per day:
 
-```bash
-    npm install
-    yarn
-```
+![Overview Section](media/overview-section.png)
 
-+ Start the theme in the development mode with hot reload support:
+Choose ***Analytics*** to dive into customer experience and query data. Out-of-the-box data collection, metrics, and visualizations on search keywords give you all you need to glean insights from the user behavior:
 
-```bash
-yarn dev
-```
+![Analytics](media/analytics.png)
 
-- Or build the theme to get an installable artifact:
+![Query Analytics](media/query-analytics.png)
 
-```bash
-yarn compress
-```
+## Improving Search Relevance
 
-## Setting up Elastic App Search
+With Elastic App Search, you can make relevance and tune adjustments, or promote/demote results based on your findings in a few clicks, right from the management interface.
 
-### Deploying Elastic App Search using Docker
-To deploy Elastic App Search using Docker, do the following: 
+Below, you can find out how to improve the search relevance with:
 
-+ Install `Docker` for [Windows](https://docs.docker.com/desktop/install/windows-install/) or [Linux](https://www.docker.com/get-started/)
-+ Install `Elastic App Search` Container using `Docker-Compose`:
++  Synonyms
++  Curations
++  Relevance Tuning
 
-    + Create a directory and with a file named `.env` inside:
+### Using Synonyms
 
-        ```
-        STACK_VERSION=8.3.3
-        ELASTIC_PASSWORD=!!!changeme!!!
-        KIBANA_PASSWORD=!!!changeme!!!
-        ES_PORT=9200
-        CLUSTER_NAME=es-cluster
-        LICENSE=basic
-        MEM_LIMIT=1073741824
-        KIBANA_PORT=5601
-        ENTERPRISE_SEARCH_PORT=3002
-        ENCRYPTION_KEYS=secret
-        ```
+Sometimes, users will use different terminology than your context might expect.
 
-   + Create a strong password and place it instead of `!!!changeme!!!`
-   + Create a file named `docker-compose.yml` and place it with the `.env` file:
-   
-        ```yml
-        version: "2.2"
+In  the ***Top queries with no results***  section, you can find query results. For example, your customers might have searched for  `duplicator`, but when you go to Storefront and try searching  `duplicator`, you didn’t find any product for it:
 
-        services:
-        setup:
-            image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
-            volumes:
-            - certs:/usr/share/elasticsearch/config/certs
-            user: "0"
-            command: >
-            bash -c '
-                if [ x${ELASTIC_PASSWORD} == x ]; then
-                echo "Set the ELASTIC_PASSWORD environment variable in the .env file";
-                exit 1;
-                elif [ x${KIBANA_PASSWORD} == x ]; then
-                echo "Set the KIBANA_PASSWORD environment variable in the .env file";
-                exit 1;
-                fi;
-                if [ ! -f certs/ca.zip ]; then
-                echo "Creating CA";
-                bin/elasticsearch-certutil ca --silent --pem -out config/certs/ca.zip;
-                unzip config/certs/ca.zip -d config/certs;
-                fi;
-                if [ ! -f certs/certs.zip ]; then
-                echo "Creating certs";
-                echo -ne \
-                "instances:\n"\
-                "  - name: es01\n"\
-                "    dns:\n"\
-                "      - es01\n"\
-                "      - localhost\n"\
-                "    ip:\n"\
-                "      - 127.0.0.1\n"\
-                > config/certs/instances.yml;
-                bin/elasticsearch-certutil cert --silent --pem -out config/certs/certs.zip --in config/certs/instances.yml --ca-cert config/certs/ca/ca.crt --ca-key config/certs/ca/ca.key;
-                unzip config/certs/certs.zip -d config/certs;
-                fi;
-                echo "Setting file permissions"
-                chown -R root:root config/certs;
-                find . -type d -exec chmod 750 \{\} \;;
-                find . -type f -exec chmod 640 \{\} \;;
-                echo "Waiting for Elasticsearch availability";
-                until curl -s --cacert config/certs/ca/ca.crt https://es01:9200 | grep -q "missing authentication credentials"; do sleep 30; done;
-                echo "Setting kibana_system password";
-                until curl -s -X POST --cacert config/certs/ca/ca.crt -u elastic:${ELASTIC_PASSWORD} -H "Content-Type: application/json" https://es01:9200/_security/user/kibana_system/_password -d "{\"password\":\"${KIBANA_PASSWORD}\"}" | grep -q "^{}"; do sleep 10; done;
-                echo "All done!";
-            '
-            healthcheck:
-            test: ["CMD-SHELL", "[ -f config/certs/es01/es01.crt ]"]
-            interval: 1s
-            timeout: 5s
-            retries: 120
+![Searching for a product with no result](media/searching-for-duplicator.png)
 
-        es01:
-            depends_on:
-            setup:
-                condition: service_healthy
-            image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
-            volumes:
-            - certs:/usr/share/elasticsearch/config/certs
-            - esdata01:/usr/share/elasticsearch/data
-            ports:
-            - ${ES_PORT}:9200
-            environment:
-            - node.name=es01
-            - cluster.name=${CLUSTER_NAME}
-            - cluster.initial_master_nodes=es01
-            - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
-            - bootstrap.memory_lock=true
-            - xpack.security.enabled=true
-            - xpack.security.http.ssl.enabled=true
-            - xpack.security.http.ssl.key=certs/es01/es01.key
-            - xpack.security.http.ssl.certificate=certs/es01/es01.crt
-            - xpack.security.http.ssl.certificate_authorities=certs/ca/ca.crt
-            - xpack.security.http.ssl.verification_mode=certificate
-            - xpack.security.transport.ssl.enabled=true
-            - xpack.security.transport.ssl.key=certs/es01/es01.key
-            - xpack.security.transport.ssl.certificate=certs/es01/es01.crt
-            - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
-            - xpack.security.transport.ssl.verification_mode=certificate
-            - xpack.license.self_generated.type=${LICENSE}
-            mem_limit: ${MEM_LIMIT}
-            ulimits:
-            memlock:
-                soft: -1
-                hard: -1
-            healthcheck:
-            test:
-                [
-                    "CMD-SHELL",
-                    "curl -s --cacert config/certs/ca/ca.crt https://localhost:9200 | grep -q 'missing authentication credentials'",
-                ]
-            interval: 10s
-            timeout: 10s
-            retries: 120
+It is a common mistake that may to poor search relevance: you are selling movies, but they want  _films_.
 
-        kibana:
-            depends_on:
-            es01:
-                condition: service_healthy
-            image: docker.elastic.co/kibana/kibana:${STACK_VERSION}
-            volumes:
-            - certs:/usr/share/kibana/config/certs
-            - kibanadata:/usr/share/kibana/data
-            ports:
-            - ${KIBANA_PORT}:5601
-            environment:
-            - SERVERNAME=kibana
-            - ELASTICSEARCH_HOSTS=https://es01:9200
-            - ELASTICSEARCH_USERNAME=kibana_system
-            - ELASTICSEARCH_PASSWORD=${KIBANA_PASSWORD}
-            - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=config/certs/ca/ca.crt
-            - ENTERPRISESEARCH_HOST=http://enterprisesearch:${ENTERPRISE_SEARCH_PORT}
-            mem_limit: ${MEM_LIMIT}
-            healthcheck:
-            test:
-                [
-                    "CMD-SHELL",
-                    "curl -s -I http://localhost:5601 | grep -q 'HTTP/1.1 302 Found'",
-                ]
-            interval: 10s
-            timeout: 10s
-            retries: 120
+The Synonym feature builds  ***synonym sets***. A synonym set contains two or more queries that have similar meanings. Each synonym set can contain up to 32 words.
 
-        enterprisesearch:
-            depends_on:
-            es01:
-                condition: service_healthy
-            kibana:
-                condition: service_healthy
-            image: docker.elastic.co/enterprise-search/enterprise-search:${STACK_VERSION}
-            volumes:
-            - certs:/usr/share/enterprise-search/config/certs
-            - enterprisesearchdata:/usr/share/enterprise-search/config
-            ports:
-            - ${ENTERPRISE_SEARCH_PORT}:3002
-            environment:
-            - SERVERNAME=enterprisesearch
-            - secret_management.encryption_keys=[${ENCRYPTION_KEYS}]
-            - allow_es_settings_modification=true
-            - elasticsearch.host=https://es01:9200
-            - elasticsearch.username=elastic
-            - elasticsearch.password=${ELASTIC_PASSWORD}
-            - elasticsearch.ssl.enabled=true
-            - app_search.engine.total_fields.limit=128
-            - elasticsearch.ssl.certificate_authority=/usr/share/enterprise-search/config/certs/ca/ca.crt
-            - kibana.external_url=http://kibana:5601
-            mem_limit: ${MEM_LIMIT}
-            healthcheck:
-            test:
-                [
-                    "CMD-SHELL",
-                    "curl -s -I http://localhost:3002 | grep -q 'HTTP/1.1 302 Found'",
-                ]
-            interval: 10s
-            timeout: 10s
-            retries: 120
+To manage synonyms through the App Search dashboard, choose  ***Synonyms***, choose  ***Create a synonym set***, and add a synonym set.
 
-        volumes:
-        certs:
-            driver: local
-        enterprisesearchdata:
-            driver: local
-        esdata01:
-            driver: local
-        kibanadata:
-            driver: local
-        ```
+Once you click ***Save***, the synonym set will be applied:
 
- !!! note
-	 There are custom settings for `enterprisesearch` in the `.yml` file:
-	 
-   ```     
-  app_search.engine.total_fields.limit=128
-  ```
-  
-  + Bring up the Elastic cluster with the following command (run it from the directory where the `.yml` file is):
-  
-        ```
-        docker-compose up
-    ``` 
-    
-+ Access Kibana at http://localhost:5601. Log in as `elastic` for username, your password being the value you provided for ELASTIC_PASSWORD in your `.env` file. Then Access Elasticsearch at http://localhost:9200.
+![Synonym set](media/synonym-set.png)
 
-!!!tip 
-	You can find more info on deploying Elastic App Search with Docker [here](https://www.elastic.co/guide/en/enterprise-search/8.3/docker.html).
+Now, if your customer searches  for `duplicator`, they will see the appropriate product set:
 
-### Setting up Elastic App Search on Platform
-To install Elastic App Search for Virto Platform, do the following:
+![Duplicator product set displayed](media/duplicator-product-set.jpeg)
 
-+ Install the [vc-module-elastic-app-search](https://github.com/VirtoCommerce/vc-module-elastic-app-search) module
-+ Modify the Platform configuration to use Elastic App Search:
+Configuring  ***Synonyms***  is a useful way to guide your users to the most relevant content. It is most useful when you know the precise terms they are searching for. For that, you should explore ***Analytics***, so that you might be aware of your insightful capabilities.
 
-```json
-"Search": {
-    "Provider": "ElasticAppSearch",
-    "Scope": "default",
-    "ElasticAppSearch": {
-        "Endpoint": "https://localhost:3002",
-        "PrivateApiKey": "private-key"
-    }
-}
-```
+If you are looking to provide even more precise and curated results, venture to the ***Curations*** section.
 
-+ Open `Kibana` (localhost:5601), navigate to `Enterprise Search` > `Open App Search` > `Credentials`, copy Private Key, and assign it to the `PrivateApiKey` setting:
+### Curations
 
-    ![Kibana Private Key](./media/kibana-private-key.png)
+Curations allow search operators to customize search results for specific queries.
 
-+ Run Platform and build the indexes. You should see the `ElasticAppSearch` value for `Provider`: 
+For instance, you can use promoted products to ensure that the specified products always match a query and receive the highest relevance scores. Imagine an ecommerce store with featured product results.
 
-    ![Elastic App Search as Provider](./media/admin-index.png)
+Similarly, use  `hidden documents`  to exclude particular products from the results.
 
-+ Navigate back to `Kibana` and confirm that engines (indexes) are created:
+Here is how you can boost product search score for, e.g., `office printer`  search query.
 
-    ![Indexes](./media/kibana-overview.png)
+Manage curations using Kibana:
 
-## Running Storefont and Working with App Search
+1.  Open  ***Enterprise Search***  →  ***App Search***  →  ***Engines***  →  ***product_  engine*** →  ***Curations***
+2.  Add a curation for  `office printer`
+3.  In our example, we promote two products: ***565507636 - HP OfficeJet Pro 6978 All-in-One Multifunction*** and ***551879675 - HP LaserJet Pro MFP M521dn - multifunction printer (B/W)***:
 
-### Running `vc-storefront` Application
+![Manage Curation screen](media/manage-curation-screen.png)
 
-+ Navigate to the Storefront root directory:
+Once you click ***Save***, the curation will be applied:
 
-```bash
-cd C:\vc-storefront\VirtoCommerce.Storefront
-```
+![Curation applied](media/curation-applied.jpeg)
 
-+ Build and run the Storefront application:
+!!! note
+	Currently, Elastic App Search offers an upgrade to the ***Platinum*** subscription to harness the power of machine learning. By analyzing your engine’s analytics, App Search is able to suggest new or updated curations. This way, you can effortlessly help your users find exactly what they are looking for.
 
-```bash
-dotnet run
-```
+If you are looking for advanced results, continue reading to the ***Relevance Tuning*** section.
 
+### Relevance Tuning
 
-### Working with Elastic App Search
+Out of the box, App Search provides quality search relevance.
 
-- In `Kibana`, open the App Search `Engines` overview page. Here can see four engines created after rebuilding the indexes. Clicking on the `products` engine, you will see general analytics about incoming queries and will be able to manage indexed documents and tune engine behavior with `Relevance Tuning`, `Synonyms`, and `Curations`.
+Built on top of Elasticsearch, App Search is a managed, the expertly crafted distillation of its finest points. It provides tools to help you further tune the search experience to optimize for your own needs.
 
-+ Open the `Documents` menu to examine all indexed documents and their content. 
+We recommend you reviewing [this step by step guide](https://www.elastic.co/guide/en/app-search/8.3/relevance-tuning-guide.html).
 
-+ Open the `Schema` menu to see which fields the documents contain. You can examine product index contents in the Platform admin UI by opening the ***Products*** screen and clicking the ***Index*** widget.
+## Performance
 
-+ Open `Synonyms` and add search query synonyms. For instance, associating the ***Sony*** keyword with the ***Samsung*** keyword and trying out the same query as before will yield a different result: you will also get all documents relevant to the ***Samsung*** keyword. Go to Storefront and see that the integration works and you get both ***Sony*** and ***Samsung*** products by the ***Sony*** keyword:
+After running load tests and comparing Elasticsearch Vs Elastic App Search, we can confirm that both engines are ready for production and demonstrate the same results.
 
-![Kibana Synonyms](./media/kibana-synonims.png)
+## Limitations
 
-+ `Curation` is a tool, by which you can handpick the results for certain search queries. E.g., search by the ***Sony*** keyword again and examine the entries. You can delete a specific document from the result set by clicking the ***Delete*** button, and add a new document by clicking the ***Add manually*** button and selecting a document from a different result set. Save the curation and check it in the Storefront:
-
-![Kibana Curation](./media/kibana-curation.png)
+For performance and historical reasons, App Search has default limitations on some objects and API calls. You can review the current limitations [here](https://www.elastic.co/guide/en/app-search/8.3/limits.html).
