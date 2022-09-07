@@ -245,6 +245,8 @@ nav:
       - Search Engine Architecture: v2.0/user_docs/catalog/search-engine-architecture-details.md
       - Viewing Catalog and Product Details: v2.0/user_docs/catalog/view-catalogs-and-physical-items.md
       - Viewing Catalog Properties: v2.0/user_docs/catalog/view-properties.md
+    - Marketing:
+      - Overview: v2.0/user_docs/marketing/overview.md
 
 extra:
     social:
