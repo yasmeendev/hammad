@@ -247,6 +247,14 @@ nav:
       - Viewing Catalog Properties: v2.0/user_docs/catalog/view-properties.md
     - Marketing:
       - Overview: v2.0/user_docs/marketing/overview.md
+      - Managing Content Items: v2.0/user_docs/marketing/managing-content-items.md
+      - Adding Advertising Spot: v2.0/user_docs/marketing/advertising-spot.md
+      - Managing Published Content: v2.0/user_docs/marketing/managing-published-content.md
+      - Managing Content Placeholders: v2.0/user_docs/marketing/managing-content-placeholders.md
+      - Managing Promotions: v2.0/user_docs/marketing/managing-promotions.md
+      - Combining Active Promotions: v2.0/user_docs/marketing/combining-active-promotions.md
+      - Promotion Rules: v2.0/user_docs/marketing/promotion-rules.md
+      - Publishing Conditions: v2.0/user_docs/marketing/publishing-conditions.md
 
 extra:
     social:

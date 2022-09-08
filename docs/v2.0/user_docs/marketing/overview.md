@@ -6,7 +6,7 @@ Virto Commerce Marketing is a dedicated module for managing various marketing ac
 Virto's Marketing module provides the following key features:
  
 + Managing [dynamic content](#dynamic-content) for Storefront
-+ Managing [content publishing](#working-with-dynamic-content)
++ Managing [published content](#working-with-dynamic-content)
 + Creating and running [promotions](#promotions)
 
 <!---## Installing Marketing Module
@@ -31,7 +31,7 @@ Dynamic Content is configurable through Virto Commerce Platform Manager, which m
 Dynamic Content consists of four independent components:
 
 + ***Dynamic Content***
-+ ***Content Publishing***
++ ***Published Content***
 + ***Content Type***
 + ***Content Placeholder***
 
@@ -52,6 +52,14 @@ The following Dynamic ***Content Types*** are shipped with Virto Commerce out-of
 | ImageNonClickable |Displays an image. For example, use this type to alert customers to a shopping cart promotion that will give them a discount on checkout |Alternative text - text if image can not be displayed. ImageFilePath - path to the image file |
 |ProductsWithinCategory |Displays products of the category as slideshow |Category code - code of the category. Title - user friendly title of the category. Item count - how many items will be presented in the slideshow. New items - switch to show only new items.|
 
+For more information on managing dynamic content, please refer to these dedicated guides:
+
+[Managing Content Items](managing-content-items.md)
+
+[Managing Content Placeholders](managing-content-placeholders.md)
+
+[Managing Content Publishing](managing-published-content.md)
+
 ### Tags
 
 The Dynamic Content functionality can be used to show specific content to targeted customers. The system determines the customers properties via Tags. Virto Commerce incorporates tagging system that is used to set and evaluate tags that the user can use to segment Customers, and to decide when, where and to which Customer this content should be displayed.
@@ -69,54 +77,6 @@ A Marketer or other Manager user with granted Dynamic Content permissions, uses 
 
 !!! tip
 	Refer to [this article](publishing-conditions.md) if you want to learn more about publishing conditions.
-
-### Working with Dynamic Content
-
-Once created, the Dynamic Content can be reused as many times as required in Content Publishing items.
-
-Creating ***Dynamic Content*** in Virto Commerce management application specifies what Content to deliver (e.g. Image, Clickable image, Flash etc.) and setting up its parameters.
-
-Creating ***Content Publishing*** specifies which Dynamic Content(s) to view and under which conditions the Dynamic Content should be available.
-
-!!! warning
-	Dynamic Content will not be available on the front end until it is assigned to any of the Content Publishing items.
-
-For more information on managing content, please refer to these dedicated guides:
-
-[Managing Content Items](managing-content-items.md)
-
-[Managing Content Placeholders](managing-content-placeholders.md)
-
-[Managing Content Publishing](managing-content-publishing.md)
-
-### Adding Advertising Spot
-
-In order to add an advertising spot via Marketing Module, the user should first prepare the dynamic content infrastructure and go through the following steps:  
-
-1. Create a content item.
-1. Create a content placeholder.
-1. Create a content publishing.  
-
-Once the Dynamic content infrastructure is prepared, the user should add the dynamic content to a web site:  
-
-1. The user should open the web page HTML file;
-1. Insert the code into the HTML file. The ID is the placeholder name:
-
-```html
-<vc-content-place id="Right banner 240x400" class="col-sm-4 col-md-4 rightblock">
-</vc-content-place>
-```
-
-In order to add a real advertising content, do the following:  
-
-1. Open Marketing Module;
-1. Select ‘Dynamic content’ tab;
-1. Select ‘Content items’;
-1. Select a specific content item from the list, to which the advertising content will be applied;
-1. Insert the code into HTML text box and save the changes;
-1. The new content will appear immediately on the web page.  
-
-![Fig. Advertising Sport](media/screen-advertising-spot.png)
 
 ## Promotions
 

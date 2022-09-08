@@ -13,7 +13,8 @@ The following table details how promotions rewards are applied compared to other
 
 ![Fig. Table](media/screen-table.png)
 
-**Important**: Stackable combination policy has a constraint- Stackable combination policy has a constraint - if the total order or any object price is less than zero after a promotion is applied, then this reward will be skipped and next reward by priority will be taken.
+!!! warning
+	Stackable combination policy has a constraint: if the total order or any object price is less than zero after a promotion is applied, this reward will be skipped and next reward by priority will be taken.
 
 ### Switch on Promotion Stackable Combination Policy  
 

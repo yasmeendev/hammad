@@ -1,15 +1,24 @@
-# Manage Dynamic Content
+# Manage Dynamic Content Items
 
-## Create Content Items
+Once created, the Dynamic Content can be reused as many times as required in Content Publishing items.
 
-Creating a **Dynamic Content** in VirtoCommerce platform manager requires that the user provides a name for the Dynamic Content, selects a Content type and provides values for the type’s parameters.
+Creating ***Dynamic Content*** in Virto Commerce management application specifies what content to deliver (e.g. image, clickable image, flash, etc.) and which parameters to set up.
 
-1. The user opens the Marketing Module and selects **‘Dynamic Content’**;
+Creating ***Content Publishing*** specifies which dynamic content items should be displayed and under which conditions they should be available.
+
+!!! warning
+	Dynamic Content will not be available on the front end until it is assigned to any of the Content Publishing items.
+
+## Creating Content Items
+
+Creating a dynamic content item in Virto Commerce Platform Manager assumes the following steps:
+
+1. The user opens the Marketing Module and selects ***Dynamic Content***;
 1. The system will display the ‘Dynamic Content’ screen with the following list:  
      1. Dynamic items;
      1. Content placeholders;
      1. Content publishing.  
-1. The user selects **‘Content items’**;
+1. The user selects ***Content items***;
 1. The ‘Content items’ screen with the existing list of Content items will be displayed;  
      1. If no Content items were previously added, the ‘Content items’ screen will be empty.
 1. The user clicks the ‘Add’ button on the top of the screen;
@@ -39,18 +48,19 @@ Creating a **Dynamic Content** in VirtoCommerce platform manager requires that t
 
 ![Edit Content Type](media/screen-edit-content-type.png)
 
-## Edit Content Item
+## Editing Content Item
 
 1. In order to edit the Dynamic Content, the user should select the ‘Marketing’ Module, navigate to Dynamic Content->Content items and select the Content item he wants to edit;
 1. The system will display the ‘Edit content item element’ screen;
 1. The user makes the editing needed and clicks ‘Save’;
 1. The system will save the changes made.  
 
-**Important**: If the user edits also the Content type of the Dynamic Content, the sensitive properties of the item will be changed too!
+!!! warning
+	If you edit the type of a dynamic content item, the relevant properties of such an item will be changed as well.
 
 ![Fig. Edit Content Item](media/screen-edit-content-item.png)
 
-## Delete Content Item
+## Deleting Content Item
 
 1. The user selects ‘Marketing’ Module, navigates to Dynamic content-> Content items and selects the Content item he wants to delete;
 1. The system will open the ‘Edit content item element’ screen;
@@ -58,7 +68,8 @@ Creating a **Dynamic Content** in VirtoCommerce platform manager requires that t
 1. The system will display a deletion confirmation ‘Are you sure you want to delete this content item?’- ‘Yes’, ‘No’, ‘Cancel’;
 1. The user selects the ‘Yes’ option and the system will delete the content item.  
 
-**Important**: Only the Dynamic Content that doesn't belong to a Content publishing can be deleted otherwise the system will display a message informing the user that the associated Content Publishing should be deleted first.
+!!! warning
+	You can only delete those dynamic content items that do not belong to published content; otherwise, the system will display a message saying the associated published content should be deleted first.
 
 ![Fig. Delete Content Item](media/screen-delete-content-item.png)
 
