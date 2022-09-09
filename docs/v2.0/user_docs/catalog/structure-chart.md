@@ -1,4 +1,4 @@
-#Catalog Structure Chart
+# Catalog Structure Chart
 
 The chart below depicts the main entities in the Catalog module with their core properties and attributes and shows the connections between them.
 
