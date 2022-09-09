@@ -1,13 +1,16 @@
 # Manage Promotions
 
-## View Promotions
+## Viewing Promotions
 
 1. The user browses the Marketing Module and navigates to Promotions tab;
 1. The system will display the list of existing Promotions on 'Promotions' blade.
 
 ![Fig. View Promotions](media/screen-promotions-blade.png)
 
-## Create New Promotion
+## Creating New Promotion
+
+!!! warning
+	To create a promotion, you must have the ***Manage promotions*** permission.
 
 1. The user opens Marketing Module->navigates to Promotions tab and clicks the 'Add' button;
 1. The system will display the 'New Promotion' screen;

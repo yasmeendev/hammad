@@ -2,18 +2,17 @@
 
 Virto Commerce Marketing is a dedicated module for managing various marketing activities, campaigns, and promotions you may run within your online store. This section will guide you through its key features and concepts, and will briefly tell you how to work with those.
 
+## Related Components
+To view the source code of Virto Commerce Marketing module, check out our [GitHub repository](https://github.com/VirtoCommerce/vc-module-marketing).
+
+To download the latest Marketing module release, click [here](https://github.com/VirtoCommerce/vc-module-marketing/releases).
+
 ## Key Features
 Virto's Marketing module provides the following key features:
  
 + Managing [dynamic content](#dynamic-content) for Storefront
 + Managing [published content](#working-with-dynamic-content)
 + Creating and running [promotions](#promotions)
-
-<!---## Installing Marketing Module
-There are two ways with which you can install Virto's Marketing module:
-
-+ *Automatically*: In VC Manager, go to ***Configuration -> Modules -> Marketing module -> Install***
-+ *Manually*: Download module ZIP package from [here](https://github.com/VirtoCommerce/vc-module-marketing/releases); then, in VC Manager, go to ***Configuration -> Modules -> Advanced -> Upload module package -> Install***.-->
 
 ## Dynamic Content
 
@@ -80,10 +79,17 @@ A Marketer or other Manager user with granted Dynamic Content permissions, uses 
 
 ## Promotions
 
-***Promotion*** is a marketing tool used to increase sales. Promotions are store-specific and cannot be shared across multiple stores. To create a promotion, you must have the ***Manage promotions*** permission.
+***Promotion*** is a marketing tool used to boost sales. In Virto Commerce, you can add a lot of various kinds of promotions to your stores that would yield such rewards as discounts, shipping discounts, or gifts. You can also create or import coupons that could be later used by your customers.
 
-!!! warning
-	In order to apply a promotion to multiple stores, you will need to manually recreate it for each relevant store.
+Each promotion is valid under specific [conditions](promotion-rules.md) you can configure, and may provide one or more rewards.
+
+!!! note
+	In Virto, promotions are highly customizable and include conditions for customers matching speficic criteria, currencies, products, stock quantity, etc.
+	
+	For instance, you can configure that customers residing in NYC and grabbing two last spartphones would get 75% off for shipping and two phone cases as a gift.
+
+!!! note
+	Promotions may be both store-specific and shared across multiple stores.
 
 For more information on managing promotions, please refer to these dedicated guides:
 

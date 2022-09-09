@@ -234,6 +234,7 @@ nav:
     - Catalog:
       - Overview: v2.0/user_docs/catalog/index.md
       - Terminology: v2.0/user_docs/catalog/glossary.md
+      - Structure Chart: v2.0/user_docs/catalog/structure-chart.md
       - Adding New Catalog: v2.0/user_docs/catalog/add-new-catalog.md
       - Catalog Search: v2.0/user_docs/catalog/catalog-search.md
       - Managing Categories: v2.0/user_docs/catalog/managing-categories.md

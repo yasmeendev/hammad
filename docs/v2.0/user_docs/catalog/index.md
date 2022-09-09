@@ -12,17 +12,10 @@ As shown above, you can have one or more stores which both physical and virtual 
 !!! note
 	Fulfillment centers are relevant to physical products only. If a store markets digital content, such as software or music, it will not require any such centers.
 
-Another chart below depicts the main entities in the Catalog module with their core properties and attributes and shows the connections between them.
+## Related Components
+To view the source code of Virto Commerce Catalog module, check out our [GitHub repository](https://github.com/VirtoCommerce/vc-module-catalog).
 
-![Catalog Core Entities and Their Linking](./media/overview/02_catalog_overview_chart_AK.png)
-<p align=center><i>Chart 2: Core entities and their linking in Virto Catalog</i></p>
-
-***Notes to the Chart:***
-
-1.	You can have any number of stores. However, each store must have at least one catalog.
-2.	A catalog may have multiple categories and/or products or may not have any at all.
-3.	*Catalog* and *Product* are logical categories that may only appear as physical or virtual for the former, and physical or digital for the latter.
-4.	While sharing some attributes in common, physical and digital products do have unique ones, such as *Track Inventory* for physical product or *User Agreement* for digital one.
+To download the latest Catalog module release, click [here](https://github.com/VirtoCommerce/vc-module-catalog/releases).
 
 ## Physical Catalogs
 
