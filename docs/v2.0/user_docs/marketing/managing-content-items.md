@@ -4,7 +4,7 @@ Once created, the Dynamic Content can be reused as many times as required in Con
 
 Creating ***Dynamic Content*** in Virto Commerce management application specifies what content to deliver (e.g. image, clickable image, flash, etc.) and which parameters to set up.
 
-Creating ***Content Publishing*** specifies which dynamic content items should be displayed and under which conditions they should be available.
+Creating ***Published Content*** specifies which dynamic content items should be displayed and under which conditions they should be available.
 
 !!! warning
 	Dynamic Content will not be available on the front end until it is assigned to any of the Content Publishing items.
@@ -15,10 +15,13 @@ Creating a dynamic content item in Virto Commerce Platform Manager assumes the f
 
 1. The user opens the Marketing Module and selects ***Dynamic Content***;
 1. The system will display the ‘Dynamic Content’ screen with the following list:  
-     1. Dynamic items;
-     1. Content placeholders;
-     1. Content publishing.  
-1. The user selects ***Content items***;
+     1. Content items
+     1. Content placeholders
+     1. Published content  
+1. The user selects ***Content items***
+
+![Dynamic Content](media/screen-dynamic-content.png)<!---add image with Dynamic Content highlighted-->
+
 1. The ‘Content items’ screen with the existing list of Content items will be displayed;  
      1. If no Content items were previously added, the ‘Content items’ screen will be empty.
 1. The user clicks the ‘Add’ button on the top of the screen;
@@ -32,21 +35,22 @@ Creating a dynamic content item in Virto Commerce Platform Manager assumes the f
      1. ‘Content item description’ text field- required;
      1. ‘Content type’ drop down optional;
      1. The ‘Create’ button disabled if the required fields are empty.  
-1. The user fills out the required fields, selects the Content type (if needed) and clicks the ‘Create’ button;
-1. The system will create the Content item and display it on the list.  
+1. The user fills out the required fields, selects the Content type (if needed) and clicks the ‘Create’ button:
 
-![Fig. Dynamic Content](media/screen-dynamic-content.png)
+![Adding Content Item](media/screen-add-content-item.png)
 
-![Fig. Add Content Item](media/screen-add-content-item.png)
+1. The system will create the Content item and display it in the list:
+ 
+<!---add image-->
 
-### Edit Content Type
+### Editing Content Type
 
 1. The user clicks on the ‘Edit’ button next to the ‘Content type’;
 1. The system will display the ‘Dictionary values’ screen;
 1. The user enters the Dictionary entry name into the correspondent input text field and click the ‘Add’ button;
 1. The new value will be added and displayed on the ‘Current values’ list and under the Content type’ drop down.
 
-![Edit Content Type](media/screen-edit-content-type.png)
+![Editing Content Type](media/screen-edit-content-type.png)
 
 ## Editing Content Item
 
@@ -58,7 +62,7 @@ Creating a dynamic content item in Virto Commerce Platform Manager assumes the f
 !!! warning
 	If you edit the type of a dynamic content item, the relevant properties of such an item will be changed as well.
 
-![Fig. Edit Content Item](media/screen-edit-content-item.png)
+![Fig. Editing Content Item](media/screen-edit-content-item.png)
 
 ## Deleting Content Item
 
@@ -71,6 +75,6 @@ Creating a dynamic content item in Virto Commerce Platform Manager assumes the f
 !!! warning
 	You can only delete those dynamic content items that do not belong to published content; otherwise, the system will display a message saying the associated published content should be deleted first.
 
-![Fig. Delete Content Item](media/screen-delete-content-item.png)
+![Fig. Deleting Content Item](media/screen-delete-content-item.png)
 
-![Fig. Confirm Deletion](media/screen-confirm-deletion.png)
+![Fig. Confirm Delete](media/screen-confirm-deletion.png)

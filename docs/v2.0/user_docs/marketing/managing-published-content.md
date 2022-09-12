@@ -1,6 +1,8 @@
-# Manage Content Publishing
+# Managing Published Content
 
-## Create Content Publishing
+This section explains you how to manage published content in Virto Commerce Marketing.
+
+## Creating Published Content
 
 Content publishing sets the delivery conditions of the Dynamic Content. Therefore, before creating Content Publishing the required Dynamic Content and Content Place should be registered (created) in the system.
 

@@ -34,22 +34,25 @@ Dynamic Content consists of four independent components:
 + ***Content Type***
 + ***Content Placeholder***
 
-The first two components, ***Dynamic Content*** and ***Content Publishing***, can be configured through Virto Commerce Platform Manager by the marketing team members. Dynamic Content provides a name and a description of the type of content to be displayed, while the Content Publishing object specifies when, under what conditions, and where the Dynamic Content will appear.
+The first two components, ***Dynamic Content*** and ***Published Content***, can be configured through Virto Commerce Platform Manager by your marketing team members. ***Dynamic Content*** provides a name and a description of the type of content to be displayed, while ***Published Content*** objects specify when, under what conditions, and where the Dynamic Content will appear.
 
-The ***Content Placeholder*** is also created via Virto Commerce platform manager, but they are created by developers, web designers and system management personnel. As soon as the  web developer adds the Content Place to a template, the developer or another user with appropriate permissions must register it in Virto Commerce platform manager.
+***Content Placeholders*** are also created through Virto Commerce Platform Manager; however, this requires some effort from developers, web designers, and system management. As soon as a web developer adds a content placeholder to a template, another developer or user with appropriate permissions must register it in Virto Commerce Platform Manager.
 
-The ***Content type*** is a template used to define the Dynamic Content Type. It describes how a particular content type is displayed and what information is required for it to be displayed. Virto Commerce includes several Content types for the most common types of Dynamic Content. For example, there is a Content type to display images with links (banner). Another one to display product data (product with image and price).
+***Content Type*** is a template used to define the dynamic content type, i.e. how a particular content type is displayed and what is required for it to appear.
 
-The following Dynamic ***Content Types*** are shipped with Virto Commerce out-of-the-box. Each of them requires one or more parameter values to specify things such as: what image file should be displayed or what the target web page should display after clicking on the element.
+!!! note
+	Virto Commerce offers varuious content types out-of-the-box. For example, there is a content type to display banners, i.e. images with links, and another one to display product data (product with an image and price).
+
+The table below shows the content types supplied by Virto Commerce by default. Each of them requires one or more parameter values to specify such things as image files, links to web pages, etc.
 
 
-| Content type | Description | Parameters |
+| Content Type | Description | Parameters |
 |--------------|-------------|------------|
-|Flash | Displays an animated Flash file that cycles through three images. This Flash animation shows each of three images in succession, each having a clickable link that shows the shopper a different promotion. You will need to specify the URLs for each link within the Flash file.| FlashFilePath - path to the Flash animation file, Link1Url, Link2Url, Link3Url - enter the complete URL to the target page (item, promotion etc)|
-| Html | Displays HTML content | RawHtml - enter raw Html formatted text here |
-|ImageClickable |Displays an image that can be clicked to perform some action. For example, redirect to another page, product or promotion |Alternative text - text if the image can not be displayed. ImageUrl - link to the image. TargetUrl - link to the target when image clicked. Title - text (optional) |
-| ImageNonClickable |Displays an image. For example, use this type to alert customers to a shopping cart promotion that will give them a discount on checkout |Alternative text - text if image can not be displayed. ImageFilePath - path to the image file |
-|ProductsWithinCategory |Displays products of the category as slideshow |Category code - code of the category. Title - user friendly title of the category. Item count - how many items will be presented in the slideshow. New items - switch to show only new items.|
+|Flash | Displays an animated Flash file that includes three images, each having a clickable link that leads to a different promotion. You will need to specify the URLs for each link within the Flash file.| *FlashFilePath:* Path to the Flash animation file.<br>*Link1Url, Link2Url, Link3Url:* Full URL to the target page (item, promotion, etc.)|
+| Html | Displays HTML content | *RawHtml:* Raw HTML formatted text. |
+|ImageClickable |Displays an image that can be clicked to perform an action, e.g., redirect to another page, product, or promotion. |*Alternative text:* Text that is displayed in case the image cannot be opened.<br>*ImageUrl:* Link to the image.<br>TargetUrl: Link to the page the clickable image leads to.<br>Title: Optional title text.|
+| ImageNonClickable |Displays a non-clickable image, e.g., to let the customers know about a promotion. |*Alternative text:* Text that is displayed in case the image cannot be opened.<br>*ImageFilePath:* Path to the image file.|
+|ProductsWithinCategory |Displays products within a specific category as a slideshow. |*Category code:* Code of the category in question.<br>*Title:* User friendly title of the category.<br>*Item count:* Number of items in the slideshow.<br>*New items:* Switch to show only new items.|
 
 For more information on managing dynamic content, please refer to these dedicated guides:
 
@@ -61,18 +64,16 @@ For more information on managing dynamic content, please refer to these dedicate
 
 ### Tags
 
-The Dynamic Content functionality can be used to show specific content to targeted customers. The system determines the customers properties via Tags. Virto Commerce incorporates tagging system that is used to set and evaluate tags that the user can use to segment Customers, and to decide when, where and to which Customer this content should be displayed.
+You can use the dynamic content feature to display specific content to the customers being targeted. Technically, this targeting is managed through tags. Virto Commerce incorporates a tagging system that is used to set and evaluate tags used to segment customers and to decide when, where, and to which customer the relevant piece of content should be displayed.
 
 The tagging data about a customer is captured in a variety of ways, including the following:
 
-1. Information provided in a registered customer account;
-1. Information entered by a Customer Service about a customer during the customer's service call;
-1. Target and referring URLs and search terms captured when the user clicks a link that brings them to a storefront;
-1. Customer Geo location.
+1. Information provided upon customer signup.
+2. Information entered by a customer service agent about a customer during the call.
+3. Target and referring URLs and search terms captured when a user clicks a link that brings them to Storefront.
+4. Customer location.
 
-Information captured by the tags is stored in the user’s session while he shops in on storefront. The information can then be used to evaluate whether the customer meets the conditions set for displaying the Dynamic Content. Tag information is captured only when the customer first visits the storefront during the browser session.
-
-A Marketer or other Manager user with granted Dynamic Content permissions, uses the tags when creating conditions that determine whether a customer will see a piece of Dynamic Content or not.
+The data captured by the tags is stored within the user session while the user continues shopping in Storefront. This data can then be used to evaluate whether the customer meets the conditions set for displaying the dynamic content. You can set those conditions whenever you have the ***Dynamic Content*** permissions.
 
 !!! tip
 	Refer to [this article](publishing-conditions.md) if you want to learn more about publishing conditions.
