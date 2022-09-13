@@ -1,9 +1,9 @@
 # Combine Active Promotions
 
-VirtoCommerce Marketing Module represents two basic promotion combination policies:  
+Virto Commerce Marketing module supplies two basic promotion combination policies:  
 
-1. **Best reward policy** - select the promotion reward, that benefits a customer the most.
-1. **Combine stackable policy** - If your store has multiple active promotions, shoppers can qualify for multiple promotions at a time.  
+1. ***Best reward policy*** - select the promotion reward, that benefits a customer the most.
+1. ***Combine stackable policy*** - If your store has multiple active promotions, shoppers can qualify for multiple promotions at a time.  
 
 ## Combine Stackable Policy
 
