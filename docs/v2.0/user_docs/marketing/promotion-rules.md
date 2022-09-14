@@ -1,71 +1,82 @@
 # Promotion Rules
 
-**Promotion rules** define the behavior and effects of promotions. There are two types of promotion rules:
+Promotion rules, or conditions, define the behavior and effects of your promotions. Just like [publish conditions](publish-conditions.md) you use for customizing the display of your content, promotion rules allow you to precisely adjust your campaign targeting specific customers, in line with various catalog and cart conditions, and offering specific rewards.
 
-* Conditions
-* Effects
+## Customer Targeting
 
-## Promotion Conditions
+The first promotion condition section you need to configure is the one saying *Customers matching any of the following criteria* (you can click the *any* word and change it to *all* in case you want your promotion applied only to the customers that match all specified criteria). As the warning says, you must provide at least one condition in this section.
 
-Promotion Conditions are split into two groups:
+After clicking *Add user group*, you will be prompted to select any of the following options:
 
-* Catalog Promotion Conditions
-* Cart Promotion Conditions
++ *Registered users*: Your promotion will be valid only for customers that already signed up.
++ *Everyone*: Your promotion will target each and every customer.
++ *First time customers*: Only those signed in customers who are buying something from your store for the first time will get promotion rewards.
++ *User group contains*: The promotion will be valid only for the user group(s) that contain(s) the specified word or phrase.
 
-### Catalog Promotion Conditions
+![Customer conditions](media/promotion-rules/customer-conditions.png)
 
-Catalog promotion conditions are used to make specific products and categories of products more attractive to shoppers through incentives, such as lowered pricing on a particular brand.
+## Catalog and Cart Conditions
 
-A catalog promotion condition grants all shoppers a discount on a specific product or set of products.
+For both catalog and cart conditions, you can not only switch from *any* to *all*, as with customer conditions, but also switch from *true* to *false*:
 
- Promotion with matching catalog conditions are always visible to shoppers, so the price they see while browsing the site is the price they pay at checkout time (except taxes and any promotions with matching shopping cart conditions that may apply).
+![Switching from true to false](media/promotion-rules/catalog-cart-true-false.png)
 
-### Cart Promotion Conditions
+!!! tip
+	Such flexibility, for instance, will allow you to exclude specific categories or products from your promotion or set a minimum purchase amount limit that qualifies for a promotion.
 
-Cart promotion conditions are used to encourage shoppers to increase their order size by providing incentives, such as free shipping on orders over a certain sum. A shopping cart promotion conditions grants a discount on a specific product or set of products to shoppers who meet them. Cart promotions are only applied after the promotion conditions expression returned true. Thus, a shopper only sees the price that will be paid for a promoted item when it's viewed in the shopping cart or during checkout (assuming all the promotion's conditions are met).
+### Catalog Conditions
 
-For example, a product has a list price of $100.00. Currently, there is a shopping cart promotion that grants a 5% discount to all orders over $99.00. When browsing the catalog, all shoppers see the product's $100.00 list price. If a shopper adds the product to the shopping cart and then views the cart's contents, the price of the cart is $95.00 (due to the 5% discount). If the same shopper goes back to browsing the frontend, the catalog still shows the list price of $100.
+Configuring catalog conditions is pretty straightforward. You can set specific products, categories, and currencies your promotion will or will not apply to:
 
-Conditions are the set of criteria that determine, based on the current state of the cart, whether a shopper is eligible for a promotion.
+![Catalog condition list](media/promotion-rules/catalog-condition-list.png)
 
-![Fig. Catalog Cart Conditions](media/screen-catalog-cart-conditions.png)
+You can also exclude specific products from selected categories, set the in-stock quantity, etc.
 
-## Effects
+### Cart Conditions
 
-The **Effects**  specify what benefits are granted by a promotion. They are the incentives used to encourage customers to purchase more or to purchase specific items. Examples of effects are:
+Cart conditions allow you to speficy such options as number of items in the shopping cart or the cart subtotal, i.e. the assumed purchase amount:
 
-* free shipping;
-* discounts on specific products;
-* free items;
-* coupons for discounts on future purchases.
+![Cart condition list](media/promotion-rules/cart-condition-list.png)
 
-## Expression builder's visitor block
+!!! note
+	Unlike catalog conditions, cart conditions have additional operators that allow you to build expressions as precisely as possible. For instance, you can configure the purchase amount to be exactly $100, at least $100, or between $100 and $200.
 
-The visitor block is similar to promotion rules. It specifies criteria that determine if the visitor is eligible to receive a promotion based on the information that was received about the visitor.  
+## Rewards
 
-![Fig. Visitor Conditions](media/screen-visitor-conditions.png)
+Configuring promotion rewards is the last step of setting promotion conditions. Here, you need to specify the rewards your customers will get within your promotion campaign. Those can be:
 
-There are four options:
++ Free shipping or shipping discount
++ Discounts on specific products
++ Gift items
++ Discount coupons
 
-* Everyone - no filtering
-* Registered user - *user that is currently logged in to storefront
-* First time buyer - registered user who has never made any purchase
-* User groups contains[]
+The complete list of reward options below shows the impressively high level of customizability:
 
-![Fig. Visitor Options](media/screen-visitor-options.png)
-Screen-visitor-options
+![Reward list](media/promotion-rules/reward-list.png)
 
-**Important**: The user who has just created an account , is a first-time buyer!
+!!! note
+	You cannot save your promotion before adding at least one reward.
 
-## Activation rules
+## Example
 
-Activation rules determine how promotions are applied to the eligible purchases. In the simplest case, a promotion is applied automatically. This means that, if the customer meets all conditions, he receives the promotion action automatically, whether it's a discount on an item, free shipping, a coupon, etc.
+The example below showcases the flexibility one might achieve with the promotion condition feature. This promotion is configured in the following way:
 
-Some promotions need to be "activated" by a coupon code (also referred to as a promotion code). For example, to receive a discount on an item in the shopping cart, the customer must enter a coupon code at checkout time. If your organization uses coupon codes, you will need to configure certain rules to control how they can be used with each promotion.
++ Only registered users qualify for this promotion.
++ This promotion *does not* apply to the *Cell Phones* category and *is not* valid unless there are more than five items in stock.
++ This promotion is valid only with the purchase amount being at least $200 *and* with at least two items in the shopping cart.
++ Customers qualifying for this promotion will get $10% off (no more than $50) for using a specific payment method *and* a gift item (headphones).
 
-When you create a promotion, you need to specify whether it's activated automatically or by a coupon.
+![Promotion conditions example](media/promotion-rules/promotion-conditions-example.png)
 
-### Coupons
 
-Coupons can be used by any eligible customer. This means that any customer who qualifies for a promotion can use coupon code associated with that promotion. Customers may re-use a previously redeemed coupon code.
+
+
+
+
+
+
+
+
+
+
 

@@ -1,32 +1,34 @@
-# Combine Active Promotions
+# Promotion Combination Policies
 
 Virto Commerce Marketing module supplies two basic promotion combination policies:  
 
-1. ***Best reward policy*** - select the promotion reward, that benefits a customer the most.
-1. ***Combine stackable policy*** - If your store has multiple active promotions, shoppers can qualify for multiple promotions at a time.  
++ ***Best reward policy***: Only one promotion, being the most beneficial to a customer, will apply. 
++ ***Stackable policy***: Customers can qualify for multiple promotions at a time.
 
-## Combine Stackable Policy
-
-With this policy each promotion can be combined with all other promotions in an order. In addition, resulting promotion rewards can be stacked on the top of other promotions rewards in the same reward group (shipment, item, order), which overrides certain promotion policies. The priority of promotions determines whether a stackable promotion reward applies to the order. 
-
-The following table details how promotions rewards are applied compared to other promotions. How promotions are applied is based on different priorities and the exclusivity with other promotions settings:
-
-![Fig. Table](media/screen-table.png)
-
-!!! warning
-	Stackable combination policy has a constraint: if the total order or any object price is less than zero after a promotion is applied, this reward will be skipped and next reward by priority will be taken.
-
-### Switch on Promotion Stackable Combination Policy  
-
-1. Open Settings -> Marketing -> General
-1. Choose CombineStackable value for setting 'Selected policy of combine active promotions'. **Notice**: This setting will be applied only after application restart.
-![Fig. Combine Stackable](media/screen-combinestackable-settings.png)
-1. Open Promotion detail blade
-1. The system will display new fields: 'Priority', 'Exclusive within an order', 'Combine with self'.
-1. Use these fields to control the promotion combinations behavior.
-
-![Fig. Combined Promotion](media/screen-combined-promotion.png)
+!!! note
+	By default, the *best reward* policy is enabled.
 
 ## Best Reward Policy  
 
-As a result of this combination policy, no rewards are stacked, and the user receives only the best rewards for each group (which is the most beneficial to the client).
+This policy follows the common *Not Valid with Any Other Offer* principle, meaning that only one promotion may be applied. This promotion will be the most beneficial to the customer; technically, it will have the highest priority.
+
+A simple example of such a policy may include two promotions, 10% off product discount and $10 shipping discount. The system will calculate the most rewarding offer of these two and apply it at customer checkout.
+
+## Stackable Policy
+
+With this policy, any promotion can be combined with all other promotions in an order. This means, for instance, that if you have five active promotions and a customer qualifies for all of them, they will be applied at checkout.
+
+!!! warning
+	Stackable policy has the following limitation: in case the total order amount or any item price is less than zero after the promotion is applied, this reward will be skipped and the next one will be applied, in line with the priority settings.
+
+## Promotion Policy Settings
+
+As mentioned above, the best reward policy is enabled by default. If you need to switch to the stackable policy, do the following:
+
++ Go to *Settings -> Marketing -> General*.
++ In the dropdown list, choose *CombineStackable*:
+
+![Switching promotion policies](media/promotion-policies/switching-promotion-policies.png)
+
++ Click *Save*.
++ Restart the application for the new settings to come into effect.

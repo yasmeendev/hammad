@@ -98,4 +98,4 @@ For more information on managing promotions, please refer to these dedicated gui
 
 [Managing Promotions](managing-promotions.md)
 
-[Combining Active Promotions](combining-active-promotions.md)
+[Promotion Combination Policies](combining-active-promotions.md)
